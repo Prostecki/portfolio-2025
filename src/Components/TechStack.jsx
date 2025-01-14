@@ -42,6 +42,21 @@ export default function TechStack() {
       name: "materialui",
       description: "Material UI - React component library.",
     },
+    {
+      name: "mysql",
+      description:
+        "MySQL - a popular open-source relational database management system.",
+    },
+    {
+      name: "postgresql",
+      description:
+        "PostgreSQL - a powerful, open-source object-relational database system.",
+    },
+    {
+      name: "mongodb",
+      description:
+        "MongoDB - A NoSQL database that stores data in flexible, JSON-like documents.",
+    },
   ];
 
   const [activeIcon, setActiveIcon] = useState(null);
@@ -52,7 +67,7 @@ export default function TechStack() {
 
   return (
     <section className="tech-stack p-14 py-28">
-      <h1 className="text-3xl font-[600] mb-4">Tech Stack</h1>
+      <h1 className="text-3xl font-[600] mb-4">Tech Skills</h1>
       <article className="mb-8 text-slate-500 text-center">
         All of my current technology stack that I really enjoy using.
       </article>
@@ -68,7 +83,7 @@ export default function TechStack() {
           >
             <StackIcon name={icon.name} />
             {activeIcon === i && (
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 p-2 bg-white text-black shadow-md rounded">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-max max-w-52 text-center p-2 bg-white text-gray-500 shadow-md rounded-lg">
                 {icon.description}
               </div>
             )}
