@@ -1,9 +1,10 @@
 import "./App.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Experience from "./Components/Experience";
+import Home from "./components/Home";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import TechStack from "./components/TechStack";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Home />
         <About />
         <Experience />
+        <TechStack />
       </main>
       <Footer />
     </>
