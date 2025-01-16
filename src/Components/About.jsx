@@ -1,6 +1,8 @@
-export default function About() {
+import { forwardRef } from "react";
+
+const About = forwardRef((_, ref) => {
   return (
-    <section className="flex flex-col items-center w-full py-24 px-8">
+    <section ref={ref} className="flex flex-col items-center w-full py-24 px-8">
       <h1 className="text-3xl font-[600]">About Me</h1>
       <p className="text-slate-500">My introduction</p>
       <div className="flex justify-center items-center w-full gap-20 py-8">
@@ -33,4 +35,6 @@ export default function About() {
       </div>
     </section>
   );
-}
+});
+
+export default About;
