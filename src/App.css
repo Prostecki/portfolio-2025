@@ -7,6 +7,7 @@
 #root {
   @apply w-full h-full;
   font-family: "Poppins", sans-serif;
+  background-color: rgba(14, 14, 14, 0.892);
 }
 
 .cv-button:hover {
@@ -23,4 +24,12 @@
 
 .tech-article {
   @apply text-black font-extrabold text-6xl;
+}
+
+.nav-links > a {
+  @apply text-slate-200;
+}
+
+.nav-links > a:hover {
+  @apply text-red-500;
 }
