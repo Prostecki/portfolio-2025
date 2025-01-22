@@ -19,7 +19,7 @@ export default function Home() {
           I'm fullstack developer Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Quos tempora vitae deserunt explicabo quia cumque.
         </p>
-        <button className="border border-slate-400 text-white w-max px-2 rounded-lg shadow-md py-2">
+        <button className="border border-slate-400 text-white w-max px-2 rounded-lg shadow-md py-2 hover:bg-blue-500 duration-300">
           Contact me!
         </button>
         <div className="w-28 flex justify-center">
