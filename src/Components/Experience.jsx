@@ -16,9 +16,11 @@ export default function Experience() {
   };
 
   return (
-    <section className="py-20 flex flex-col gap-10">
+    <section className="flex w-full h-max flex-col gap-10">
       <div className="flex flex-col items-center gap-2">
-        <h1 className="text-3xl text-white font-[600]">Experience</h1>
+        <h1 className="text-3xl text-white font-[600] uppercase tracking-wide">
+          Experience
+        </h1>
         <p className="text-slate-500">My journey</p>
       </div>
       <div className="flex flex-col items-center">

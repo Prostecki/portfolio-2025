@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./Components/About";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
 import { useRef, useEffect } from "react";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <About ref={elementRef} />
         <Experience />
         <TechStack />
+        <Projects />
       </main>
       <Footer />
     </>
