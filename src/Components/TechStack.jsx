@@ -83,8 +83,12 @@ export default function TechStack() {
     },
   ];
 
+  const capitalizeFirstLetter = (str) => {
+    return String(str).charAt(0).toUpperCase() + String(str).slice(1);
+  };
+
   return (
-    <section className="flex flex-col justify-center gap-5 py-36 w-[60rem]">
+    <section className="flex flex-col justify-center gap-5 py-36 w-[80%]">
       <h1 className="text-3xl text-white text-center uppercase tracking-wide font-[600] mb-4">
         Tech Skills
       </h1>
@@ -92,38 +96,57 @@ export default function TechStack() {
         All of my current technology stack that I really enjoy using.
       </article>
       <div className="flex w-full gap-5">
-        <div className="grid grid-cols-2 grid-rows-3 gap-10 bg-slate-900 border-2 rounded-xl p-5">
-          <h1 className="text-2xl w-full text-center text-white col-span-2">
+        <div className="w-1/3 grid grid-cols-2 grid-rows-4 gap-1 rounded-xl p-5">
+          <h1 className="text-2xl w-full tracking-wide text-center text-white col-span-2">
             Frontend
           </h1>
           {stackIcons
             .filter((icon) => icon.field === "Frontend")
             .map((icon, i) => (
-              <div key={i} className="flex items-center gap-5">
-                <StackIcon className="w-8" name={icon.name} />
-                <h1 className="text-white">{icon.name}</h1>
+              <div
+                key={i}
+                className="flex items-center justify-start ml-14 mt-5 gap-2"
+              >
+                <StackIcon className="w-5" name={icon.name} />
+                <h1 className="text-white">
+                  {capitalizeFirstLetter(icon.name)}
+                </h1>
               </div>
             ))}
         </div>
-        <div className="flex justify-center items-center gap-5 flex-wrap bg-slate-900 border-2 rounded-xl">
-          <h1 className="text-2xl w-full text-center text-white">Backend</h1>
+        <div className="w-1/3 grid grid-cols-2 grid-rows-4 gap-1 rounded-xl p-5">
+          <h1 className="text-2xl w-full tracking-wide text-center text-white col-span-2">
+            Backend
+          </h1>
           {stackIcons
             .filter((icon) => icon.field === "Backend")
             .map((icon, i) => (
-              <div key={i} className="flex items-center gap-5">
-                <StackIcon className="w-6" name={icon.name} />
-                <h1 className="text-white">{icon.name}</h1>
+              <div
+                key={i}
+                className="flex items-center justify-start ml-14 mt-5 gap-2"
+              >
+                <StackIcon className="w-5" name={icon.name} />
+                <h1 className="text-white">
+                  {capitalizeFirstLetter(icon.name)}
+                </h1>
               </div>
             ))}
         </div>
-        <div className="flex justify-center items-center gap-5 flex-wrap bg-slate-900 border-2 rounded-xl">
-          <h1 className="text-2xl w-full text-center text-white">Tools</h1>
+        <div className="w-1/3 grid grid-cols-2 grid-rows-4 gap-1 rounded-xl p-5">
+          <h1 className="text-2xl w-full tracking-wide text-center text-white col-span-2">
+            Tools
+          </h1>
           {stackIcons
             .filter((icon) => icon.field === "Tools")
             .map((icon, i) => (
-              <div key={i} className="flex items-center gap-5">
-                <StackIcon className="w-6" name={icon.name} />
-                <h1 className="text-white">{icon.name}</h1>
+              <div
+                key={i}
+                className="flex items-center justify-start mt-5 ml-14 gap-2"
+              >
+                <StackIcon className="w-5" name={icon.name} />
+                <h1 className="text-white">
+                  {capitalizeFirstLetter(icon.name)}
+                </h1>
               </div>
             ))}
         </div>

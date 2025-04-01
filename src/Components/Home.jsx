@@ -11,7 +11,7 @@ export default function Home() {
         <img
           src="/src/assets/avatar.jpeg"
           alt="avatar"
-          className="w-64 rounded-full border drop-shadow-lg"
+          className="w-64 rounded-full animate-ultra-smooth-spin border-4 drop-shadow-lg"
         />
         <p className="text-slate-500">Hi, my name is</p>
         <h1 className="text-3xl text-slate-200 font-extrabold tracking-wide drop-shadow-lg">
