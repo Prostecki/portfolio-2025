@@ -6,7 +6,7 @@ import { RiTelegram2Line } from "react-icons/ri";
 export default function HomeSocial() {
   return (
     <section>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10 max-md:hidden">
         <a href="https://github.com/Prostecki" target="_blank">
           <FaGithub
             className="drop-shadow-lg"

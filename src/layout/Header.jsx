@@ -1,6 +1,6 @@
-export default function Header({ scrollToAbout }) {
+export default function Header({ scrollToAbout, scrollToExperience }) {
   return (
-    <header className="flex w-full justify-evenly items-center p-6 drop-shadow-sm text-slate-800 text-md overflow-hidden">
+    <header className="flex fixed w-full justify-evenly items-center p-6 drop-shadow-sm z-10 text-slate-800 bg-white text-md overflow-hidden">
       <img
         src="src/assets/logo.png"
         alt="logo"
@@ -10,6 +10,9 @@ export default function Header({ scrollToAbout }) {
         <a href="">Home</a>
         <a href="#" onClick={scrollToAbout}>
           About
+        </a>
+        <a href="#" onClick={scrollToExperience}>
+          Experience
         </a>
         <a href="">Skills</a>
         <a href="">Project</a>

@@ -1,10 +1,10 @@
 import { BsBriefcaseFill } from "react-icons/bs";
 import { TbSchool } from "react-icons/tb";
-import { useState } from "react";
 import Education from "./Education";
 import Work from "./Work";
+import { forwardRef, useState } from "react";
 
-export default function Experience() {
+const Experience = forwardRef((props, ref) => {
   const [activeSection, setActiveSection] = useState("work");
 
   const handleWork = () => {
@@ -16,8 +16,15 @@ export default function Experience() {
   };
 
   return (
-    <section className="flex w-full h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center">
+    <section
+      className="flex w-full pt-32 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center"
+      ref={ref}
+      id="experience"
+    >
       <div className="flex flex-col items-center gap-2">
+        <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
+          Journey
+        </span>
         <h1 className="text-3xl text-white font-[600] uppercase tracking-wide">
           Experience
         </h1>
@@ -61,4 +68,6 @@ export default function Experience() {
       {activeSection === "education" && <Education />}
     </section>
   );
-}
+});
+
+export default Experience;

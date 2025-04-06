@@ -54,8 +54,11 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="w-full py-24 flex flex-col items-center gap-5 justify-center bg-gray-950 text-white">
-      <h1 className="text-5xl text-center uppercase tracking-wide font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
+    <section className="w-full py-24 max-md:py-0 flex flex-col items-center gap-5 justify-center bg-gray-950">
+      <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
+        Projects
+      </span>
+      <h1 className="text-4xl text-center font-bold text-transparent text-white">
         Projects
       </h1>
       <h3 className="mb-10 mt-5 text-xl text-center font-light text-gray-400">
@@ -65,7 +68,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="rounded-xl shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col justify-between"
+            className="rounded-xl shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden flex flex-col justify-between"
           >
             <div className="flex-grow">
               <img

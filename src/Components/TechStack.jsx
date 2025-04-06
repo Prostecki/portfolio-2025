@@ -117,11 +117,14 @@ export default function TechStack() {
   };
 
   return (
-    <section className="flex flex-col justify-center gap-5 py-16 px-4 sm:px-6 md:px-8 w-full md:w-[80%]">
-      <h1 className="text-3xl text-white text-center uppercase tracking-wide font-[600] mb-4">
+    <section className="w-full py-32 flex flex-col items-center gap-5 justify-center bg-gray-950 text-white">
+      <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
+        Skills
+      </span>
+      <h1 className="text-4xl text-center font-bold text-transparent bg-clip-text text-white">
         Tech Skills
       </h1>
-      <article className="mb-8 text-slate-500 text-center">
+      <article className="mb-10 mt-5 text-xl text-center font-light text-gray-400">
         All of my current technology stack that I really enjoy using.
       </article>
       <div className="flex flex-col md:flex-row w-full gap-8">
@@ -136,7 +139,7 @@ export default function TechStack() {
                 key={i}
                 className="flex items-center justify-start ml-2 md:ml-14 mt-5 gap-2"
               >
-                <StackIcon className="w-5" name={icon.name} />
+                <StackIcon className="w-10" name={icon.name} />
                 <h1 className="text-white">
                   {capitalizeFirstLetter(icon.name)}
                 </h1>
@@ -154,7 +157,7 @@ export default function TechStack() {
                 key={i}
                 className="flex items-center justify-start ml-2 md:ml-14 mt-5 gap-2"
               >
-                <StackIcon className="w-5" name={icon.name} />
+                <StackIcon className="w-10" name={icon.name} />
                 <h1 className="text-white">
                   {capitalizeFirstLetter(icon.name)}
                 </h1>
@@ -172,7 +175,7 @@ export default function TechStack() {
                 key={i}
                 className="flex items-center justify-start mt-5 ml-2 md:ml-14 gap-2"
               >
-                <StackIcon className="w-5" name={icon.name} />
+                <StackIcon className="w-10" name={icon.name} />
                 <h1 className="text-white">
                   {capitalizeFirstLetter(icon.name)}
                 </h1>

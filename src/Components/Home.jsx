@@ -3,11 +3,14 @@ import { FaArrowDownLong } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <section className="text-black flex py-20 px-8 max-w-[55rem] border-b">
+    <section className="text-black flex pt-32 pb-12 px-8 max-w-[55rem] border-b">
       <div className="-translate-x-20 flex items-center">
         <HomeSocial />
       </div>
       <div className="flex flex-col gap-6 items-center justify-center">
+        <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
+          Welcome to my portfolio
+        </span>
         <img
           src="/src/assets/avatar.jpeg"
           alt="avatar"
