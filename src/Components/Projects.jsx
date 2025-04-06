@@ -58,7 +58,7 @@ export default function Projects() {
       <h1 className="text-5xl text-center uppercase tracking-wide font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
         Projects
       </h1>
-      <h3 className="mb-10 mt-5 text-xl font-light text-gray-400">
+      <h3 className="mb-10 mt-5 text-xl text-center font-light text-gray-400">
         Here are some of the projects I've worked on.
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 w-full max-w-7xl">

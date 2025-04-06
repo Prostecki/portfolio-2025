@@ -32,7 +32,7 @@
 }
 
 .nav-links > a {
-  @apply text-slate-200;
+  @apply text-slate-200 text-base uppercase tracking-wider;
 }
 
 .nav-links > a:hover {
