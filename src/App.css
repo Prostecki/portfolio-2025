@@ -4,11 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  /* outline: 1px solid red; */
+}
+
 #root {
   @apply w-full h-full;
   font-family: "Poppins", sans-serif;
   /* background-color: rgba(14, 14, 14, 0.892); */
-  background: rgb(10, 10, 10);
+  background: rgb(20, 20, 20);
 }
 
 .cv-button:hover {
