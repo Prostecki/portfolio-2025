@@ -3,11 +3,11 @@ import BorderLine from "./BorderLine";
 import { MdLocationCity } from "react-icons/md";
 export default function Work() {
   return (
-    <section className="flex flex-col w-full justify-center items-center">
+    <section className="flex flex-col w-full justify-center gap-6 items-center">
       <div className="max-w-[35rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2"></div>
+        <div className="w-1/2 hidden md:block"></div>
         <BorderLine />
-        <div className="w-1/2 flex flex-col items-start pl-4 py-2 bg-slate-900 drop-shadow-lg rounded-md  border-b-4 border-blue-500">
+        <div className="w-1/2 max-md:w-full flex flex-col items-start pl-4 py-2 bg-slate-900 drop-shadow-lg rounded-md  border-b-4 border-blue-500">
           <h1 className="text-slate-200 font-[600] text-lg uppercase mb-2 tracking-wide">
             Delivery Driver
           </h1>
@@ -31,7 +31,7 @@ export default function Work() {
         </div>
       </div>
       <div className="max-w-[35rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2 flex flex-col items-start py-2 pl-4 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
+        <div className="w-1/2 max-md:w-full flex flex-col items-start py-2 pl-4 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
           <h1 className="text-white font-[600] mb-2 text-lg uppercase tracking-wide">
             Web Dev Freelancer
           </h1>
@@ -53,12 +53,12 @@ export default function Work() {
           </div>
         </div>
         <BorderLine />
-        <div className="w-1/2"></div>
+        <div className="w-1/2 hidden md:block"></div>
       </div>
       <div className="max-w-[35rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2"></div>
+        <div className="w-1/2 hidden md:block"></div>
         <BorderLine />
-        <div className="w-1/2 flex flex-col items-start py-2 pl-4 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
+        <div className="w-1/2 max-md:w-full flex flex-col items-start py-2 pl-4 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
           <h1 className="text-slate-400 uppercase font-[600] text-lg tracking-wide mb-2">
             Web Development Intern
           </h1>
@@ -81,7 +81,7 @@ export default function Work() {
         </div>
       </div>
       <div className="max-w-[35rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2 flex flex-col items-start pl-4 py-2 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
+        <div className="w-1/2 max-md:w-full flex flex-col items-start pl-4 py-2 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
           <h1 className="text-slate-400 tracking-wide text-lg font-[600] uppercase mb-2">
             Locksmith Specialist
           </h1>
@@ -104,12 +104,12 @@ export default function Work() {
           </div>
         </div>
         <BorderLine />
-        <div className="w-1/2"></div>
+        <div className="w-1/2 hidden md:block"></div>
       </div>
       <div className="max-w-[35rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2"></div>
+        <div className="w-1/2 hidden md:block"></div>
         <BorderLine />
-        <div className="w-1/2 flex flex-col items-start pl-4 py-2 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
+        <div className="w-1/2 max-md:w-full flex flex-col items-start pl-4 py-2 drop-shadow-lg rounded-md bg-slate-900 border-b-4 border-blue-500">
           <h1 className="text-slate-400 font-[600] text-lg mb-2 uppercase tracking-wide">
             Coach in Athletics
           </h1>

@@ -2,16 +2,19 @@ import { forwardRef } from "react";
 
 const About = forwardRef((_, ref) => {
   return (
-    <section ref={ref} className="flex flex-col items-center w-full py-52 px-8">
-      <div className="flex justify-center items-center w-full gap-20 py-8">
-        <div className="">
+    <section
+      ref={ref}
+      className="flex flex-col items-center w-full py-32 px-4 sm:px-8"
+    >
+      <div className="flex flex-col md:flex-row justify-center items-center w-full gap-12 md:gap-20 py-8">
+        <div className="mb-8 md:mb-0">
           <img
-            className="max-w-80 content-center bg-center rounded-lg drop-shadow-md"
+            className="max-w-80 md:min-w-40 content-center bg-center rounded-lg drop-shadow-md"
             src="/src/assets/deepai-dev-2.jpeg"
             alt="profile picture"
           />
         </div>
-        <div className="w-1/3 flex flex-col gap-5">
+        <div className="w-full md:w-1/3 flex flex-col gap-5">
           <div className="flex items-center relative gap-5">
             <h1 className="text-3xl text-slate-200 font-[600] mb-2">
               About Me

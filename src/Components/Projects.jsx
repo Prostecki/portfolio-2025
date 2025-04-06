@@ -54,41 +54,53 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="border-t-2 w-full py-32 flex flex-col items-center gap-8 bg-gray-900 text-white">
-      <h1 className="text-4xl text-center uppercase tracking-wide font-bold mb-6">
+    <section className="w-full py-24 flex flex-col items-center gap-5 justify-center bg-gray-950 text-white">
+      <h1 className="text-5xl text-center uppercase tracking-wide font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
         Projects
       </h1>
-      <div className="flex items-center justify-center gap-10 w-full">
+      <h3 className="mb-10 mt-5 text-xl font-light text-gray-400">
+        Here are some of the projects I've worked on.
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 w-full max-w-7xl">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="max-w-[30rem] p-4 rounded-lg shadow-lg bg-gray-800 hover:scale-105 transition-transform duration-300"
+            className="rounded-xl shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col justify-between"
           >
-            <img
-              className="w-full object-cover rounded-md mb-4"
-              src={project.image}
-              alt={project.name}
-            />
-            <h2 className="text-xl font-semibold mb-2">{project.name}</h2>
-            <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-            <div className="flex gap-4 mb-4">
-              {project.tools.map((tool, toolIndex) => (
-                <div key={toolIndex} className="flex items-center border p-2">
-                  <img
-                    src={tool.image}
-                    alt={tool.name}
-                    className="w-8 object-cover mr-2"
-                  />
-                  <span className="text-sm text-gray-300">{tool.name}</span>
-                </div>
-              ))}
+            <div className="flex-grow">
+              <img
+                className="w-full h-48 object-cover"
+                src={project.image}
+                alt={project.name}
+              />
+              <h2 className="text-2xl font-bold px-4 pt-4 mb-1 text-teal-300">
+                {project.name}
+              </h2>
+              <p className="text-gray-300 text-sm px-4 mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 px-4 mb-4">
+                {project.tools.map((tool, toolIndex) => (
+                  <div
+                    key={toolIndex}
+                    className="flex items-center border border-gray-700 p-2 rounded-md bg-gray-800"
+                  >
+                    <img
+                      src={tool.image}
+                      alt={tool.name}
+                      className="w-8 object-cover mr-2"
+                    />
+                    <span className="text-sm text-gray-300">{tool.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex justify-between w-full">
+            <div className="flex justify-between px-4 pb-4">
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all duration-300"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition duration-300 shadow"
               >
                 View Live
               </a>
@@ -96,7 +108,7 @@ export default function Projects() {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-md transition-all duration-300"
+                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300 shadow"
               >
                 GitHub
               </a>
