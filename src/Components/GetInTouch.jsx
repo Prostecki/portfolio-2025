@@ -11,7 +11,7 @@ export default function GetInTouch() {
         I would love to hear from you. Please reach out if you have any
         questions or projects you'd like to collaborate on.
       </h3>
-      <div className="w-full max-w-7xl px-6">
+      <div className="max-md:w-[25rem] w-[30rem] max-w-7xl px-6">
         <form className="bg-gray-800 p-8 rounded-lg shadow-xl flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className="text-sm text-gray-300">

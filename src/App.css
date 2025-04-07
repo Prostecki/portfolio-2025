@@ -32,7 +32,7 @@
 }
 
 .nav-links > a {
-  @apply text-black drop-shadow-md text-[0.875rem] font-normal;
+  @apply drop-shadow-md text-[0.875rem] font-normal;
 }
 
 .nav-links > a:hover {
@@ -47,4 +47,17 @@
   width: 15rem;
   height: 1px;
   background: white;
+}
+
+/* Пример для скрытого и открытого состояния меню */
+.hidden {
+  opacity: 0;
+  transform: translateY(-20px); /* Сдвиг вверх */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.flex {
+  opacity: 1;
+  transform: translateY(0); /* Нормальное положение */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
