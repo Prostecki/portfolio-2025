@@ -68,11 +68,11 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="rounded-xl shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden flex flex-col justify-between"
+            className="rounded-xl shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col justify-between"
           >
             <div className="flex-grow">
               <img
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover project-image"
                 src={project.image}
                 alt={project.name}
               />

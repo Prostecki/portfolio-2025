@@ -8,9 +8,40 @@
   /* outline: 1px solid yellowgreen; */
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-primary-300: hsl(219, 76%, 75%);
+    --clr-primary-400: hsl(219, 76%, 50%);
+    --clr-primary-500: hsl(219, 76%, 35%);
+    --clr-primary-600: hsl(219, 76%, 25%);
+    --clr-primary-700: hsl(219, 76%, 15%);
+
+    --clr-secondary-300: hsl(269, 75%, 75%);
+    --clr-secondary-400: hsl(269, 75%, 50%);
+    --clr-secondary-500: hsl(269, 75%, 35%);
+    --clr-secondary-600: hsl(269, 75%, 20%);
+    --clr-secondary-700: hsl(269, 75%, 15%);
+
+    --clr-accent-300: hsl(358, 72%, 75%);
+    --clr-accent-400: hsl(358, 72%, 50%);
+    --clr-accent-500: hsl(358, 72%, 35%);
+    --clr-accent-600: hsl(358, 72%, 20%);
+    --clr-accent-700: hsl(358, 72%, 15%);
+
+    --clr-neutral-100: hsl(219, 15%, 90%);
+    --clr-neutral-300: hsl(219, 15%, 75%);
+    --clr-neutral-400: hsl(219, 15%, 50%);
+    --clr-neutral-500: hsl(219, 15%, 35%);
+    --clr-neutral-600: hsl(219, 15%, 20%);
+    --clr-neutral-700: hsl(219, 15%, 15%);
+    --clr-neutral-900: hsl(219, 15%, 5%);
+    font-family: "Inter", sans-serif;
+  }
+}
+
 #root {
   @apply w-full h-full;
-  font-family: "Inter", sans-serif;
+
   /* background-color: rgba(14, 14, 14, 0.892); */
   background: rgb(20, 20, 20);
 }
@@ -49,15 +80,113 @@
   background: white;
 }
 
-/* Пример для скрытого и открытого состояния меню */
 .hidden {
   opacity: 0;
-  transform: translateY(-20px); /* Сдвиг вверх */
+  transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .flex {
   opacity: 1;
-  transform: translateY(0); /* Нормальное положение */
+  transform: translateY(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+
+.project-image,
+img {
+  animation: fade-in linear;
+  animation-timeline: view();
+}
+
+header {
+  --_animationStartsAfter: 50vh;
+  --_animationDistance: 500px;
+  --_surfaceColorStart: hsl(0 10% 5%);
+  --_surfaceColorEnd: hsl(0 50% 90% / 0.1);
+  --_textColorStart: hsl(0 10% 90%);
+  --_textColorEnd: hsl(0 10% 90%);
+
+  padding: 1rem 3rem;
+  margin-inline: auto;
+  margin-block: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_headerWidth, auto);
+
+  color: var(--_textColorStart);
+  background-color: var(--_surfaceColorStart);
+
+  position: sticky;
+  z-index: 1000;
+  top: 0rem;
+}
+@supports (animation-timeline: view()) {
+  header {
+    top: -5rem;
+    border-radius: 100vw;
+    backdrop-filter: blur(0.35rem);
+    animation: stickyNav linear forwards;
+    animation-timeline: view();
+    animation-range-start: calc(100vh + var(--_animationStartsAfter));
+    animation-range-end: calc(
+      100vh + var(--_animationStartsAfter) + var(--_animationDistance)
+    );
+  }
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header a:hover,
+header a:focus {
+  color: var(--clr-primary-300);
+  text-decoration: underline;
+  text-decoration-thickness: 0.07lh;
+  text-underline-offset: 0.17lh;
+}
+
+@keyframes stickyNav {
+  0%,
+  100% {
+    --_headerWidth: fit-content;
+  }
+
+  100% {
+    top: 1rem;
+    color: var(--_textColorEnd);
+    background-color: var(--_surfaceColorEnd);
+    box-shadow: inset 0 0 0.5rem hsl(0 0% 100% / 0.1),
+      0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
 }
