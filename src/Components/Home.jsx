@@ -11,11 +11,13 @@ export default function Home() {
         <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
           Welcome to my portfolio
         </span>
-        <img
-          src="/src/assets/avatar.jpeg"
-          alt="avatar"
-          className="w-64 rounded-full animate-ultra-smooth-spin border-4 drop-shadow-lg"
-        />
+        <div className="rounded-full element">
+          <img
+            src="/src/assets/avatar.jpeg"
+            alt="avatar"
+            className="w-64 rounded-full z-20 drop-shadow-lg"
+          />
+        </div>
         <p className="text-slate-500">Hi, my name is</p>
         <h1 className="text-3xl text-slate-200 font-extrabold tracking-wide drop-shadow-lg">
           Mark Taratynov
