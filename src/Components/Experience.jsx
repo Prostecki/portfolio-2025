@@ -3,6 +3,7 @@ import { TbSchool } from "react-icons/tb";
 import Education from "./Education";
 import Work from "./Work";
 import { forwardRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Experience = forwardRef((props, ref) => {
   const [activeSection, setActiveSection] = useState("work");
@@ -17,19 +18,14 @@ const Experience = forwardRef((props, ref) => {
 
   return (
     <section
-      className="flex w-full pt-32 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center"
+      className="flex w-full pt-32 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center text-white"
       ref={ref}
       id="experience"
     >
-      <div className="flex flex-col items-center gap-2">
-        <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
-          Journey
-        </span>
-        <h1 className="text-3xl text-white font-[600] uppercase tracking-wide">
-          Experience
-        </h1>
-        <p className="text-slate-500">My journey</p>
-      </div>
+      <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
+        My Story
+      </span>
+
       <div className="flex flex-col items-center">
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-10 w-full">
           <div className="flex items-center gap-2">
@@ -63,9 +59,19 @@ const Experience = forwardRef((props, ref) => {
             </button>
           </div>
         </div>
-        {activeSection === "work" && <Work />}
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSection}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5 }}
+          >
+            {activeSection === "work" ? <Work /> : <Education />}
+          </motion.div>
+        </AnimatePresence>
       </div>
-      {activeSection === "education" && <Education />}
     </section>
   );
 });

@@ -1,5 +1,6 @@
 import HomeSocial from "./HomeSocial";
 import { FaArrowDownLong } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -11,17 +12,26 @@ export default function Home() {
         <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
           Welcome to my portfolio
         </span>
-        <div className="rounded-full element">
+        <div className="rounded-full">
           <img
             src="/src/assets/avatar.jpeg"
             alt="avatar"
             className="w-64 rounded-full z-20 drop-shadow-lg"
           />
         </div>
-        <p className="text-slate-500">Hi, my name is</p>
-        <h1 className="text-3xl text-slate-200 font-extrabold tracking-wide drop-shadow-lg">
-          Mark Taratynov
-        </h1>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <p className="text-slate-400 text-lg uppercase tracking-widest mb-2">
+            Hi, my name is
+          </p>
+          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 text-transparent bg-clip-text drop-shadow-md">
+            Mark Taratynov
+          </h1>
+        </motion.div>
         <div className="flex relative items-center justify-between gap-2 border rounded-xl px-4 py-2">
           <span className="relative w-2 h-2">
             <span className="absolute w-full h-full animate-ping bg-green-500 opacity-75 rounded-full"></span>

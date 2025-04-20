@@ -68,7 +68,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="rounded-xl shadow-xl bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col justify-between"
+            className="rounded-xl overflow-hidden border border-gray-700 bg-gray-900/60 backdrop-blur-md shadow-2xl hover:scale-[1.02] transition-all duration-500 flex flex-col justify-between"
           >
             <div className="flex-grow">
               <img
@@ -86,12 +86,12 @@ export default function Projects() {
                 {project.tools.map((tool, toolIndex) => (
                   <div
                     key={toolIndex}
-                    className="flex items-center border border-gray-700 p-2 rounded-md bg-gray-800"
+                    className="flex items-center gap-2 border border-gray-700 px-3 py-1 rounded-full bg-gray-800/70 justify-center"
                   >
                     <img
                       src={tool.image}
                       alt={tool.name}
-                      className="w-8 object-cover mr-2"
+                      className="w-5 object-contain"
                     />
                     <span className="text-sm text-gray-300">{tool.name}</span>
                   </div>
@@ -103,7 +103,7 @@ export default function Projects() {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition duration-300 shadow"
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white rounded-lg transition-all duration-300 shadow-md"
               >
                 View Live
               </a>
@@ -111,7 +111,7 @@ export default function Projects() {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300 shadow"
+                className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white rounded-lg transition-all duration-300 shadow-md"
               >
                 GitHub
               </a>

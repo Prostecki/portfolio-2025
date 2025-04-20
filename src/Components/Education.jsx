@@ -1,69 +1,96 @@
-import BorderLine from "./BorderLine";
-import { IoCalendarOutline } from "react-icons/io5";
-import { IoSchoolOutline } from "react-icons/io5";
+import { IoCalendarOutline, IoSchoolOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 export default function Education() {
   return (
-    <section className="flex flex-col w-full justify-center items-center gap-6">
-      <div className="max-w-[50rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2 max-md:w-full bg-slate-900 p-3 py-2 max-md:items-center rounded-md drop-shadow-lg flex flex-col border-b-4 border-blue-500">
-          <h1 className="text-white font-[600] mb-2 text-nowrap tracking-wide uppercase">
-            Fullstack Developer, open source
-          </h1>
-          <div className="flex items-center w-max gap-1">
-            <IoSchoolOutline style={{ color: "white" }} size={22} />
-            <p className="text-slate-500">Nackademin, Stockholm</p>
-          </div>
-          <div className="flex items-center gap-1 mt-3">
-            <IoCalendarOutline style={{ color: "white" }} size={12} />
-            <p className="text-sm text-gray-400">Aug 2024 - Juni 2026</p>
-          </div>
-        </div>
-        <BorderLine />
-        <div className="w-1/2 hidden md:block"></div>
-      </div>
+    <section className="w-full px-6 text-white">
+      <div className="max-w-[1200px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+            Education & Certifications
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-400 mt-4">
+            Here's a brief overview of my educational journey.
+          </p>
+        </motion.div>
 
-      <div className="max-w-[50rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2 hidden md:block"></div>
-        <BorderLine />
-        <div className="w-1/2 max-md:w-full bg-slate-900 p-3 py-2 rounded-md drop-shadow-lg flex flex-col max-md:items-center items-start gap-2 border-b-4 border-blue-500">
-          <h1 className="text-white font-[600] text-end uppercase mb-2">
-            Municipal Adult Education
-          </h1>
-          <div>
-            <ul className="text-white ml-5 list-disc">
+        {/* First Education Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row gap-8 mb-12"
+        >
+          <div className="flex-1 bg-gray-800 p-8 rounded-2xl shadow-xl">
+            <h3 className="text-2xl font-semibold mb-3">
+              Fullstack Developer, open source
+            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <IoSchoolOutline className="text-white" size={20} />
+              <p>Nackademin, Stockholm</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <IoCalendarOutline className="text-white" size={16} />
+              <p>Aug 2024 - June 2026</p>
+            </div>
+          </div>
+          <div className="flex-1 hidden md:block"></div>
+        </motion.div>
+
+        {/* Second Education Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row gap-8 mb-12"
+        >
+          <div className="flex-1 hidden md:block"></div>
+          <div className="flex-1 bg-gray-800 p-8 rounded-2xl shadow-xl">
+            <h3 className="text-2xl font-semibold mb-3">
+              Municipal Adult Education
+            </h3>
+            <ul className="text-white ml-6 list-disc mb-4">
               <li className="my-2">Swedish</li>
               <li className="my-2">English</li>
             </ul>
+            <div className="flex items-center gap-2 mb-3">
+              <IoSchoolOutline className="text-white" size={20} />
+              <p>Solna KomVux, Stockholm</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <IoCalendarOutline className="text-white" size={16} />
+              <p>Sep 2022 - April 2024</p>
+            </div>
           </div>
-          <div className="flex items-end gap-1">
-            <IoSchoolOutline style={{ color: "white" }} size={22} />
-            <p className="text-slate-500">Solna KomVux, Stockholm</p>
+        </motion.div>
+
+        {/* Third Education Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row gap-8"
+        >
+          <div className="flex-1 bg-gray-800 p-8 rounded-2xl shadow-xl">
+            <h3 className="text-2xl font-semibold mb-3">
+              Bachelor's degree in Athletics
+            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <IoSchoolOutline className="text-white" size={20} />
+              <p>Lesgaft National State University, Russia</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <IoCalendarOutline className="text-white" size={16} />
+              <p>Sep 2014 - May 2018</p>
+            </div>
           </div>
-          <div className="flex items-center justify-end gap-1 mt-3">
-            <IoCalendarOutline style={{ color: "white" }} size={12} />
-            <p className="text-sm text-gray-400">Sep 2022 - April 2024</p>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-[50rem] w-full h-max flex justify-between gap-2">
-        <div className="w-1/2 max-md:w-full bg-slate-900 p-3 py-2 rounded-md drop-shadow-lg flex flex-col items-end max-md:items-center border-b-4 border-blue-500">
-          <h1 className="text-white font-[600] text-end uppercase mb-2">
-            Bachelor's degree in Athletics
-          </h1>
-          <div className="flex items-end gap-1">
-            <IoSchoolOutline style={{ color: "white" }} size={22} />
-            <p className="text-slate-500">
-              Lesgaft National State University, Russia
-            </p>
-          </div>
-          <div className="flex items-center justify-end gap-1 mt-3">
-            <IoCalendarOutline style={{ color: "white" }} size={12} />
-            <p className="text-sm text-gray-400">Sep 2014 - May 2018</p>
-          </div>
-        </div>
-        <BorderLine />
-        <div className="w-1/2 hidden md:block"></div>
+          <div className="flex-1 hidden md:block"></div>
+        </motion.div>
       </div>
     </section>
   );

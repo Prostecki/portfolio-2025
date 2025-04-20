@@ -35,7 +35,7 @@ function App() {
         scrollToAbout={scrollToAbout}
         scrollToExperience={scrollToExperience}
       />
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col items-center bg-[#04081A]">
         <Home />
         <About ref={aboutRef} />
         <Experience ref={experienceRef} />
