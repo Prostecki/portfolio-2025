@@ -6,7 +6,7 @@ export default function GetInTouch() {
       <span className="inline-block py-1 px-4 rounded-full text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-blue-400 mb-4 tracking-wide">
         Contact
       </span>
-      <h1 className="text-4xl md:text-5xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-cyan-400 to-teal-300 drop-shadow-sm">
+      <h1 className="text-4xl md:text-5xl text-center font-bold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-sm">
         Let's Connect
       </h1>
       <h3 className="mb-10 mt-4 text-lg md:text-xl text-center font-light text-gray-400 max-w-2xl mx-auto">

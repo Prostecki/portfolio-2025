@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Work() {
   return (
-    <section className="w-full px-6 text-white">
+    <section className="w-full py-2 px-6 text-white">
       <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -12,7 +12,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
             Work Experience
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 mt-4">
@@ -27,7 +27,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="flex-1 bg-gradient-to-r from-teal-500 to-blue-600 p-8 rounded-2xl shadow-xl">
+          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">Delivery Driver</h3>
             <div className="flex items-center gap-2 mb-4">
               <MdLocationCity className="text-white" size={20} />
@@ -47,7 +47,6 @@ export default function Work() {
               <p>May 2024 - Present</p>
             </div>
           </div>
-          <div className="flex-1 hidden md:block"></div>
         </motion.div>
 
         {/* Web Dev Freelancer */}
@@ -57,8 +56,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="flex-1 hidden md:block"></div>
-          <div className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-700 p-8 rounded-2xl shadow-xl">
+          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">Web Dev Freelancer</h3>
             <div className="flex items-center gap-2 mb-4">
               <MdLocationCity className="text-white" size={20} />
@@ -86,8 +84,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="flex-1 hidden md:block"></div>
-          <div className="flex-1 bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl shadow-xl">
+          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">
               Web Development Intern
             </h3>
@@ -117,7 +114,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-2xl shadow-xl">
+          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">
               Locksmith Specialist
             </h3>
@@ -139,7 +136,6 @@ export default function Work() {
               <p>Dec 2019 - Sept 2022</p>
             </div>
           </div>
-          <div className="flex-1 hidden md:block"></div>
         </motion.div>
 
         {/* Coach in Athletics */}
@@ -149,7 +145,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8"
         >
-          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-2xl shadow-xl">
+          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">Coach in Athletics</h3>
             <div className="flex items-center gap-2 mb-4">
               <MdLocationCity className="text-white" size={20} />
@@ -169,7 +165,6 @@ export default function Work() {
               <p>Sep 2018 - May 2019</p>
             </div>
           </div>
-          <div className="flex-1 hidden md:block"></div>
         </motion.div>
       </div>
     </section>

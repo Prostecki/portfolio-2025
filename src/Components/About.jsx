@@ -1,16 +1,20 @@
 import { forwardRef } from "react";
+import Button from "@mui/material/Button";
+import "animate.css";
 
 const About = forwardRef((_, ref) => {
   return (
     <section
       ref={ref}
       id="about"
-      className="flex flex-col items-center w-full py-32 px-4 max-md:px-0 max-md:py-12"
+      className="flex flex-col items-center w-full py-20 px-4 max-md:px-0 max-md:py-12"
     >
       <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500 mb-4">
         About
       </span>
-      <h1 className="text-3xl text-slate-200 font-[600] mb-2">About Me</h1>
+      <h1 className="text-4xl bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text font-[600] mb-2">
+        About Me
+      </h1>
       <div className="flex flex-col md:flex-row justify-center items-center w-full gap-12 md:gap-20 max-md:py-0 py-8">
         <div className="mb-8 md:mb-0">
           <img
@@ -19,7 +23,7 @@ const About = forwardRef((_, ref) => {
             alt="profile picture"
           />
         </div>
-        <div className="w-full md:w-1/3 max-md:flex max-md:items-center max-md:justify-center flex flex-col gap-5">
+        <div className="w-full md:w-1/3 max-md:flex max-md:items-center max-md:justify-center max-md:px-4 flex flex-col gap-5">
           <p className="text-slate-500">My introduction</p>
           <p className="text-slate-400 max-md:text-center">
             Since my childhood, I've been eager to solve problems. When I got my
@@ -39,9 +43,13 @@ const About = forwardRef((_, ref) => {
               and progress."
             </span>
           </p>
-          <a className="cv-button border cursor-pointer text-center mt-2 border-slate-400 text-slate-200 w-24 px-2 rounded-lg shadow-md py-1 duration-200">
+          <Button
+            variant="outlined"
+            color="primary"
+            className="w-24 text-center mt-2 px-4 py-1 rounded-lg shadow-md duration-200"
+          >
             CV
-          </a>
+          </Button>
         </div>
       </div>
     </section>

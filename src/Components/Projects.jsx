@@ -54,11 +54,11 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="w-full py-24 max-md:py-0 flex flex-col items-center gap-5 justify-center bg-gray-950">
+    <section className="w-full py-24 max-md:py-0 flex flex-col items-center gap-5 justify-center">
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
         Projects
       </span>
-      <h1 className="text-4xl text-center font-bold text-transparent text-white">
+      <h1 className="text-4xl text-center font-extrabold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text">
         Projects
       </h1>
       <h3 className="mb-10 mt-5 text-xl text-center font-light text-gray-400">

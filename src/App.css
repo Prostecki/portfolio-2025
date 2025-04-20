@@ -9,6 +9,26 @@
   font-family: "Roboto", sans-serif;
 }
 
+.custom-background {
+  background: repeating-linear-gradient(
+        0deg,
+        rgb(41, 41, 41) 0px,
+        rgb(41, 41, 41) 1px,
+        transparent 1px,
+        transparent 21px
+      )
+      0% 0% / 21px 21px fixed,
+    repeating-linear-gradient(
+        90deg,
+        rgb(41, 41, 41) 0px,
+        rgb(41, 41, 41) 1px,
+        transparent 1px,
+        transparent 21px
+      )
+      0% 0% / 21px 21px,
+    linear-gradient(90deg, rgb(23, 23, 23), rgb(23, 23, 23)) 0% 0% / 100% 100%;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-primary-300: hsl(219, 76%, 75%);
