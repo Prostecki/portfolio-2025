@@ -2,8 +2,8 @@ import { TextField, Button, Box, Typography } from "@mui/material";
 
 export default function GetInTouch() {
   return (
-    <section className="w-full py-24 flex flex-col items-center gap-5 justify-center bg-gray-950 text-white">
-      <span className="inline-block py-1 px-4 rounded-full text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-blue-400 mb-4 tracking-wide">
+    <section className="w-full py-8 px-4 flex flex-col items-center gap-5 justify-center text-white">
+      <span className="inline-block py-1 px-8 rounded-full text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-blue-400 mb-4 tracking-wide">
         Contact
       </span>
       <h1 className="text-4xl md:text-5xl text-center font-bold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-sm">
@@ -13,7 +13,7 @@ export default function GetInTouch() {
         Have a project in mind or just want to say hello? I’m always open to new
         ideas and collaborations.
       </h3>
-      <div className="max-md:w-[25rem] w-[30rem] max-w-7xl px-6">
+      <div className="max-md:w-[35rem] w-[30rem] max-w-7xl px-4">
         <Box
           component="form"
           sx={{

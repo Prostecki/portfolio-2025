@@ -18,7 +18,7 @@ const Experience = forwardRef((props, ref) => {
 
   return (
     <section
-      className="flex w-full pt-32 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center text-white"
+      className="flex w-full pt-8 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center text-white"
       ref={ref}
       id="experience"
     >

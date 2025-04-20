@@ -54,7 +54,7 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="w-full py-24 max-md:py-0 flex flex-col items-center gap-5 justify-center">
+    <section className="w-full py-8 max-md:py-0 flex flex-col items-center gap-5 justify-center">
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
         Projects
       </span>
