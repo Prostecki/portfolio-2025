@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Header({ scrollToAbout, scrollToExperience }) {
+export default function Header() {
   const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {
@@ -18,8 +18,10 @@ export default function Header({ scrollToAbout, scrollToExperience }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ease-in-out ${
-        showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ease-in-out overflow-x-hidden ${
+        showHeader
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0 pointer-events-none"
       } bg-black bg-opacity-80 backdrop-blur-md`}
     >
       <nav className="p-4">

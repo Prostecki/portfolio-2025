@@ -60,7 +60,7 @@ export default function HomeSocial() {
 
   return (
     <section>
-      <div className="flex flex-col gap-10 max-md:hidden relative">
+      <div className="flex flex-col gap-10 relative">
         {icons.map(({ id, href, icon }) => (
           <div
             key={id}
