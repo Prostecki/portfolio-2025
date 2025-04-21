@@ -1,19 +1,15 @@
-// Removed unused hooks and motion import
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
-  // Header is fixed at the top with no animation or scroll handling
+  const [isOpen, setIsOpen] = useState(false);
+  const handleNavClick = () => setIsOpen(false);
 
   return (
-    <header
-      className="fixed top-10 left-0 right-0 mx-auto w-11/12 max-w-2xl z-50 overflow-x-hidden bg-gray-400 bg-transparent drop-shadow-lg backdrop-blur-md"
-      style={{
-        border: "2px solid gray",
-        borderRadius: "30px",
-      }}
-    >
+    <header className="fixed md:top-10 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-4xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800">
       <nav className="p-4">
-        <ul className="flex gap-6 justify-center text-white">
+        <ul className="max-md:hidden flex gap-6 justify-center text-white">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -34,6 +30,45 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      {/* burger menu button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="absolute top-4 text-3xl right-4 text-white md:hidden"
+      >
+        {isOpen ? "X" : "☰"}
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            className="absolute top-full left-0 right-0 bg-slate-900 z-10 text-white p-4 flex flex-col items-center"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Link to="/" className="py-2" onClick={handleNavClick}>
+              Home
+            </Link>
+            <Link to="/about" className="py-2" onClick={handleNavClick}>
+              About
+            </Link>
+            <Link to="/experience" className="py-2" onClick={handleNavClick}>
+              Experience
+            </Link>
+            <Link to="/contact" className="py-2" onClick={handleNavClick}>
+              Contact
+            </Link>
+            <Link to="/techstack" className="py-2" onClick={handleNavClick}>
+              Skills
+            </Link>
+            <Link to="/projects" className="py-2" onClick={handleNavClick}>
+              Projects
+            </Link>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
