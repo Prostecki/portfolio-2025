@@ -7,7 +7,7 @@ export default function Header() {
   const handleNavClick = () => setIsOpen(false);
 
   return (
-    <header className="fixed md:top-10 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-4xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800">
+    <header className="h-[72px] fixed md:top-10 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-4xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800">
       <nav className="p-4">
         <ul className="max-md:hidden flex gap-6 justify-center text-white">
           <li>
@@ -42,7 +42,7 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="absolute top-full left-0 right-0 bg-slate-900 z-10 text-white p-4 flex flex-col items-center"
+            className="fixed top-[72px] left-0 right-0 bg-slate-900 z-40 text-white p-4 flex flex-col items-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
