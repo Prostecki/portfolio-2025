@@ -26,7 +26,7 @@ export default function Education() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
+          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">
               Fullstack Developer, open source
             </h3>
@@ -36,7 +36,7 @@ export default function Education() {
             </div>
             <div className="flex items-center gap-2">
               <IoCalendarOutline className="text-white" size={16} />
-              <p>Aug 2024 - June 2026</p>
+              <p>Aug 2024 - Present</p>
             </div>
           </div>
         </motion.div>
@@ -48,7 +48,7 @@ export default function Education() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
+          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">
               Municipal Adult Education
             </h3>
@@ -74,7 +74,7 @@ export default function Education() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row mb-12 gap-8"
         >
-          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
+          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">
               The Complete JavaScript Course 2025: From Zero to Expert!
             </h3>
@@ -94,7 +94,7 @@ export default function Education() {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row gap-8"
         >
-          <div className="flex-1 bg-gradient-to-r from-gray-700 to-gray-900 p-8 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-300">
+          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <h3 className="text-2xl font-semibold mb-3">
               Bachelor's degree in Athletics
             </h3>

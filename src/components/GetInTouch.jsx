@@ -4,11 +4,11 @@ import { MapPin } from "lucide-react";
 
 export default function GetInTouch() {
   return (
-    <section className="w-full py-8 px-4 flex flex-col items-center gap-5 justify-center text-white">
+    <section className="w-full px-4 min-h-screen max-md:mt-32 flex flex-col items-center justify-center gap-4 text-white">
       <span className="inline-block py-1 px-8 rounded-full text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-blue-400 mb-4 tracking-wide">
         Contact
       </span>
-      <h1 className="text-4xl md:text-5xl text-center font-bold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-sm max-md:mb-0 mb-10">
+      <h1 className="text-4xl md:text-5xl text-center font-bold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-sm max-md:mb-0">
         Let's Connect
       </h1>
       <div className="flex max-md:flex-col gap-5 p-5">

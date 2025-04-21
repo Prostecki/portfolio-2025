@@ -1,45 +1,36 @@
-import { useEffect, useState } from "react";
+// Removed unused hooks and motion import
+import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [showHeader, setShowHeader] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setShowHeader(true);
-      } else {
-        setShowHeader(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Header is fixed at the top with no animation or scroll handling
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ease-in-out overflow-x-hidden ${
-        showHeader
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0 pointer-events-none"
-      } bg-black bg-opacity-80 backdrop-blur-md`}
+      className="fixed top-10 left-0 right-0 mx-auto w-11/12 max-w-2xl z-50 overflow-x-hidden bg-gray-400 bg-transparent drop-shadow-lg backdrop-blur-md"
+      style={{
+        border: "2px solid gray",
+        borderRadius: "30px",
+      }}
     >
       <nav className="p-4">
         <ul className="flex gap-6 justify-center text-white">
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="/experience">Experience</Link>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <a href="#">Something else</a>
+            <Link to="/techstack">Skills</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
           </li>
         </ul>
       </nav>

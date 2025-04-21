@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <section className="text-black flex pt-16 pb-12 px-8 max-w-[55rem] border-b">
+    <section className="text-black flex pt-16 mt-14 pb-12 px-8 max-w-[55rem]">
       <div className="-translate-x-20 flex items-center">
         <HomeSocial />
       </div>

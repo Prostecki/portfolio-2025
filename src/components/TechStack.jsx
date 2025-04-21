@@ -154,7 +154,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="w-full py-36 px-5 text-black flex flex-col items-center">
+    <section className="w-full min-h-screen gap-3 px-5 max-md:mt-32 text-black flex flex-col items-center justify-center">
       <span className="inline-block py-1 px-3 mb-8 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500">
         Tech Stack
       </span>

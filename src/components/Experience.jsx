@@ -2,6 +2,7 @@ import { BsBriefcaseFill } from "react-icons/bs";
 import { TbSchool } from "react-icons/tb";
 import Education from "./Education";
 import Work from "./Work";
+import Merit from "./Merit";
 import { forwardRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,9 +17,13 @@ const Experience = forwardRef((props, ref) => {
     setActiveSection("education");
   };
 
+  const handleMerit = () => {
+    setActiveSection("merit");
+  };
+
   return (
     <section
-      className="flex w-full pt-8 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center text-white"
+      className="flex w-full pt-32 max-md:mt-12 h-max flex-col gap-10 px-4 max-md:px-6 max-md:py-20 items-center text-white"
       ref={ref}
       id="experience"
     >
@@ -58,6 +63,23 @@ const Experience = forwardRef((props, ref) => {
               Education
             </button>
           </div>
+          <div className="flex items-center gap-2">
+            <BsBriefcaseFill
+              size={25}
+              className="cursor-pointer"
+              color="gray"
+            />
+            <button
+              onClick={handleMerit}
+              className={`text-2xl font-medium ${
+                activeSection === "merit"
+                  ? "text-blue-500"
+                  : "text-gray-500 hover:text-blue-500"
+              } duration-300 cursor-pointer`}
+            >
+              Merit
+            </button>
+          </div>
         </div>
 
         <AnimatePresence mode="wait">
@@ -68,7 +90,13 @@ const Experience = forwardRef((props, ref) => {
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.5 }}
           >
-            {activeSection === "work" ? <Work /> : <Education />}
+            {activeSection === "work" ? (
+              <Work />
+            ) : activeSection === "education" ? (
+              <Education />
+            ) : (
+              <Merit />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>

@@ -7,7 +7,7 @@ const About = forwardRef((_, ref) => {
     <section
       ref={ref}
       id="about"
-      className="flex flex-col items-center w-full py-20 px-4 max-md:px-0 max-md:py-12"
+      className="flex flex-col items-center justify-center w-full min-h-screen pt-12 px-4 max-md:px-0 max-md:py-12"
     >
       <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500 mb-4">
         About
@@ -46,7 +46,8 @@ const About = forwardRef((_, ref) => {
           <Button
             variant="outlined"
             color="primary"
-            className="w-24 text-center mt-2 px-4 py-1 rounded-lg shadow-md duration-200"
+            style={{ borderRadius: "20px" }}
+            className="w-24 text-center mt-2 px-4 py-1 rounded-full shadow-md duration-200"
           >
             CV
           </Button>

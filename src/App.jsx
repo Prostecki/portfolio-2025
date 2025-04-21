@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Home from "./components/Home";
@@ -14,34 +14,18 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 function App() {
-  const experienceRef = useRef(null);
-  const aboutRef = useRef(null);
-
-  const scrollToAbout = () => {
-    setTimeout(() => {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 0);
-  };
-
-  const scrollToExperience = () => {
-    setTimeout(() => {
-      experienceRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 0);
-  };
-
   return (
     <>
-      <Header
-        scrollToAbout={scrollToAbout}
-        scrollToExperience={scrollToExperience}
-      />
+      <Header />
       <main className="flex flex-col items-center bg-[#04081A]">
-        <Home />
-        <About ref={aboutRef} />
-        <Experience ref={experienceRef} />
-        <TechStack />
-        <Projects />
-        <GetInTouch />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/techstack" element={<TechStack />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<GetInTouch />} />
+        </Routes>
       </main>
       <Footer />
     </>
