@@ -167,7 +167,7 @@ export default function TechStack() {
         how I build, test, and ship modern web applications.
       </p>
 
-      <div className="relative">
+      <div className="relative w-3/4">
         <div className="max-md:flex-col max-md:items-center flex items-stretch gap-5 justify-center">
           <div className=" flex-1 border border-gray-700 bg-gray-900 py-5 px-2 rounded-xl">
             <h1 className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-5">
