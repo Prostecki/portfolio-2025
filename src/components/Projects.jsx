@@ -4,7 +4,7 @@ export default function Projects() {
       name: "Sortify",
       description:
         "Your ultimate time tracker and management system for habits, tasks, and events.",
-      image: "images/sortify.png",
+      image: "images/dashboard.jpg",
       tools: [
         { name: "React.js", image: "images/react.webp" },
         { name: "JavaScript", image: "images/javascript.webp" },
@@ -17,7 +17,7 @@ export default function Projects() {
       name: "Quiz App",
       description:
         "This web-based quiz application is built using JavaScript, HTML, and CSS, designed to provide a fun and interactive quiz experience for users.",
-      image: "images/quizapp.png",
+      image: "images/quiz.jpg",
       tools: [
         { name: "HTML", image: "images/html.webp" },
         { name: "CSS", image: "images/css.png" },
@@ -30,7 +30,7 @@ export default function Projects() {
       name: "Advent Calendar - 2024",
       description:
         "An interactive advent calendar where users can watch videos and follow baking instructions each day, leading up to Christmas.",
-      image: "images/advent-calendar-2024.png",
+      image: "images/advent.jpeg",
       tools: [
         { name: "React.js", image: "images/react.webp" },
         { name: "JavaScript", image: "images/javascript.webp" },
@@ -54,7 +54,7 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="w-full py-8 max-md:py-0 flex flex-col items-center gap-5 justify-center">
+    <section className="w-full max-md:pt-24 max-md:pb-10 pt-32 flex flex-col items-center gap-5 justify-center">
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
         Projects
       </span>
