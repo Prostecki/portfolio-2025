@@ -29,8 +29,8 @@ export default function Home() {
             transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
           />
           <img
-            src="/src/assets/avatar.jpeg"
-            alt="avatar"
+            src="/images/avatar.jpeg"
+            alt="Avatar"
             className="w-64 h-64 rounded-full z-10 drop-shadow-lg object-cover"
           />
         </div>

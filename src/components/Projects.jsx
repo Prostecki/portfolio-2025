@@ -4,11 +4,11 @@ export default function Projects() {
       name: "Sortify",
       description:
         "Your ultimate time tracker and management system for habits, tasks, and events.",
-      image: "src/assets/sortify.png",
+      image: "images/sortify.png",
       tools: [
-        { name: "React.js", image: "src/assets/react.webp" },
-        { name: "JavaScript", image: "src/assets/javascript.webp" },
-        { name: "tailwind.css", image: "src/assets/tailwind.png" },
+        { name: "React.js", image: "images/react.webp" },
+        { name: "JavaScript", image: "images/javascript.webp" },
+        { name: "tailwind.css", image: "images/tailwind.png" },
       ],
       liveLink: "#",
       githubLink: "#",
@@ -17,11 +17,11 @@ export default function Projects() {
       name: "Quiz App",
       description:
         "This web-based quiz application is built using JavaScript, HTML, and CSS, designed to provide a fun and interactive quiz experience for users.",
-      image: "src/assets/quizapp.png",
+      image: "images/quizapp.png",
       tools: [
-        { name: "HTML", image: "src/assets/html.webp" },
-        { name: "CSS", image: "src/assets/css.png" },
-        { name: "JavaScript", image: "src/assets/javascript.webp" },
+        { name: "HTML", image: "images/html.webp" },
+        { name: "CSS", image: "images/css.png" },
+        { name: "JavaScript", image: "images/javascript.webp" },
       ],
       liveLink: "#",
       githubLink: "#",
@@ -30,11 +30,11 @@ export default function Projects() {
       name: "Advent Calendar - 2024",
       description:
         "An interactive advent calendar where users can watch videos and follow baking instructions each day, leading up to Christmas.",
-      image: "src/assets/advent-calendar-2024.png",
+      image: "images/advent-calendar-2024.png",
       tools: [
-        { name: "React.js", image: "src/assets/react.webp" },
-        { name: "JavaScript", image: "src/assets/javascript.webp" },
-        { name: "tailwind.css", image: "src/assets/tailwind.png" },
+        { name: "React.js", image: "images/react.webp" },
+        { name: "JavaScript", image: "images/javascript.webp" },
+        { name: "tailwind.css", image: "images/tailwind.png" },
       ],
       liveLink: "#",
       githubLink: "#",
@@ -43,11 +43,11 @@ export default function Projects() {
       name: "Parallax Effect",
       description:
         "A simple study project based on theme The Witcher using by Parallax and Swiper libraries in JS.",
-      image: "src/assets/parallax.png",
+      image: "images/parallax.png",
       tools: [
-        { name: "HTML", image: "src/assets/html.webp" },
-        { name: "CSS", image: "src/assets/css.png" },
-        { name: "JavaScript", image: "src/assets/javascript.webp" },
+        { name: "HTML", image: "images/html.webp" },
+        { name: "CSS", image: "images/css.png" },
+        { name: "JavaScript", image: "images/javascript.webp" },
       ],
       liveLink: "#",
       githubLink: "#",

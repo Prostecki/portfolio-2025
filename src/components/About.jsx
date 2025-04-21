@@ -19,7 +19,7 @@ const About = forwardRef((_, ref) => {
         <div className="mb-8 md:mb-0">
           <img
             className="max-w-80 max-md:hidden content-center bg-center rounded-lg drop-shadow-md"
-            src="/src/assets/deepai-dev-2.jpeg"
+            src="images/deepai-dev-2.jpeg"
             alt="profile picture"
           />
         </div>
