@@ -7,8 +7,8 @@ export default function Header() {
   const handleNavClick = () => setIsOpen(false);
 
   return (
-    <header className="h-[72px] fixed md:top-10 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-4xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800">
-      <nav className="p-4">
+    <header className="h-[72px] fixed flex justify-center items-center md:top-10 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800">
+      <nav className="">
         <ul className="max-md:hidden flex gap-6 justify-center text-white">
           <li>
             <Link to="/">Home</Link>
