@@ -1,5 +1,6 @@
 import HomeSocial from "./HomeSocial";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { IoIosArrowRoundBack } from "react-icons/io";
+
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -40,11 +41,14 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <p className="text-slate-400 text-lg uppercase tracking-widest mb-2">
+          {/* <p className="text-slate-400 text-lg uppercase tracking-widest mb-2">
             Hi, my name is
-          </p>
+          </p> */}
           <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-md">
-            Mark Taratynov
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-blue-500 via-purple-300 to-purple-500 text-transparent bg-clip-text">
+              Mark Taratynov
+            </span>
           </h1>
         </motion.div>
         <div className="flex relative items-center justify-between gap-2 border rounded-xl px-4 py-2">
@@ -63,15 +67,29 @@ export default function Home() {
           grew through consistent practice. I focus on learning modern
           technologies and applying them in real projects step by step.
         </p>
-        <button className="border border-slate-400 text-white w-max px-4 rounded-lg shadow-md py-2 hover:bg-blue-500 duration-300">
-          Contact me!
-        </button>
+        <div className="flex gap-5 w-max">
+          <div className="bg-slate-200 cursor-pointer border-slate-200 text-black w-[10rem] px-4 rounded-lg shadow-md py-2 hover:bg-slate-300 hover:text-black duration-300">
+            <a className="flex items-center gap-2 justify-center">
+              Link to CV
+              <IoIosArrowRoundBack
+                style={{
+                  color: "black",
+                }}
+                size={30}
+                className="arrow-shake"
+              />
+            </a>
+          </div>
+          <button className="border focus-visible:ring-2 border-slate-400 text-white w-max px-4 rounded-lg shadow-md py-2 hover:bg-gray-800 duration-300">
+            Contact me!
+          </button>
+        </div>
         <div className="w-4 flex justify-center">
-          <FaArrowDownLong
+          {/* <FaArrowDownLong
             style={{ color: "white" }}
             className="size-6  animate-bounce mt-6 cursor-pointer"
             size={25}
-          />
+          /> */}
         </div>
       </div>
     </section>
