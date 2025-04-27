@@ -150,6 +150,7 @@ header a {
   color: inherit;
   font-weight: 500;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 header a:hover,

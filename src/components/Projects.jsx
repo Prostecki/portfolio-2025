@@ -23,8 +23,8 @@ export default function Projects() {
         { name: "CSS", image: "images/css.png" },
         { name: "JavaScript", image: "images/javascript.webp" },
       ],
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "https://prostecki.github.io/quiz-app/",
+      githubLink: "https://github.com/Prostecki/quiz-app",
     },
     {
       name: "Advent Calendar - 2024",
@@ -36,7 +36,7 @@ export default function Projects() {
         { name: "JavaScript", image: "images/javascript.webp" },
         { name: "tailwind.css", image: "images/tailwind.png" },
       ],
-      liveLink: "#",
+      liveLink: "https://anastasias-advent-calendar.vercel.app/",
       githubLink: "#",
     },
     {

@@ -1,5 +1,4 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Home from "./components/Home";
@@ -18,14 +17,12 @@ function App() {
     <>
       <Header />
       <main className="flex flex-col items-center bg-[#04081A]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/techstack" element={<TechStack />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<GetInTouch />} />
-        </Routes>
+        <Home />
+        <About />
+        <Experience />
+        <TechStack />
+        <Projects />
+        <GetInTouch />
       </main>
       <Footer />
     </>
