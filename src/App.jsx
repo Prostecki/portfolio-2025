@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center bg-[#04081A]">
+      <main className="flex flex-col items-center background-test">
         <Home />
         <About />
         <Experience />
