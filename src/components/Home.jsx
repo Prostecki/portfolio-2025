@@ -1,6 +1,5 @@
 import HomeSocial from "./HomeSocial";
 import { IoIosArrowRoundBack } from "react-icons/io";
-
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -44,9 +43,9 @@ export default function Home() {
           {/* <p className="text-slate-400 text-lg uppercase tracking-widest mb-2">
             Hi, my name is
           </p> */}
-          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-md">
+          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-md">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-blue-500 via-purple-300 to-purple-500 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r font-bold from-blue-500 via-purple-300 to-purple-500 text-transparent bg-clip-text">
               Mark Taratynov
             </span>
           </h1>
