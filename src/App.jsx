@@ -1,4 +1,5 @@
 import "./App.css";
+import { useRef } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Home from "./components/Home";
@@ -13,16 +14,44 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 function App() {
+  const homeRef = useRef();
+  const aboutRef = useRef();
+  const experienceRef = useRef();
+  const techStackRef = useRef();
+  const projectsRef = useRef();
+  const getInTouchRef = useRef();
+
   return (
     <>
-      <Header />
+      <Header
+        scrollTo={{
+          homeRef,
+          aboutRef,
+          experienceRef,
+          techStackRef,
+          projectsRef,
+          getInTouchRef,
+        }}
+      />
       <main className="flex flex-col items-center background-test">
-        <Home />
-        <About />
-        <Experience />
-        <TechStack />
-        <Projects />
-        <GetInTouch />
+        <section ref={homeRef}>
+          <Home />
+        </section>
+        <section ref={aboutRef}>
+          <About />
+        </section>
+        <section ref={experienceRef}>
+          <Experience />
+        </section>
+        <section ref={techStackRef}>
+          <TechStack />
+        </section>
+        <section ref={projectsRef}>
+          <Projects />
+        </section>
+        <section ref={getInTouchRef}>
+          <GetInTouch />
+        </section>
       </main>
       <Footer />
     </>

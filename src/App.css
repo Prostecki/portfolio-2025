@@ -84,6 +84,10 @@
   /* background: rgb(20, 20, 20); */
 }
 
+a {
+  @apply border-b;
+}
+
 .cv-button:hover {
   @apply bg-blue-500 text-white;
 }
