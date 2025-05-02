@@ -2,6 +2,7 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { MdLocationCity } from "react-icons/md";
 import { motion } from "framer-motion";
 import { IoLocationOutline } from "react-icons/io5";
+import { Scale } from "lucide-react";
 
 export default function Work() {
   return (
@@ -22,14 +23,35 @@ export default function Work() {
         </motion.div>
 
         {/* Start grid with alternating content blocks */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* First row: Content Block, Separator, Empty Block */}
+        <motion.div
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.3,
+              },
+            },
+          }}
+          className="grid md:grid-cols-2 gap-x-[31px] gap-y-0"
+        >
+          {/* First row: Content Block */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
-            style={{ transform: "translateY(-30px)" }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.3, ease: "easeOut" },
+            }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0 },
+              },
+            }}
+            className="relative cursor-pointer bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
           >
             <h3 className="text-2xl font-semibold mb-3">Delivery Driver</h3>
             <div className="md:flex justify-start items-center gap-2">
@@ -59,12 +81,20 @@ export default function Work() {
           {/* Separator */}
           <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
 
+          {/* Second Content Block */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
+              },
+            }}
             className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
-            style={{ transform: "translateY(30px)" }}
           >
             <h3 className="text-2xl font-semibold mb-3">Web Dev Freelancer</h3>
             <div className="md:flex justify-start items-center gap-2">
@@ -87,13 +117,20 @@ export default function Work() {
             </div>
           </motion.div>
 
-          {/* Third row: Content Block, Separator, Empty Block */}
+          {/* Third row: Content Block */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0.6 },
+              },
+            }}
             className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
-            style={{ transform: "translateY(-30px)" }}
           >
             <h3 className="text-2xl font-semibold mb-3">
               Web Development Intern
@@ -125,7 +162,7 @@ export default function Work() {
 
           {/* Empty Block */}
           <div className="relative bg-black/80 p-7 rounded-2xl border border-white/10 opacity-0"></div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

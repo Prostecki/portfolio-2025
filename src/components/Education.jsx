@@ -6,9 +6,17 @@ export default function Education() {
     <div className="w-full px-6 text-white">
       <div className="max-w-[1200px] mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0, y: 60 },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.6, ease: "easeOut", delay: 0 },
+            },
+          }}
           className="text-center mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
@@ -19,14 +27,23 @@ export default function Education() {
           </p>
         </motion.div>
 
-        {/* First Education Block */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8 mb-12"
-        >
-          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+        {/* Grid layout with alternating structure */}
+        <div className="grid md:grid-cols-2 gap-x-[31px] gap-y-0">
+          {/* Row 1 */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0.15 },
+              },
+            }}
+            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+          >
             <h3 className="text-2xl font-semibold mb-3">
               Fullstack Developer, open source
             </h3>
@@ -38,17 +55,27 @@ export default function Education() {
               <IoCalendarOutline className="text-white" size={16} />
               <p>Aug 2024 - Present</p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+          <div className="border-l border-white/20 h-full"></div>
+          {/* <div className="opacity-0"></div> */}
 
-        {/* Second Education Block */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8 mb-12"
-        >
-          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+          {/* Row 2 */}
+          {/* <div className="opacity-0"></div> */}
+          <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
+              },
+            }}
+            className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
+          >
             <h3 className="text-2xl font-semibold mb-3">
               Municipal Adult Education
             </h3>
@@ -62,19 +89,25 @@ export default function Education() {
             </div>
             <div className="flex items-center gap-2">
               <IoCalendarOutline className="text-white" size={16} />
-              <p>Sep 2022 - April 2024</p>
+              <p>Oct 2022 - April 2024</p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Third Education Block */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row mb-12 gap-8"
-        >
-          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+          {/* Row 3 */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0.45 },
+              },
+            }}
+            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+          >
             <h3 className="text-2xl font-semibold mb-3">
               The Complete JavaScript Course 2025: From Zero to Expert!
             </h3>
@@ -86,15 +119,27 @@ export default function Education() {
               <IoCalendarOutline className="text-white" size={16} />
               <p>Sep 2024 - Jan 2025</p>
             </div>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8"
-        >
-          <div className="flex-1 max-w-xl bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+          </motion.div>
+          <div className="border-l border-white/20 h-full"></div>
+          <div className="opacity-0"></div>
+
+          {/* Row 4 */}
+          <div className="opacity-0"></div>
+          <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 60 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut", delay: 0 },
+              },
+            }}
+            className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
+          >
             <h3 className="text-2xl font-semibold mb-3">
               Bachelor's degree in Athletics
             </h3>
@@ -106,8 +151,8 @@ export default function Education() {
               <IoCalendarOutline className="text-white" size={16} />
               <p>Sep 2014 - May 2018</p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
