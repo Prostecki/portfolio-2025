@@ -59,6 +59,28 @@
   }
 }
 
+/* Styling for scrollbar into browser */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* background of track */
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 15px;
+  border: 2px solid #0f172a;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2563eb; /* blue-600 */
+}
+
 .background-test {
   background-color: #020203;
   background-image: radial-gradient(

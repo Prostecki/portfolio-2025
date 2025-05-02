@@ -3,17 +3,18 @@ export default function Projects() {
     {
       name: "Hakim Livs",
       description:
-        "Hakim Livs Webshop is a fully functional e-commerce application built using the MERN stack (MongoDB, Express.js, React, Node.js)",
-      image: "",
+        "Hakim Livs Webshop is a full-stack e-commerce application built by modern concepts and technologies with user authentication through JWT auth",
+      image: "images/hakim-livs.png",
       tools: [
         { name: "HTML", image: "images/html.webp" },
         { name: "CSS", image: "images/css.png" },
         { name: "JavaScript", image: "images/javascript.webp" },
         { name: "MongoDB", image: "images/mongodb-icon.svg" },
-        { name: "Node.js", image: "images/node-js.svg" },
-        { name: "Express.js", image: "images/express.png" },
+        { name: "Node.js", image: "images/nodejs.webp" },
         { name: "Jest", image: "images/jest.png" },
       ],
+      liveLink: "https://webshop-2025-fe-g1-one.vercel.app",
+      githubLink: "https://github.com/Prostecki/hakim-livs-webshop-frontend",
     },
     {
       name: "Sortify",
@@ -87,7 +88,7 @@ export default function Projects() {
           >
             <div className="flex-grow">
               <img
-                className="w-full h-48 object-cover project-image"
+                className="w-full h-48 object-bottom project-image"
                 src={project.image}
                 alt={project.name}
               />

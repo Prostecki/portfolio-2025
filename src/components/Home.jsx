@@ -37,7 +37,7 @@ export default function Home({ scrollTo }) {
           <img
             src="/images/me.jpeg"
             alt="Avatar"
-            className="w-64 h-64 rounded-full z-10 drop-shadow-lg object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer"
+            className="w-64 h-64 rounded-full z-10 drop-shadow-lg object-cover cursor-pointer"
           />
         </div>
         <motion.div
@@ -73,8 +73,12 @@ export default function Home({ scrollTo }) {
           technologies and applying them in real projects step by step.
         </p>
         <div className="flex gap-5 w-max">
-          <div className="bg-slate-200 cursor-pointer border-slate-200 text-black w-[10rem] px-4 rounded-lg shadow-md py-2 hover:bg-slate-300 hover:text-black duration-300">
-            <a className="flex items-center gap-2 justify-center">
+          <div className="bg-slate-200 cursor-pointer border-slate-200 text-black w-[10rem] rounded-lg shadow-md hover:bg-slate-300 hover:text-black duration-300">
+            <a
+              href="https://taratynov-cv-page.vercel.app/"
+              target="_blank"
+              className="flex items-center gap-2 justify-center py-2 px-4"
+            >
               Link to CV
               <IoIosArrowRoundBack
                 style={{
