@@ -70,7 +70,7 @@ export default function Projects() {
     },
   ];
   return (
-    <section className="w-full max-md:pt-24 max-md:pb-10 pt-32 flex flex-col items-center gap-5 justify-center">
+    <div className="w-full max-md:pt-24 max-md:pb-10 pt-32 flex flex-col items-center gap-5 justify-center">
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
         Projects
       </span>
@@ -135,6 +135,6 @@ export default function Projects() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

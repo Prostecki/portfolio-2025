@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Education() {
   return (
-    <section className="w-full px-6 text-white">
+    <div className="w-full px-6 text-white">
       <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -109,6 +109,6 @@ export default function Education() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

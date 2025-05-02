@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react";
 
 export default function GetInTouch() {
   return (
-    <section className="w-full px-4 min-h-screen max-md:mt-32 flex flex-col items-center justify-center gap-4 text-white">
+    <div className="w-full px-4 min-h-screen max-md:mt-32 flex flex-col items-center justify-center gap-4 text-white">
       <span className="inline-block py-1 px-8 rounded-full text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-blue-400 mb-4 tracking-wide">
         Contact
       </span>
@@ -130,6 +130,6 @@ export default function GetInTouch() {
           </Box>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ import "animate.css";
 
 const About = forwardRef((_, ref) => {
   return (
-    <section
+    <div
       ref={ref}
       id="about"
       className="flex flex-col items-center justify-center w-full min-h-screen pt-12 px-4 max-md:px-0 max-md:py-12"
@@ -58,7 +58,7 @@ const About = forwardRef((_, ref) => {
           </Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 });
 

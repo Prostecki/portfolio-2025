@@ -59,7 +59,7 @@ export default function HomeSocial() {
   ];
 
   return (
-    <section>
+    <div>
       <div className="flex flex-col gap-10 relative">
         {icons.map(({ id, href, icon }) => (
           <div
@@ -79,6 +79,6 @@ export default function HomeSocial() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

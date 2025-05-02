@@ -1,10 +1,11 @@
 import { IoCalendarOutline } from "react-icons/io5";
 import { MdLocationCity } from "react-icons/md";
 import { motion } from "framer-motion";
+import { IoLocationOutline } from "react-icons/io5";
 
 export default function Work() {
   return (
-    <section className="w-full py-2 px-6 text-white">
+    <div className="w-full py-2 px-6 text-white">
       <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -20,18 +21,26 @@ export default function Work() {
           </p>
         </motion.div>
 
-        {/* Delivery Driver */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8 mb-12"
-        >
-          <div className="flex-1 max-w-xl border-[1px] p-6 bg-slate-900 cursor-pointer rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+        {/* Start grid with alternating content blocks */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* First row: Content Block, Separator, Empty Block */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+            style={{ transform: "translateY(-30px)" }}
+          >
             <h3 className="text-2xl font-semibold mb-3">Delivery Driver</h3>
-            <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-blue-500" size={20} />
-              <p>ICA Brunna, Stockholm</p>
+            <div className="md:flex justify-start items-center gap-2">
+              <div className="flex items-center gap-2">
+                <IoCalendarOutline className="text-blue-500 text-xl" />
+                <p className="text-gray-500 text-sm">May 2024 - Present</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <IoLocationOutline className="text-blue-500 text-xl" />
+                <p className="text-gray-500 text-sm">ICA Brunna, Stockholm</p>
+              </div>
             </div>
             <div className="text-white text-sm mt-2">
               <p>
@@ -42,25 +51,31 @@ export default function Work() {
                 English
               </p>
             </div>
-            <div className="flex items-center gap-2 mt-3">
-              <IoCalendarOutline className="text-white" size={16} />
-              <p>May 2024 - Present</p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Web Dev Freelancer */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8 mb-12"
-        >
-          <div className="flex-1 max-w-xl border-[1px] bg-slate-900 cursor-pointer p-6 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+          {/* Separator */}
+          <div className="border-l border-white/20 h-full"></div>
+
+          {/* Separator */}
+          <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
+            style={{ transform: "translateY(30px)" }}
+          >
             <h3 className="text-2xl font-semibold mb-3">Web Dev Freelancer</h3>
-            <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-blue-500" size={20} />
-              <p>Self-Employed, Remote</p>
+            <div className="md:flex justify-start items-center gap-2">
+              <div className="flex items-center gap-2">
+                <IoCalendarOutline className="text-blue-500 text-xl" />
+                <p className="text-gray-500 text-sm">Sep 2023 - Present</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <IoLocationOutline className="text-blue-500 text-xl" />
+                <p className="text-gray-500 text-sm">Self-Employed, Remote</p>
+              </div>
             </div>
             <div className="text-white text-sm mt-2">
               <p>
@@ -70,27 +85,30 @@ export default function Work() {
                 HTML, CSS, JavaScript, React.js, Tailwind.CSS
               </p>
             </div>
-            <div className="flex items-center gap-2 mt-3">
-              <IoCalendarOutline className="text-white" size={16} />
-              <p>Sep 2023 - Present</p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Web Development Intern */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8 mb-12"
-        >
-          <div className="flex-1 max-w-xl border-[1px] p-6 bg-slate-900 cursor-pointer rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
+          {/* Third row: Content Block, Separator, Empty Block */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+            style={{ transform: "translateY(-30px)" }}
+          >
             <h3 className="text-2xl font-semibold mb-3">
               Web Development Intern
             </h3>
-            <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-blue-500" size={20} />
-              <p>Nordic IT School, Moscow</p>
+            <div className="md:flex justify-start items-center gap-2">
+              <div className="flex items-center gap-2">
+                <IoCalendarOutline className="text-blue-500 text-xl" />
+                <p className="text-gray-500 text-sm">Oct 2022 - March 2023</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <IoLocationOutline className="text-blue-500 text-xl" />
+                <p className="text-gray-500 text-sm">
+                  Nordic IT School, Moscow
+                </p>
+              </div>
             </div>
             <div className="text-white text-sm mt-2">
               <p>
@@ -100,73 +118,15 @@ export default function Work() {
                 HTML, CSS, JavaScript, PHP, MySQL, Docker, GO
               </p>
             </div>
-            <div className="flex items-center gap-2 mt-3">
-              <IoCalendarOutline className="text-white" size={16} />
-              <p>Oct 2022 - March 2023</p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Locksmith Specialist */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8 mb-12"
-        >
-          <div className="flex-1 max-w-xl border-[1px] p-6 bg-slate-900 cursor-pointer rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-3">
-              Locksmith Specialist
-            </h3>
-            <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-blue-500" size={20} />
-              <p>Self-Employed, Russia</p>
-            </div>
-            <div className="text-white text-sm mt-2">
-              <p>
-                <span className="text-slate-400 uppercase tracking-wide">
-                  Skills:{" "}
-                </span>
-                Emergency Lock Opening, Patience, Problem Solving, Customer
-                Service, Sales
-              </p>
-            </div>
-            <div className="flex items-center gap-2 mt-3">
-              <IoCalendarOutline className="text-white" size={16} />
-              <p>Dec 2019 - Sept 2022</p>
-            </div>
-          </div>
-        </motion.div>
+          {/* Separator */}
+          <div className="border-l border-white/20 h-full"></div>
 
-        {/* Coach in Athletics */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row gap-8"
-        >
-          <div className="flex-1 max-w-xl border-[1px] p-6 bg-slate-900 cursor-pointer rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-3">Coach in Athletics</h3>
-            <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-blue-500" size={20} />
-              <p>Athletics School, Russia</p>
-            </div>
-            <div className="text-white text-sm mt-2">
-              <p>
-                <span className="text-slate-400 uppercase tracking-wide">
-                  Skills:{" "}
-                </span>
-                Communication, Interpersonal Skills, Leadership, Problem
-                Solving, Motivation, Planning
-              </p>
-            </div>
-            <div className="flex items-center gap-2 mt-3">
-              <IoCalendarOutline className="text-white" size={16} />
-              <p>Sep 2018 - May 2019</p>
-            </div>
-          </div>
-        </motion.div>
+          {/* Empty Block */}
+          <div className="relative bg-black/80 p-7 rounded-2xl border border-white/10 opacity-0"></div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MdLocationCity } from "react-icons/md";
 export default function Merit() {
   return (
-    <section>
+    <div>
       <h1 className="text-4xl text-center mb-10 sm:text-5xl font-extrabold bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
         Merit
       </h1>
@@ -73,6 +73,6 @@ export default function Merit() {
           </div>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }

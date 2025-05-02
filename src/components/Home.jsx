@@ -10,7 +10,7 @@ export default function Home({ scrollTo }) {
     }
   };
   return (
-    <section className="text-black flex pt-16 mt-14 pb-12 px-8 max-w-[55rem]">
+    <div className="text-black flex pt-16 mt-14 pb-12 px-8 max-w-[55rem]">
       <div className="-translate-x-20 flex items-center">
         <HomeSocial />
       </div>
@@ -58,7 +58,7 @@ export default function Home({ scrollTo }) {
         </motion.div>
         <div className="flex relative items-center justify-between gap-2 border rounded-xl px-4 py-2">
           <span className="relative w-3 h-3">
-            <span className="absolute w-full h-full animate-ping bg-green-500 opacity-75 rounded-full"></span>
+            <span className="absolute w-full h-full animate-ping bg-slate-400 opacity-75 rounded-full"></span>
             <span className="absolute w-3 h-3 bg-blue-500 rounded-full"></span>
           </span>
           <p className="text-white text-center">Open to work</p>
@@ -67,7 +67,7 @@ export default function Home({ scrollTo }) {
           I build and enjoy things for the web.
         </h3>
         <p className="text-balance text-slate-100 text-center">
-          I'm a self-taught developer who enjoys building web applications that
+          I'm a fullstack developer who enjoys building web applications that
           are both useful and easy to use. My journey started with curiosity and
           grew through consistent practice. I focus on learning modern
           technologies and applying them in real projects step by step.
@@ -104,6 +104,6 @@ export default function Home({ scrollTo }) {
           /> */}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
