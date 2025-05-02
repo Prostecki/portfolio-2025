@@ -43,7 +43,12 @@ const About = forwardRef((_, ref) => {
               and progress."
             </span>
           </p>
+
           <Button
+            component="a"
+            href="https://taratynov-cv-page.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             variant="outlined"
             color="primary"
             style={{ borderRadius: "20px" }}

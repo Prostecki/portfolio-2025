@@ -35,7 +35,11 @@ function App() {
       />
       <main className="flex flex-col items-center background-test">
         <section ref={homeRef}>
-          <Home />
+          <Home
+            scrollTo={{
+              getInTouchRef,
+            }}
+          />
         </section>
         <section ref={aboutRef}>
           <About />

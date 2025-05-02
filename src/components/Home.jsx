@@ -2,7 +2,13 @@ import HomeSocial from "./HomeSocial";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { motion } from "framer-motion";
 
-export default function Home() {
+export default function Home({ scrollTo }) {
+  const scrollToSection = (ref) => {
+    if (ref?.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
   return (
     <section className="text-black flex pt-16 mt-14 pb-12 px-8 max-w-[55rem]">
       <div className="-translate-x-20 flex items-center">
@@ -17,21 +23,21 @@ export default function Home() {
             className="absolute w-72 h-72 rounded-full z-0"
             style={{
               background:
-                "conic-gradient(from 0deg, #3b82f6, #9333ea, #3b82f6, #9333ea, #ffffff 99%, #ffffff)",
+                "conic-gradient(from 0deg, #3b82f6, #64748b, #1e293b, #3b82f6, #64748b, #ffffff 99%, #ffffff)",
               padding: "6px",
               WebkitMask:
                 "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
               WebkitMaskComposite: "xor",
               maskComposite: "exclude",
-              boxShadow: "0 0 10px rgba(147, 51, 234, 0.4)",
+              boxShadow: "0 0 10px rgba(100, 116, 139, 0.4)",
             }}
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
           />
           <img
-            src="/images/avatar.jpeg"
+            src="/images/me.jpeg"
             alt="Avatar"
-            className="w-64 h-64 rounded-full z-10 drop-shadow-lg object-cover"
+            className="w-64 h-64 rounded-full z-10 drop-shadow-lg object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer"
           />
         </div>
         <motion.div
@@ -43,9 +49,9 @@ export default function Home() {
           {/* <p className="text-slate-400 text-lg uppercase tracking-widest mb-2">
             Hi, my name is
           </p> */}
-          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-md">
+          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight bg-gradient-to-r from-white to-blue-200 text-transparent bg-clip-text drop-shadow-md">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r font-bold from-blue-500 via-purple-300 to-purple-500 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r font-bold from-blue-200 via-blue-400 to-blue-700 text-transparent bg-clip-text">
               Mark Taratynov
             </span>
           </h1>
@@ -79,7 +85,10 @@ export default function Home() {
               />
             </a>
           </div>
-          <button className="border focus-visible:ring-2 border-slate-400 text-white w-max px-4 rounded-lg shadow-md py-2 hover:bg-gray-800 duration-300">
+          <button
+            onClick={() => scrollToSection(scrollTo.getInTouchRef)}
+            className="border focus-visible:ring-2 border-slate-400 text-white w-max px-4 rounded-lg shadow-md py-2 hover:bg-gray-800 duration-300"
+          >
             Contact me!
           </button>
         </div>
