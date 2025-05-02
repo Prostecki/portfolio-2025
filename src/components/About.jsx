@@ -18,8 +18,8 @@ const About = forwardRef((_, ref) => {
       <div className="flex flex-col md:flex-row justify-center items-center w-full gap-12 md:gap-20 max-md:py-0 py-8">
         <div className="mb-8 md:mb-0">
           <img
-            className="max-w-80 max-md:hidden content-center bg-center rounded-lg drop-shadow-md"
-            src="images/deepai-dev-2.jpeg"
+            className="max-w-80 max-md:max-w-60 max-md:rounded-3xl max-md:mt-10 content-center rounded-3xl shadow-2xl shadow-blue-600/30 border border-slate-300/30"
+            src="images/about-section.jpeg"
             alt="profile picture"
           />
         </div>

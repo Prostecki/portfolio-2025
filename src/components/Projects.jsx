@@ -1,6 +1,21 @@
 export default function Projects() {
   const projects = [
     {
+      name: "Hakim Livs",
+      description:
+        "Hakim Livs Webshop is a fully functional e-commerce application built using the MERN stack (MongoDB, Express.js, React, Node.js)",
+      image: "",
+      tools: [
+        { name: "HTML", image: "images/html.webp" },
+        { name: "CSS", image: "images/css.png" },
+        { name: "JavaScript", image: "images/javascript.webp" },
+        { name: "MongoDB", image: "images/mongodb-icon.svg" },
+        { name: "Node.js", image: "images/node-js.svg" },
+        { name: "Express.js", image: "images/express.png" },
+        { name: "Jest", image: "images/jest.png" },
+      ],
+    },
+    {
       name: "Sortify",
       description:
         "Your ultimate time tracker and management system for habits, tasks, and events.",
@@ -86,12 +101,12 @@ export default function Projects() {
                 {project.tools.map((tool, toolIndex) => (
                   <div
                     key={toolIndex}
-                    className="flex items-center gap-2 border border-gray-700 px-3 py-1 rounded-full bg-gray-800/70 justify-center"
+                    className="flex items-center gap-2 border border-gray-700 px-5 py-1 rounded-full bg-slate-700/40 justify-center"
                   >
                     <img
                       src={tool.image}
                       alt={tool.name}
-                      className="w-5 object-contain"
+                      className="w-6 object-contain"
                     />
                     <span className="text-sm text-gray-300">{tool.name}</span>
                   </div>

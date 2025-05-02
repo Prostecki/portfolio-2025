@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header({ scrollTo }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleNavClick = () => setIsOpen(false);
-
   const scrollToSection = (ref) => {
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -15,65 +13,44 @@ export default function Header({ scrollTo }) {
 
   return (
     <header className="h-[72px] flex justify-center max-md:justify-start max-md:gap-5 items-center md:top-6 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800 fixed">
-      <nav className="">
-        <ul className="max-md:hidden flex gap-6 justify-center text-white">
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.homeRef)}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.aboutRef)}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.aboutRef)}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.experienceRef)}
-            >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.getInTouchRef)}
-            >
-              Contact
-            </a>
-          </li>
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.techStackRef)}
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              className="cursor-pointer"
-              onClick={() => scrollToSection(scrollTo.projectsRef)}
-            >
-              Projects
-            </a>
-          </li>
-        </ul>
+      <nav className="max-md:hidden flex gap-6 justify-center text-white">
+        <a
+          className="nav-link"
+          onClick={() => scrollToSection(scrollTo.homeRef)}
+        >
+          Home
+        </a>
+
+        <a
+          className="nav-link"
+          onClick={() => scrollToSection(scrollTo.aboutRef)}
+        >
+          About
+        </a>
+        <a
+          className="nav-link"
+          onClick={() => scrollToSection(scrollTo.experienceRef)}
+        >
+          Experience
+        </a>
+        <a
+          className="nav-link"
+          onClick={() => scrollToSection(scrollTo.techStackRef)}
+        >
+          Skills
+        </a>
+        <a
+          className="nav-link"
+          onClick={() => scrollToSection(scrollTo.projectsRef)}
+        >
+          Projects
+        </a>
+        <a
+          className="nav-link"
+          onClick={() => scrollToSection(scrollTo.getInTouchRef)}
+        >
+          Contact
+        </a>
       </nav>
 
       {/* burger menu button */}
@@ -94,38 +71,38 @@ export default function Header({ scrollTo }) {
             transition={{ duration: 0.3 }}
           >
             <a
-              className="py-1 hover:underline cursor-pointer"
+              className="burger-link"
               onClick={() => scrollToSection(scrollTo.homeRef)}
             >
               Home
             </a>
             <a
-              className="py-1 hover:underline cursor-pointer"
+              className="burger-link"
               onClick={() => scrollToSection(scrollTo.aboutRef)}
             >
               About
             </a>
             <a
-              className="py-1 hover:underline cursor-pointer"
+              className="burger-link"
               onClick={() => scrollToSection(scrollTo.experienceRef)}
             >
               Experience
             </a>
 
             <a
-              className="py-1 hover:underline cursor-pointer"
+              className="burger-link"
               onClick={() => scrollToSection(scrollTo.techStackRef)}
             >
               Skills
             </a>
             <a
-              className="py-1 hover:underline cursor-pointer"
+              className="burger-link"
               onClick={() => scrollToSection(scrollTo.projectsRef)}
             >
               Projects
             </a>
             <a
-              className="py-1 hover:underline cursor-pointer"
+              className="burger-link"
               onClick={() => scrollToSection(scrollTo.getInTouchRef)}
             >
               Get In Touch
