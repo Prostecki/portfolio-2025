@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header({ scrollTo }) {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const scrollToSection = (ref) => {
     if (ref?.current) {
@@ -11,42 +13,61 @@ export default function Header({ scrollTo }) {
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <header className="h-[72px] flex justify-center max-md:justify-start max-md:gap-5 items-center md:top-6 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800 fixed">
       <nav className="max-md:hidden flex gap-6 justify-center text-white">
         <a
-          className="nav-link"
+          className="nav-link transition-all duration-300 hover:text-blue-500"
           onClick={() => scrollToSection(scrollTo.homeRef)}
         >
           Home
         </a>
 
         <a
-          className="nav-link"
+          className="nav-link transition-all duration-300 hover:text-blue-500"
           onClick={() => scrollToSection(scrollTo.aboutRef)}
         >
           About
         </a>
         <a
-          className="nav-link"
+          className="nav-link transition-all duration-300 hover:text-blue-500"
           onClick={() => scrollToSection(scrollTo.experienceRef)}
         >
           Experience
         </a>
         <a
-          className="nav-link"
+          className="nav-link transition-all duration-300 hover:text-blue-500"
           onClick={() => scrollToSection(scrollTo.techStackRef)}
         >
           Skills
         </a>
         <a
-          className="nav-link"
+          className="nav-link transition-all duration-300 hover:text-blue-500"
           onClick={() => scrollToSection(scrollTo.projectsRef)}
         >
           Projects
         </a>
         <a
-          className="nav-link"
+          className="nav-link transition-all duration-300 hover:text-blue-500"
           onClick={() => scrollToSection(scrollTo.getInTouchRef)}
         >
           Contact
@@ -55,6 +76,7 @@ export default function Header({ scrollTo }) {
 
       {/* burger menu button */}
       <button
+        ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         className="absolute top-4 text-3xl right-4 text-white md:hidden"
       >
@@ -64,6 +86,7 @@ export default function Header({ scrollTo }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={menuRef}
             className="absolute top-[72px] right-4 w-48 bg-slate-800 border border-gray-700 rounded-md shadow-md text-white p-4 z-40 flex flex-col"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,38 +94,38 @@ export default function Header({ scrollTo }) {
             transition={{ duration: 0.3 }}
           >
             <a
-              className="burger-link"
+              className="burger-link transition-all duration-300 hover:text-blue-500"
               onClick={() => scrollToSection(scrollTo.homeRef)}
             >
               Home
             </a>
             <a
-              className="burger-link"
+              className="burger-link transition-all duration-300 hover:text-blue-500"
               onClick={() => scrollToSection(scrollTo.aboutRef)}
             >
               About
             </a>
             <a
-              className="burger-link"
+              className="burger-link transition-all duration-300 hover:text-blue-500"
               onClick={() => scrollToSection(scrollTo.experienceRef)}
             >
               Experience
             </a>
 
             <a
-              className="burger-link"
+              className="burger-link transition-all duration-300 hover:text-blue-500"
               onClick={() => scrollToSection(scrollTo.techStackRef)}
             >
               Skills
             </a>
             <a
-              className="burger-link"
+              className="burger-link transition-all duration-300 hover:text-blue-500"
               onClick={() => scrollToSection(scrollTo.projectsRef)}
             >
               Projects
             </a>
             <a
-              className="burger-link"
+              className="burger-link transition-all duration-300 hover:text-blue-500"
               onClick={() => scrollToSection(scrollTo.getInTouchRef)}
             >
               Get In Touch
