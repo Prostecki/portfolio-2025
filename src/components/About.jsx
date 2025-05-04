@@ -41,7 +41,7 @@ const About = forwardRef((_, ref) => {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="text-slate-500">My introduction</p>
+          {/* <p className="text-slate-500">My introduction</p> */}
           <p className="text-slate-400 max-md:text-center">
             Since my childhood, I've been eager to solve problems. When I got my
             first PC with an AMD Duron 700MHz processor, if I remember

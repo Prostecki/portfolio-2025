@@ -11,9 +11,9 @@ export default function Home({ scrollTo }) {
   };
   return (
     <div className="text-black flex pt-16 mt-14 pb-12 px-8 max-w-[55rem]">
-      <div className="-translate-x-20 flex items-center">
+      {/* <div className="-translate-x-20 flex items-center">
         <HomeSocial />
-      </div>
+      </div> */}
       <motion.div
         initial="hidden"
         animate="show"

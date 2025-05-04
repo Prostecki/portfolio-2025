@@ -1,6 +1,7 @@
 import { TextField, Button, Box, Typography } from "@mui/material";
 import { Mail } from "lucide-react";
 import { MapPin } from "lucide-react";
+import HomeSocial from "./HomeSocial";
 
 export default function GetInTouch() {
   return (
@@ -37,6 +38,9 @@ export default function GetInTouch() {
                 <h1 className="text-xl font-bold">Location</h1>
                 <h3 className="text-lg text-gray-400">Stockholm, Sweden</h3>
               </div>
+            </div>
+            <div className="flex gap-3 items-center justify-center w-full mt-2 mb-5">
+              <HomeSocial />
             </div>
           </div>
         </div>

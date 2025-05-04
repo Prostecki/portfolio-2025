@@ -33,7 +33,7 @@ export default function Header({ scrollTo }) {
   }, [isOpen]);
 
   return (
-    <header className="h-[72px] flex justify-center max-md:justify-start max-md:gap-5 items-center md:top-6 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800 fixed">
+    <header className="h-[72px] flex justify-center max-md:justify-end max-md:gap-5 items-center md:top-6 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-md md:rounded-full md:border md:border-gray-800 fixed">
       <nav className="max-md:hidden flex gap-6 justify-center text-white">
         <a
           className="nav-link transition-all duration-300 hover:text-blue-500"
@@ -78,9 +78,23 @@ export default function Header({ scrollTo }) {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute top-4 text-3xl right-4 text-white md:hidden"
+        className="burger-button relative w-8 h-8 flex flex-col justify-between items-center md:hidden"
       >
-        {isOpen ? "X" : "☰"}
+        <span
+          className={`burger-bar transition-all duration-300 ${
+            isOpen ? "rotate-45 translate-y-2" : ""
+          }`}
+        ></span>
+        <span
+          className={`burger-bar transition-all duration-300 ${
+            isOpen ? "opacity-0" : ""
+          }`}
+        ></span>
+        <span
+          className={`burger-bar transition-all duration-300 ${
+            isOpen ? "-rotate-45 translate-y-[-6px]" : ""
+          }`}
+        ></span>
       </button>
 
       <AnimatePresence>
