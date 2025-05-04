@@ -14,7 +14,7 @@ export default function Work() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text drop-shadow-xl bg-gradient-to-r from-white to-gray-500">
             Work Experience
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 mt-4">
@@ -32,7 +32,7 @@ export default function Work() {
               },
             },
           }}
-          className="grid md:grid-cols-2 gap-x-[31px] gap-y-0"
+          className="grid md:grid-cols-2 gap-x-[31px] max-md:gap-y-[1rem]"
         >
           {/* First row: Content Block */}
           <motion.div
@@ -51,41 +51,54 @@ export default function Work() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0 },
               },
             }}
-            className="relative cursor-pointer bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative max-w-[28rem] cursor-pointer"
           >
-            <h3 className="text-2xl font-semibold mb-3">Delivery Driver</h3>
-            <div className="md:flex justify-start items-center gap-2">
-              <div className="flex items-center gap-2">
-                <IoCalendarOutline className="text-blue-500 text-xl" />
-                <p className="text-gray-500 text-sm">May 2024 - Present</p>
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-500">
+                <div className="w-full h-full rounded-2xl border border-blue-500 shadow-[0_0_12px_3px_rgba(59,130,246,0.5)] transition-all duration-500" />
               </div>
-              <div className="flex items-center gap-2">
-                <IoLocationOutline className="text-blue-500 text-xl" />
-                <p className="text-gray-500 text-sm">ICA Brunna, Stockholm</p>
+              <div className="relative z-10 bg-black/80 p-7 rounded-2xl border border-white/10 group-hover:border-white/30">
+                <h3 className="text-2xl font-semibold mb-3">Delivery Driver</h3>
+                <div className="md:flex justify-start items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <IoCalendarOutline className="text-blue-500 text-xl" />
+                    <p className="text-gray-500 text-sm">May 2024 - Present</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <IoLocationOutline className="text-blue-500 text-xl" />
+                    <p className="text-gray-500 text-sm">
+                      ICA Brunna, Stockholm
+                    </p>
+                  </div>
+                </div>
+                <div className="text-white text-sm mt-2">
+                  <p>
+                    <span className="text-slate-400 uppercase tracking-wide">
+                      Skills:{" "}
+                    </span>
+                    Time Management, Communication, Problem Solving, GPS,
+                    Swedish, English
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="text-white text-sm mt-2">
-              <p>
-                <span className="text-slate-400 uppercase tracking-wide">
-                  Skills:{" "}
-                </span>
-                Time Management, Communication, Problem Solving, GPS, Swedish,
-                English
-              </p>
             </div>
           </motion.div>
 
           {/* Separator */}
-          <div className="border-l border-white/20 h-full"></div>
+          <div className="border-l border-white/20 h-full max-md:hidden"></div>
 
           {/* Separator */}
-          <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
+          <div className="border-r -mr-[2rem] border-white/20 h-full max-md:hidden"></div>
 
           {/* Second Content Block */}
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.3, ease: "easeOut" },
+            }}
             variants={{
               hidden: { opacity: 0, y: 60 },
               show: {
@@ -94,26 +107,37 @@ export default function Work() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
               },
             }}
-            className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative cursor-pointer"
           >
-            <h3 className="text-2xl font-semibold mb-3">Web Dev Freelancer</h3>
-            <div className="md:flex justify-start items-center gap-2">
-              <div className="flex items-center gap-2">
-                <IoCalendarOutline className="text-blue-500 text-xl" />
-                <p className="text-gray-500 text-sm">Sep 2023 - Present</p>
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-500 md:ml-[2rem]">
+                <div className="w-full h-full rounded-2xl border border-blue-500 shadow-[0_0_12px_3px_rgba(59,130,246,0.5)] transition-all duration-500" />
               </div>
-              <div className="flex items-center gap-2">
-                <IoLocationOutline className="text-blue-500 text-xl" />
-                <p className="text-gray-500 text-sm">Self-Employed, Remote</p>
+              <div className="relative z-10 bg-black/80 p-7 md:ml-[2rem] rounded-2xl border border-white/10 group-hover:border-white/30">
+                <h3 className="text-2xl font-semibold mb-3">
+                  Web Dev Freelancer
+                </h3>
+                <div className="md:flex justify-start items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <IoCalendarOutline className="text-blue-500 text-xl" />
+                    <p className="text-gray-500 text-sm">Sep 2023 - Present</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <IoLocationOutline className="text-blue-500 text-xl" />
+                    <p className="text-gray-500 text-sm">
+                      Self-Employed, Remote
+                    </p>
+                  </div>
+                </div>
+                <div className="text-white text-sm mt-2">
+                  <p>
+                    <span className="text-slate-400 uppercase tracking-wide">
+                      Skills:{" "}
+                    </span>
+                    HTML, CSS, JavaScript, React.js, Tailwind.CSS
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="text-white text-sm mt-2">
-              <p>
-                <span className="text-slate-400 uppercase tracking-wide">
-                  Skills:{" "}
-                </span>
-                HTML, CSS, JavaScript, React.js, Tailwind.CSS
-              </p>
             </div>
           </motion.div>
 
@@ -122,6 +146,10 @@ export default function Work() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.3, ease: "easeOut" },
+            }}
             variants={{
               hidden: { opacity: 0, y: 60 },
               show: {
@@ -130,30 +158,39 @@ export default function Work() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0.6 },
               },
             }}
-            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative cursor-pointer"
           >
-            <h3 className="text-2xl font-semibold mb-3">
-              Web Development Intern
-            </h3>
-            <div className="md:flex justify-start items-center gap-2">
-              <div className="flex items-center gap-2">
-                <IoCalendarOutline className="text-blue-500 text-xl" />
-                <p className="text-gray-500 text-sm">Oct 2022 - March 2023</p>
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-500">
+                <div className="w-full h-full rounded-2xl border border-blue-500 shadow-[0_0_12px_3px_rgba(59,130,246,0.5)] transition-all duration-500" />
               </div>
-              <div className="flex items-center gap-2">
-                <IoLocationOutline className="text-blue-500 text-xl" />
-                <p className="text-gray-500 text-sm">
-                  Nordic IT School, Moscow
-                </p>
+              <div className="relative z-10 bg-black/80 p-7 rounded-2xl border border-white/10 group-hover:border-white/30">
+                <h3 className="text-2xl font-semibold mb-3">
+                  Web Development Intern
+                </h3>
+                <div className="md:flex justify-start items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <IoCalendarOutline className="text-blue-500 text-xl" />
+                    <p className="text-gray-500 text-sm">
+                      Oct 2022 - March 2023
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <IoLocationOutline className="text-blue-500 text-xl" />
+                    <p className="text-gray-500 text-sm">
+                      Nordic IT School, Moscow
+                    </p>
+                  </div>
+                </div>
+                <div className="text-white text-sm mt-2">
+                  <p>
+                    <span className="text-slate-400 uppercase tracking-wide">
+                      Skills:{" "}
+                    </span>
+                    HTML, CSS, JavaScript, PHP, MySQL, Docker, GO
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="text-white text-sm mt-2">
-              <p>
-                <span className="text-slate-400 uppercase tracking-wide">
-                  Skills:{" "}
-                </span>
-                HTML, CSS, JavaScript, PHP, MySQL, Docker, GO
-              </p>
             </div>
           </motion.div>
 

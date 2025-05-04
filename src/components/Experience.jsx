@@ -2,7 +2,6 @@ import { BsBriefcaseFill } from "react-icons/bs";
 import { TbSchool } from "react-icons/tb";
 import Education from "./Education";
 import Work from "./Work";
-import Merit from "./Merit";
 import { forwardRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,10 +14,6 @@ const Experience = forwardRef((props, ref) => {
 
   const handleEducation = () => {
     setActiveSection("education");
-  };
-
-  const handleMerit = () => {
-    setActiveSection("merit");
   };
 
   return (
@@ -63,23 +58,6 @@ const Experience = forwardRef((props, ref) => {
               Education
             </button>
           </div>
-          <div className="flex items-center gap-2">
-            <BsBriefcaseFill
-              size={25}
-              className="cursor-pointer"
-              color="gray"
-            />
-            <button
-              onClick={handleMerit}
-              className={`text-2xl font-medium ${
-                activeSection === "merit"
-                  ? "text-blue-500"
-                  : "text-gray-500 hover:text-blue-500"
-              } duration-300 cursor-pointer`}
-            >
-              Merit
-            </button>
-          </div>
         </div>
 
         <AnimatePresence mode="wait">
@@ -90,13 +68,7 @@ const Experience = forwardRef((props, ref) => {
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.5 }}
           >
-            {activeSection === "work" ? (
-              <Work />
-            ) : activeSection === "education" ? (
-              <Education />
-            ) : (
-              <Merit />
-            )}
+            {activeSection === "work" ? <Work /> : <Education />}
           </motion.div>
         </AnimatePresence>
       </div>

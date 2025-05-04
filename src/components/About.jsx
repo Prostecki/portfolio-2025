@@ -1,13 +1,18 @@
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
 import Button from "@mui/material/Button";
 import "animate.css";
 
 const About = forwardRef((_, ref) => {
   return (
-    <div
+    <motion.div
       ref={ref}
       id="about"
       className="flex flex-col items-center justify-center w-full min-h-screen pt-12 px-4 max-md:px-0 max-md:py-12"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500 mb-4">
         About
@@ -16,14 +21,26 @@ const About = forwardRef((_, ref) => {
         About Me
       </h1>
       <div className="flex flex-col md:flex-row justify-center items-center w-full gap-12 md:gap-20 max-md:py-0 py-8">
-        <div className="mb-8 md:mb-0">
+        <motion.div
+          className="mb-8 md:mb-0"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <img
             className="max-w-80 max-md:max-w-60 max-md:rounded-3xl max-md:mt-10 content-center rounded-3xl shadow-2xl shadow-blue-600/30 border border-slate-300/30"
             src="images/about-section.jpeg"
             alt="profile picture"
           />
-        </div>
-        <div className="w-full md:w-1/3 max-md:flex max-md:items-center max-md:justify-center max-md:px-4 flex flex-col gap-5">
+        </motion.div>
+        <motion.div
+          className="w-full md:w-1/3 max-md:flex max-md:items-center max-md:justify-center max-md:px-4 flex flex-col gap-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <p className="text-slate-500">My introduction</p>
           <p className="text-slate-400 max-md:text-center">
             Since my childhood, I've been eager to solve problems. When I got my
@@ -44,21 +61,28 @@ const About = forwardRef((_, ref) => {
             </span>
           </p>
 
-          <Button
-            component="a"
-            href="https://taratynov-cv-page.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="outlined"
-            color="primary"
-            style={{ borderRadius: "20px" }}
-            className="w-24 text-center mt-2 px-4 py-1 rounded-full shadow-md duration-200"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
-            CV
-          </Button>
-        </div>
+            <Button
+              component="a"
+              href="https://taratynov-cv-page.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outlined"
+              color="primary"
+              style={{ borderRadius: "20px" }}
+              className="w-24 text-center mt-2 px-4 py-1 rounded-full shadow-md duration-200"
+            >
+              CV
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 });
 

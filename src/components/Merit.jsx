@@ -18,7 +18,7 @@ export default function Merit() {
           </h3>
           <div className="flex flex-col items-start gap-2 mb-4">
             <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-white" size={20} />
+              <MdLocationCity className="text-blue-500" size={20} />
               <p>Tureberg, Sollentuna</p>
             </div>
             <p className="w-4/5">
@@ -51,7 +51,7 @@ export default function Merit() {
           <h3 className="text-2xl font-semibold mb-3">Hurdles Coach</h3>
           <div className="flex flex-col items-start gap-2 mb-4">
             <div className="flex items-center gap-2 mb-4">
-              <MdLocationCity className="text-white" size={20} />
+              <MdLocationCity className="text-blue-500" size={20} />
               <p>Tureberg, Sollentuna</p>
             </div>
             <p className="w-3/4">
@@ -69,7 +69,7 @@ export default function Merit() {
             </p>
           </div>
           <div className="flex items-center gap-2 mt-3">
-            <p>2024 - Present</p>
+            <p>March 2025 - Present</p>
           </div>
         </div>
       </motion.div>

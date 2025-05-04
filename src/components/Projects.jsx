@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Projects() {
   const projects = [
     {
@@ -26,8 +28,8 @@ export default function Projects() {
         { name: "JavaScript", image: "images/javascript.webp" },
         { name: "tailwind.css", image: "images/tailwind.png" },
       ],
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "https://sortify-khaki.vercel.app/",
+      githubLink: "https://github.com/Prostecki/Sortify",
     },
     {
       name: "Quiz App",
@@ -53,7 +55,7 @@ export default function Projects() {
         { name: "tailwind.css", image: "images/tailwind.png" },
       ],
       liveLink: "https://anastasias-advent-calendar.vercel.app/",
-      githubLink: "#",
+      githubLink: "https://github.com/Prostecki/advent-calendar-react",
     },
     {
       name: "Parallax Effect",
@@ -65,10 +67,35 @@ export default function Projects() {
         { name: "CSS", image: "images/css.png" },
         { name: "JavaScript", image: "images/javascript.webp" },
       ],
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "https://prostecki.github.io/Parallax-Effect/",
+      githubLink: "https://github.com/Prostecki/Parallax-Effect",
     },
   ];
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.1,
+      },
+    }),
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.3,
+      },
+    }),
+  };
+
   return (
     <div className="w-full max-md:pt-24 max-md:pb-10 pt-32 flex flex-col items-center gap-5 justify-center">
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
@@ -77,14 +104,26 @@ export default function Projects() {
       <h1 className="text-4xl text-center font-extrabold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text">
         Projects
       </h1>
-      <h3 className="mb-10 mt-5 text-xl text-center font-light text-gray-400">
+      <motion.h3
+        className="mb-10 mt-5 text-xl text-center font-light text-gray-400"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        custom={0}
+        variants={textVariants}
+      >
         Here are some of the projects I've worked on.
-      </h3>
+      </motion.h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 w-full max-w-7xl">
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className="rounded-xl overflow-hidden border border-gray-700 bg-gray-900/60 backdrop-blur-md shadow-2xl hover:scale-[1.02] transition-all duration-500 flex flex-col justify-between"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            custom={index}
+            variants={itemVariants}
           >
             <div className="flex-grow">
               <img
@@ -132,7 +171,7 @@ export default function Projects() {
                 GitHub
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

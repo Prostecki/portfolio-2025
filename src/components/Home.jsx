@@ -38,22 +38,23 @@ export default function Home({ scrollTo }) {
           variants={fadeUp}
           className="relative rounded-full w-64 h-64 flex items-center justify-center"
         >
-          {/* rounded border */}
+          {/* pulsating background */}
           <motion.div
-            className="absolute w-72 h-72 rounded-full z-0"
-            style={{
-              background:
-                "conic-gradient(from 0deg, #3b82f6, #64748b, #1e293b, #3b82f6, #64748b, #ffffff 99%, #ffffff)",
-              padding: "6px",
-              WebkitMask:
-                "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-              WebkitMaskComposite: "xor",
-              maskComposite: "exclude",
-              boxShadow: "0 0 10px rgba(100, 116, 139, 0.4)",
+            className="absolute inset-0 rounded-full"
+            animate={{
+              boxShadow: [
+                "0 0 110px rgba(59, 130, 246, 0.7)",
+                "0 0 120px rgba(59, 130, 246, 1)",
+                "0 0 110px rgba(59, 130, 246, 0.7)",
+              ],
             }}
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+            transition={{
+              duration: 4,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
           />
+
           <img
             src="/images/me.jpeg"
             alt="Avatar"

@@ -28,22 +28,34 @@ export default function Education() {
         </motion.div>
 
         {/* Grid layout with alternating structure */}
-        <div className="grid md:grid-cols-2 gap-x-[31px] gap-y-0">
+        <motion.div
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.3,
+              },
+            },
+          }}
+          className="grid md:grid-cols-2 gap-x-[31px] max-md:gap-y-[1rem]"
+        >
           {/* Row 1 */}
           <motion.div
             initial="hidden"
             whileInView="show"
+            whileHover={{ scale: 1.02 }}
             viewport={{ once: true, amount: 0.2 }}
             variants={{
               hidden: { opacity: 0, y: 60 },
               show: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.6, ease: "easeOut", delay: 0.15 },
+                transition: { duration: 0.6, ease: "easeOut", delay: 0 },
               },
             }}
-            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative bg-black/80 max-w-[28rem] p-7 rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
           >
+            <div className="pointer-events-none absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-all duration-500 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             <h3 className="text-2xl font-semibold mb-3">
               Fullstack Developer, open source
             </h3>
@@ -65,6 +77,7 @@ export default function Education() {
           <motion.div
             initial="hidden"
             whileInView="show"
+            whileHover={{ scale: 1.02 }}
             viewport={{ once: true, amount: 0.2 }}
             variants={{
               hidden: { opacity: 0, y: 60 },
@@ -74,8 +87,9 @@ export default function Education() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
               },
             }}
-            className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative bg-black/80 p-7 ml-[2rem] max-w-[28rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
           >
+            <div className="pointer-events-none absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-all duration-500 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             <h3 className="text-2xl font-semibold mb-3">
               Municipal Adult Education
             </h3>
@@ -97,6 +111,7 @@ export default function Education() {
           <motion.div
             initial="hidden"
             whileInView="show"
+            whileHover={{ scale: 1.02 }}
             viewport={{ once: true, amount: 0.2 }}
             variants={{
               hidden: { opacity: 0, y: 60 },
@@ -106,8 +121,9 @@ export default function Education() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0.45 },
               },
             }}
-            className="relative bg-black/80 p-7 rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative bg-black/80 p-7 max-w-[28rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
           >
+            <div className="pointer-events-none absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-all duration-500 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             <h3 className="text-2xl font-semibold mb-3">
               The Complete JavaScript Course 2025: From Zero to Expert!
             </h3>
@@ -129,6 +145,7 @@ export default function Education() {
           <motion.div
             initial="hidden"
             whileInView="show"
+            whileHover={{ scale: 1.02 }}
             viewport={{ once: true, amount: 0.2 }}
             variants={{
               hidden: { opacity: 0, y: 60 },
@@ -138,8 +155,9 @@ export default function Education() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0 },
               },
             }}
-            className="relative bg-black/80 p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30"
+            className="relative bg-black/80 max-w-[28rem] p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
           >
+            <div className="pointer-events-none absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-all duration-500 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             <h3 className="text-2xl font-semibold mb-3">
               Bachelor's degree in Athletics
             </h3>
@@ -152,7 +170,7 @@ export default function Education() {
               <p>Sep 2014 - May 2018</p>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

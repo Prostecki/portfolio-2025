@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import StackIcon from "tech-stack-icons";
 import Chip from "@mui/material/Chip";
 
@@ -153,103 +154,116 @@ export default function TechStack() {
     return String(str).charAt(0).toUpperCase() + String(str).slice(1);
   };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.3,
+      },
+    }),
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.1,
+      },
+    }),
+  };
+
   return (
     <div className="w-full min-h-screen gap-3 md:pt-24 px-5 max-md:mt-24 text-black flex flex-col items-center justify-center">
-      <span className="inline-block py-1 px-3 mb-8 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500">
+      <motion.span
+        className="inline-block py-1 px-3 mb-8 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500"
+        variants={textVariants}
+        initial="hidden"
+        whileInView="visible"
+        custom={0}
+        viewport={{ once: true }}
+      >
         Tech Stack
-      </span>
-      <h1 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+      </motion.span>
+      <motion.h1
+        className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
+        variants={textVariants}
+        initial="hidden"
+        whileInView="visible"
+        custom={1}
+        viewport={{ once: true }}
+      >
         My Tech Stack
-      </h1>
-      <p className="text-center text-gray-400 max-w-4xl mb-12">
+      </motion.h1>
+      <motion.p
+        className="text-center text-gray-400 max-w-4xl mb-12"
+        variants={textVariants}
+        initial="hidden"
+        whileInView="visible"
+        custom={2}
+        viewport={{ once: true }}
+      >
         Here's a collection of technologies I've been working with across
         frontend, backend, and development tools. Each of them plays a role in
         how I build, test, and ship modern web applications.
-      </p>
+      </motion.p>
 
       <div className="relative w-3/4">
         <div className="max-md:flex-col max-md:items-center flex items-stretch gap-5 justify-center">
-          <div className=" flex-1 border border-gray-700 bg-gray-900 py-5 px-2 rounded-xl">
-            <h1 className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-5">
-              Frontend Development
-            </h1>
-            <div className="flex flex-wrap ml-4 justify-start gap-1">
-              {stackIcons
-                .filter((icon) => icon.field === "Frontend")
-                .map((icon, i) => (
-                  <Chip
-                    key={i}
-                    icon={<StackIcon name={icon.name} className="w-4 h-4" />}
-                    label={capitalizeFirstLetter(icon.headline)}
-                    variant="outlined"
-                    sx={{
-                      color: "white",
-                      borderColor: "gray",
-                      padding: "1rem 0.5rem",
-                      backgroundColor: "rgba(31,41,55,0.5)",
-                      "&:hover": { backgroundColor: "rgba(71,85,105,0.8)" },
-                      transition: "all 0.3s ease",
-                      marginBottom: "0.5rem",
-                      marginRight: "0.5rem",
-                    }}
-                  />
-                ))}
-            </div>
-          </div>
-          <div className=" flex-1 border border-gray-700 bg-gray-900 p-5 rounded-xl">
-            <h1 className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-5">
-              Backend Development
-            </h1>
-            <div className="flex flex-wrap ml-4 justify-start gap-1">
-              {stackIcons
-                .filter((icon) => icon.field === "Backend")
-                .map((icon, i) => (
-                  <Chip
-                    key={i}
-                    icon={<StackIcon name={icon.name} className="w-4 h-4" />}
-                    label={capitalizeFirstLetter(icon.headline)}
-                    variant="outlined"
-                    sx={{
-                      color: "white",
-                      borderColor: "gray",
-                      backgroundColor: "rgba(31,41,55,0.5)",
-                      padding: "1rem 0.5rem",
-                      "&:hover": { backgroundColor: "rgba(71,85,105,0.8)" },
-                      transition: "all 0.3s ease",
-                      marginBottom: "0.5rem",
-                      marginRight: "0.5rem",
-                    }}
-                  />
-                ))}
-            </div>
-          </div>
-          <div className=" flex-1 border border-gray-700 bg-gray-900 p-5 rounded-xl">
-            <h1 className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-5">
-              Tools and Technologies
-            </h1>
-            <div className="flex flex-wrap ml-4 justify-start gap-1">
-              {stackIcons
-                .filter((icon) => icon.field === "Tools")
-                .map((icon, i) => (
-                  <Chip
-                    key={i}
-                    icon={<StackIcon name={icon.name} className="w-4 h-4" />}
-                    label={capitalizeFirstLetter(icon.headline)}
-                    variant="outlined"
-                    sx={{
-                      color: "white",
-                      borderColor: "gray",
-                      backgroundColor: "rgba(31,41,55,0.5)",
-                      padding: "1rem 0.5rem",
-                      "&:hover": { backgroundColor: "rgba(71,85,105,0.8)" },
-                      transition: "all 0.3s ease",
-                      marginBottom: "0.5rem",
-                      marginRight: "0.5rem",
-                    }}
-                  />
-                ))}
-            </div>
-          </div>
+          {[
+            "Frontend Development",
+            "Backend Development",
+            "Tools and Technologies",
+          ].map((section, index) => (
+            <motion.div
+              key={index}
+              className="flex-1 border border-gray-700 bg-black/80 p-5 rounded-xl"
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              custom={index}
+              viewport={{ once: true }}
+            >
+              <h1 className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-5">
+                {section}
+              </h1>
+              <div className="flex flex-wrap ml-4 justify-center gap-1">
+                {stackIcons
+                  .filter((icon) => {
+                    if (section === "Frontend Development")
+                      return icon.field === "Frontend";
+                    if (section === "Backend Development")
+                      return icon.field === "Backend";
+                    return icon.field === "Tools";
+                  })
+                  .map((icon, i) => (
+                    <Chip
+                      key={i}
+                      icon={<StackIcon name={icon.name} className="w-4 h-4" />}
+                      label={capitalizeFirstLetter(icon.headline)}
+                      variant="outlined"
+                      sx={{
+                        color: "white",
+                        borderColor: "gray",
+                        backgroundColor: "rgba(0, 0, 0, 0.3)",
+                        padding: "1rem 0.5rem",
+                        "&:hover": {
+                          backgroundColor: "rgba(255, 255, 255, 0.2)",
+                        },
+                        transition: "all 0.3s ease",
+                        marginBottom: "0.5rem",
+                        marginRight: "0.5rem",
+                      }}
+                    />
+                  ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
