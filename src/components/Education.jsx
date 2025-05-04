@@ -37,7 +37,7 @@ export default function Education() {
               },
             },
           }}
-          className="grid md:grid-cols-2 gap-x-[31px] max-md:gap-y-[1rem]"
+          className="grid md:grid-cols-2 gap-x-[31px] max-md:gap-y-[.5rem]"
         >
           {/* Row 1 */}
           <motion.div
@@ -68,12 +68,12 @@ export default function Education() {
               <p>Aug 2024 - Present</p>
             </div>
           </motion.div>
-          <div className="border-l border-white/20 h-full"></div>
-          {/* <div className="opacity-0"></div> */}
+          <div className="border-l max-md:hidden border-white/20 h-full"></div>
+          <div className="opacity-0 max-md:hidden"></div>
 
           {/* Row 2 */}
-          {/* <div className="opacity-0"></div> */}
-          <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
+          <div className="opacity-0 max-md:hidden"></div>
+          <div className="border-r -mr-[2rem] max-md:hidden border-white/20 h-full"></div>
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -87,7 +87,7 @@ export default function Education() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
               },
             }}
-            className="relative bg-black/80 p-7 ml-[2rem] max-w-[28rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
+            className="relative bg-black/80 p-7 md:ml-[2rem] max-w-[28rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
           >
             <div className="pointer-events-none absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-all duration-500 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             <h3 className="text-2xl font-semibold mb-3">
@@ -136,12 +136,12 @@ export default function Education() {
               <p>Sep 2024 - Jan 2025</p>
             </div>
           </motion.div>
-          <div className="border-l border-white/20 h-full"></div>
-          <div className="opacity-0"></div>
+          <div className="border-l max-md:hidden border-white/20 h-full"></div>
+          <div className="opacity-0 max-md:hidden"></div>
 
           {/* Row 4 */}
-          <div className="opacity-0"></div>
-          <div className="border-r -mr-[2rem] border-white/20 h-full"></div>
+          <div className="opacity-0 max-md:hidden"></div>
+          <div className="border-r -mr-[2rem] max-md:hidden border-white/20 h-full"></div>
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -155,7 +155,7 @@ export default function Education() {
                 transition: { duration: 0.6, ease: "easeOut", delay: 0 },
               },
             }}
-            className="relative bg-black/80 max-w-[28rem] p-7 ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
+            className="relative bg-black/80 max-w-[28rem] p-7 md:ml-[2rem] rounded-2xl border border-white/10 group hover:border-white/30 cursor-pointer duration-300"
           >
             <div className="pointer-events-none absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-all duration-500 border border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             <h3 className="text-2xl font-semibold mb-3">
