@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full h-[5rem] bg-[#04081A] py-8 text-white flex flex-col items-center justify-center">
+    <footer className="w-full h-[5rem] bg-black border-t-[0.5px] py-8 text-white flex flex-col items-center justify-center">
       {/* <div className="h-1 w-full bg-gradient-to-r from-white via-neutral-600 to-white"></div> */}
       <h1 className="text-center text-lg uppercase">
         Made with ❤️ by{" "}
