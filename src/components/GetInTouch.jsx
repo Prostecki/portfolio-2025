@@ -2,8 +2,71 @@ import { TextField, Button, Box, Typography } from "@mui/material";
 import { Mail } from "lucide-react";
 import { MapPin } from "lucide-react";
 import HomeSocial from "./HomeSocial";
+import { useState } from "react";
 
 export default function GetInTouch() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [messageError, setMessageError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setMessageError(false);
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (
+      !data.name ||
+      !data.email ||
+      !data.message ||
+      data.name.length > 50 ||
+      data.message.length > 500 ||
+      !emailRegex.test(data.email)
+    ) {
+      setMessageError("Please fill in the fields properly and try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/mark.taratynov@yh.nackademin.se",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) throw new Error("Send failed");
+      // mail was sent successfully
+      setIsSuccess(true);
+
+      //Show modal if there is
+      setIsModalOpen(true);
+      form.reset();
+    } catch (error) {
+      console.error(`Error, ${error}`);
+
+      //show error if the mail wasn't sent
+      setMessageError("Something went wrong. Please, try again");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="w-full px-4 min-h-screen max-md:mt-32 flex flex-col items-center justify-center gap-4 text-white">
       <span className="inline-block py-1 px-8 rounded-full text-sm font-semibold bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-blue-400 mb-4 tracking-wide">
@@ -19,17 +82,19 @@ export default function GetInTouch() {
             new ideas and collaborations.
           </h3>
           <div className=" flex flex-col max-md:gap-8 items-start gap-3 justify-center max-w-[20rem]">
-            <div className="flex gap-3 items-center">
-              <div className="bg-purple-500/10 p-3 rounded-lg">
-                <Mail className="w-6 h-6 text-purple-400" />
+            <address>
+              <div className="flex gap-3 items-center">
+                <div className="bg-purple-500/10 p-3 rounded-lg">
+                  <Mail className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold">Email</h1>
+                  <h3 className="text-lg text-gray-400">
+                    mark.taratynov@gmail.com
+                  </h3>
+                </div>
               </div>
-              <div>
-                <h1 className="text-xl font-bold">Email</h1>
-                <h3 className="text-lg text-gray-400">
-                  mark.taratynov@gmail.com
-                </h3>
-              </div>
-            </div>
+            </address>
             <div className="flex gap-3 items-center justify-between">
               <div className="bg-pink-500/10 p-3 rounded-lg">
                 <MapPin className="w-6 h-6 text-pink-400" />
@@ -39,15 +104,16 @@ export default function GetInTouch() {
                 <h3 className="text-lg text-gray-400">Stockholm, Sweden</h3>
               </div>
             </div>
-            <div className="flex gap-3 items-center justify-center w-full mt-2 mb-5">
+            <nav className="flex gap-3 items-center justify-center w-full mt-2 mb-5">
               <HomeSocial />
-            </div>
+            </nav>
           </div>
         </div>
 
         <div className="w-full max-w-md px-4 max-md:m-auto">
           <Box
             component="form"
+            onSubmit={handleFormSubmit}
             sx={{
               backgroundColor: "#0f172a",
               p: 4,
@@ -67,6 +133,7 @@ export default function GetInTouch() {
               name="name"
               variant="standard"
               fullWidth
+              inputProps={{ maxLength: 50 }}
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
                 style: {
@@ -100,6 +167,7 @@ export default function GetInTouch() {
               rows={4}
               variant="standard"
               fullWidth
+              inputProps={{ maxLength: 500 }}
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
                 style: {
@@ -112,6 +180,7 @@ export default function GetInTouch() {
             />
             <Button
               type="submit"
+              disabled={isSubmitting}
               variant="contained"
               sx={{
                 mt: 2,
@@ -129,8 +198,16 @@ export default function GetInTouch() {
                 },
               }}
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
+            {isSuccess && (
+              <p className="text-blue-300 text-md text-center drop-shadow-xl bg-gradient-to-r bg-clip-text from-white via-blue-500 to-blue-700">
+                Thank you! Message sent successfully!
+              </p>
+            )}
+            {messageError && (
+              <p className="text-red-400 text-center text-md">{messageError}</p>
+            )}
           </Box>
         </div>
       </div>
