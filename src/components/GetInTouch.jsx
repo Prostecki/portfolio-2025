@@ -9,28 +9,27 @@ export default function GetInTouch() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [messageError, setMessageError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
     setMessageError(false);
 
     const form = event.target;
-    const formData = new FormData(form);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
 
+    // Validate form with RegEx
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (
-      !data.name ||
-      !data.email ||
-      !data.message ||
-      data.name.length > 50 ||
-      data.message.length > 500 ||
-      !emailRegex.test(data.email)
+      !formValues.name ||
+      !formValues.email ||
+      !formValues.message ||
+      formValues.name.length > 50 ||
+      formValues.message.length > 500 ||
+      !emailRegex.test(formValues.email)
     ) {
       setMessageError("Please fill in the fields properly and try again.");
       setIsSubmitting(false);
@@ -46,13 +45,14 @@ export default function GetInTouch() {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(formValues),
         }
       );
 
       if (!response.ok) throw new Error("Send failed");
       // mail was sent successfully
       setIsSuccess(true);
+      setFormValues({ name: "", email: "", message: "" });
 
       //Show modal if there is
       setIsModalOpen(true);
@@ -75,8 +75,8 @@ export default function GetInTouch() {
       <h1 className="text-4xl md:text-5xl text-center font-bold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-sm max-md:mb-0">
         Let's Connect
       </h1>
-      <div className="flex max-md:flex-col gap-5 p-5">
-        <div className="flex flex-col items-start max-md:items-center justify-center">
+      <div className="flex max-md:flex-col max-md:items-center gap-5 p-5">
+        <div className="flex flex-col items-start max-md:items-center justify-center max-h-[30rem]">
           <h3 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-gray-400 max-w-2xl mx-auto">
             Have a project in mind or just want to say hello? I’m always open to
             new ideas and collaborations.
@@ -110,7 +110,7 @@ export default function GetInTouch() {
           </div>
         </div>
 
-        <div className="w-full max-w-md px-4 max-md:m-auto">
+        <div className="md:w-1/2 w-[20rem] flex flex-col items-center px-4 md:m-auto">
           <Box
             component="form"
             onSubmit={handleFormSubmit}
@@ -121,9 +121,13 @@ export default function GetInTouch() {
               boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
               display: "flex",
               flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-around",
               gap: 4,
               backdropFilter: "blur(6px)",
               border: "1px solid #334155",
+              minHeight: "500px",
+              minWidth: "400px",
             }}
             noValidate
             autoComplete="off"
@@ -133,6 +137,10 @@ export default function GetInTouch() {
               name="name"
               variant="standard"
               fullWidth
+              value={formValues.name}
+              onChange={(e) =>
+                setFormValues({ ...formValues, name: e.target.value })
+              }
               inputProps={{ maxLength: 50 }}
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
@@ -150,6 +158,10 @@ export default function GetInTouch() {
               type="email"
               variant="standard"
               fullWidth
+              value={formValues.email}
+              onChange={(e) =>
+                setFormValues({ ...formValues, email: e.target.value })
+              }
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
                 style: {
@@ -167,6 +179,10 @@ export default function GetInTouch() {
               rows={4}
               variant="standard"
               fullWidth
+              value={formValues.message}
+              onChange={(e) =>
+                setFormValues({ ...formValues, message: e.target.value })
+              }
               inputProps={{ maxLength: 500 }}
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
@@ -178,9 +194,19 @@ export default function GetInTouch() {
                 disableUnderline: false,
               }}
             />
+
+            <div className="min-h-[1.5rem] md:w-max text-center text-sm relative transition-all duration-300">
+              {isSuccess ? (
+                <p className="text-blue-300 text-md drop-shadow-xl bg-gradient-to-r bg-clip-text from-white via-blue-500 to-blue-700">
+                  Thank you! Message sent successfully!
+                </p>
+              ) : messageError ? (
+                <p className="text-red-400">{messageError}</p>
+              ) : null}
+            </div>
             <Button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || isSuccess}
               variant="contained"
               sx={{
                 mt: 2,
@@ -200,14 +226,6 @@ export default function GetInTouch() {
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
-            {isSuccess && (
-              <p className="text-blue-300 text-md text-center drop-shadow-xl bg-gradient-to-r bg-clip-text from-white via-blue-500 to-blue-700">
-                Thank you! Message sent successfully!
-              </p>
-            )}
-            {messageError && (
-              <p className="text-red-400 text-center text-md">{messageError}</p>
-            )}
           </Box>
         </div>
       </div>
