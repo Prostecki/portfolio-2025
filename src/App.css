@@ -287,6 +287,12 @@ img {
 .burger-bar {
   width: 100%;
   height: 3px; /* sticks thickness */
+  background-color: black;
+  /* transition: transform 0.3s ease, opacity 0.3s ease; */
+}
+.dark .burger-bar {
+  width: 100%;
+  height: 3px; /* sticks thickness */
   background-color: white;
   /* transition: transform 0.3s ease, opacity 0.3s ease; */
 }

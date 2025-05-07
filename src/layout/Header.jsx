@@ -72,7 +72,18 @@ export default function Header({ scrollTo }) {
   }, [isOpen]);
 
   return (
-    <header className="h-[72px] flex justify-center max-md:justify-end max-md:gap-5 items-center md:top-6 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-sm md:rounded-full md:border md:border-gray-800 fixed">
+    <header className="h-[72px] flex justify-center max-md:justify-end max-md:gap-5 items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-2xl md:w-11/12 z-50 bg-white/70 dark:bg-slate-900/70 drop-shadow-md backdrop-blur-md md:rounded-full md:border md:border-gray-300 dark:md:border-gray-800 transition-colors duration-300">
+      <div className="md:hidden">
+        {theme === "dark" ? (
+          <FiSun
+            size={25}
+            style={{ color: theme === "dark" ? "white" : "dark" }}
+            onClick={toggleTheme}
+          />
+        ) : (
+          <MdOutlineDarkMode size={25} onClick={toggleTheme} />
+        )}
+      </div>
       <nav className="max-md:hidden flex gap-6 justify-center text-black dark:text-white">
         {menuItems.map(({ label, ref }) => (
           <a
@@ -83,11 +94,13 @@ export default function Header({ scrollTo }) {
             {label}
           </a>
         ))}
-        {theme === "dark" ? (
-          <FiSun size={25} onClick={toggleTheme} />
-        ) : (
-          <MdOutlineDarkMode size={25} onClick={toggleTheme} />
-        )}
+        <div className="max-md:hidden">
+          {theme === "dark" ? (
+            <FiSun size={25} onClick={toggleTheme} />
+          ) : (
+            <MdOutlineDarkMode size={25} onClick={toggleTheme} />
+          )}
+        </div>
       </nav>
 
       {/* burger menu button */}
@@ -116,7 +129,7 @@ export default function Header({ scrollTo }) {
           <motion.div
             ref={menuRef}
             variants={menuVars}
-            className="absolute top-[4.8rem] right-4 w-48 bg-slate-800 border border-gray-700 rounded-md shadow-md text-white p-4 z-40 flex flex-col"
+            className="absolute top-[4.8rem] right-4 w-48 dark:bg-slate-800 bg-slate-200 border dark:border-gray-700 rounded-md shadow-md dark:text-white p-4 z-40 flex flex-col"
             initial="initial"
             animate="animate"
             exit="exit"
