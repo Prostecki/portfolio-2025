@@ -2,11 +2,14 @@ import { BsBriefcaseFill } from "react-icons/bs";
 import { TbSchool } from "react-icons/tb";
 import Education from "./Education";
 import Work from "./Work";
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Experience = forwardRef((props, ref) => {
   const [activeSection, setActiveSection] = useState("work");
+
+  const { theme } = useContext(ThemeContext);
 
   const handleWork = () => {
     setActiveSection("work");
@@ -32,7 +35,7 @@ const Experience = forwardRef((props, ref) => {
             <BsBriefcaseFill
               size={25}
               className="cursor-pointer"
-              color="gray"
+              color={theme === "dark" ? "gray" : "black"}
             />
             <button
               onClick={handleWork}
@@ -46,7 +49,11 @@ const Experience = forwardRef((props, ref) => {
             </button>
           </div>
           <div className="flex items-center gap-2">
-            <TbSchool size={35} className="cursor-pointer" color="gray" />
+            <TbSchool
+              size={35}
+              className="cursor-pointer"
+              color={theme === "dark" ? "gray" : "black"}
+            />
             <button
               onClick={handleEducation}
               className={`text-2xl font-medium ${
