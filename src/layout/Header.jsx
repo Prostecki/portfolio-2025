@@ -1,7 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { motion, AnimatePresence, animate } from "framer-motion";
+import { MdOutlineDarkMode } from "react-icons/md";
+import { FiSun } from "react-icons/fi";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Header({ scrollTo }) {
+  const { toggleTheme, theme } = useContext(ThemeContext);
+  console.log(theme);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const menuRef = useRef(null);
@@ -67,16 +73,21 @@ export default function Header({ scrollTo }) {
 
   return (
     <header className="h-[72px] flex justify-center max-md:justify-end max-md:gap-5 items-center md:top-6 left-0 max-md:py-4 right-0 mx-auto w-full md:max-w-xl md:w-11/12 z-50 md:overflow-x-hidden max-md:bg-slate-900 bg-transparent drop-shadow-lg backdrop-blur-sm md:rounded-full md:border md:border-gray-800 fixed">
-      <nav className="max-md:hidden flex gap-6 justify-center text-white">
+      <nav className="max-md:hidden flex gap-6 justify-center text-black dark:text-white">
         {menuItems.map(({ label, ref }) => (
           <a
             key={label}
-            className="nav-link   duration-300 hover:text-blue-500"
+            className="nav-link duration-300 hover:text-blue-500"
             onClick={() => scrollToSection(ref)}
           >
             {label}
           </a>
         ))}
+        {theme === "dark" ? (
+          <FiSun size={25} onClick={toggleTheme} />
+        ) : (
+          <MdOutlineDarkMode size={25} onClick={toggleTheme} />
+        )}
       </nav>
 
       {/* burger menu button */}

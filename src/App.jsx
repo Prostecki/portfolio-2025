@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Home from "./components/Home";
@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import GetInTouch from "./components/GetInTouch";
+import { ThemeContext } from "./context/ThemeContext";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -21,6 +22,8 @@ function App() {
   const projectsRef = useRef();
   const getInTouchRef = useRef();
 
+  const { toggleTheme, theme } = useContext(ThemeContext);
+
   return (
     <>
       <Header
@@ -33,7 +36,7 @@ function App() {
           getInTouchRef,
         }}
       />
-      <main className="flex flex-col items-center background-test">
+      <main className="flex flex-col items-center dark:background-test bg-gray-100">
         <section ref={homeRef}>
           <Home
             scrollTo={{

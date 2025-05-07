@@ -1,5 +1,8 @@
+import plugin from "tailwindcss/plugin";
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -26,5 +29,23 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".background-test": {
+          backgroundColor: "#020203",
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(229,231,235,0.2) 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        },
+        ".dark .background-test": {
+          backgroundColor: "#000",
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.15) 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        },
+      });
+    }),
+    require("tailwind-scrollbar"),
+  ],
 };
