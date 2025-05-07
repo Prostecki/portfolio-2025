@@ -181,7 +181,7 @@ export default function TechStack() {
   return (
     <div className="w-full min-h-screen gap-3 md:pt-24 px-5 max-md:mt-24 text-black flex flex-col items-center justify-center">
       <motion.span
-        className="inline-block py-1 px-3 mb-8 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500"
+        className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800 mb-4"
         variants={textVariants}
         initial="hidden"
         whileInView="visible"

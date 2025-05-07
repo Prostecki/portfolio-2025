@@ -48,7 +48,7 @@ export default function Home({ scrollTo }) {
         <motion.span
           custom={0}
           variants={itemVariants}
-          className="inline-block py-1 px-3 rounded-full text-sm font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800 mb-4"
+          className="inline-block py-1 px-3 rounded-full text-sm font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4"
         >
           Welcome to my portfolio
         </motion.span>
@@ -136,7 +136,7 @@ export default function Home({ scrollTo }) {
             variants={itemVariants}
             href="https://taratynov-cv-page.vercel.app/"
             target="_blank"
-            className="bg-slate-300/80 dark:bg-blue-600 cursor-pointer dark:border-slate-200 border-black dark:text-white text-slate-900/70 w-[10rem] rounded-lg shadow-md hover:text-white duration-300 flex items-center gap-2 justify-center py-2 px-4"
+            className="bg-slate-300/80 dark:bg-blue-600/95 cursor-pointer dark:border-slate-200 border-black dark:text-white text-slate-900/70 w-[10rem] rounded-lg shadow-md hover:text-white duration-300 flex items-center gap-2 justify-center py-2 px-4"
           >
             Link to CV
             <IoIosArrowRoundBack

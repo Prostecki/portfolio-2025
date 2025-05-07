@@ -1,7 +1,8 @@
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
 import { motion } from "framer-motion";
 import Button from "@mui/material/Button";
 import "animate.css";
+import { ThemeContext } from "../context/ThemeContext";
 
 const About = forwardRef((_, ref) => {
   const itemVariants = {
@@ -15,6 +16,9 @@ const About = forwardRef((_, ref) => {
       },
     }),
   };
+
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div
       ref={ref}
@@ -28,7 +32,7 @@ const About = forwardRef((_, ref) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-blue-500 mb-4">
+        <span className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4">
           About
         </span>
       </motion.div>
@@ -39,7 +43,7 @@ const About = forwardRef((_, ref) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h1 className="text-4xl bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text font-[600] mb-2">
+        <h1 className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2">
           About Me
         </h1>
       </motion.div>
@@ -66,7 +70,7 @@ const About = forwardRef((_, ref) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <p className="text-slate-400 max-md:text-center">
+            <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
               Since my childhood, I've been eager to solve problems. When I got
               my first PC with an AMD Duron 700MHz processor, if I remember
               correctly, something went wrong. Without the internet, I managed
@@ -81,7 +85,7 @@ const About = forwardRef((_, ref) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <p className="text-slate-400 max-md:text-center">
+            <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
               I’m highly motivated by a growth mindset, always looking for
               opportunities to learn, improve, and contribute.
             </p>
@@ -93,9 +97,9 @@ const About = forwardRef((_, ref) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <p className="text-slate-400 max-md:text-center">
+            <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
               My principle in life is:{" "}
-              <span className="italic text-slate-300 font-[500]">
+              <span className="italic dark:text-slate-300 text-slate-700/80 font-[500]">
                 "Patience and diligent effort are the keys to personal
                 development and progress."
               </span>
@@ -115,9 +119,10 @@ const About = forwardRef((_, ref) => {
               target="_blank"
               rel="noopener noreferrer"
               variant="outlined"
-              color="primary"
+              color={theme === "dark" ? "primary" : "black"}
+              size="medium"
               style={{ borderRadius: "20px" }}
-              className="w-24 text-center mt-2 px-4 py-1 rounded-full shadow-md duration-200"
+              className="w-[5rem] text-center mt-2 bg-slate-300/80 rounded-full shadow-md duration-200"
             >
               CV
             </Button>

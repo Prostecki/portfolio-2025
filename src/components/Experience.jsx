@@ -22,7 +22,7 @@ const Experience = forwardRef((props, ref) => {
       ref={ref}
       id="experience"
     >
-      <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-teal-500/10 text-blue-500 mb-4">
+      <span className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800 mb-4">
         My Story
       </span>
 
