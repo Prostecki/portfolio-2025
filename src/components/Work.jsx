@@ -55,7 +55,7 @@ export default function Work() {
           >
             <div className="relative group cursor-pointer">
               <div className="absolute inset-0 rounded-2xl group-hover:opacity-100 opacity-0 transition-opacity duration-500">
-                <div className="w-full h-full rounded-2xl border dark:border-blue-500 border-black/50 dark:shadow-[0_0_12px_3px_rgba(59,130,246,0.5)] shadow-[0_0_10px_10px_rgba(0, 0, 0, 0.9)]transition-all duration-500" />
+                <div className="w-full h-full rounded-2xl border border-blue-500 shadow-[0_0_12px_3px_rgba(59,130,246,0.5)] transition-all duration-500" />
               </div>
               <div className="relative z-10 dark:bg-black/80 bg-slate-500/10 p-7 rounded-2xl border border-black/10 dark:border-white/10 group-hover:border-white/30">
                 <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">
