@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import StackIcon from "tech-stack-icons";
 import Chip from "@mui/material/Chip";
+import { ThemeContext } from "../context/ThemeContext";
+import { useContext } from "react";
 
 export default function TechStack() {
+
+  const { theme } = useContext(ThemeContext);
+
   const stackIcons = [
     {
       name: "js",
@@ -51,7 +56,7 @@ export default function TechStack() {
       headline: "Docker",
       description:
         "Docker - A platform for developing, shipping, and running applications in containers, ensuring consistency across environments.",
-      field: "Backend",
+      field: "Tools",
     },
     {
       name: "html5",
@@ -79,7 +84,7 @@ export default function TechStack() {
       headline: "Postman",
       description:
         "Postman - A tool for API development and testing, allowing developers to create requests and analyze responses from web services.",
-      field: "Backend",
+      field: "Tools",
     },
     {
       name: "slack",
@@ -155,10 +160,10 @@ export default function TechStack() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, x: -30 },
     visible: (index) => ({
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         duration: 0.5,
         delay: index * 0.3,
@@ -181,7 +186,7 @@ export default function TechStack() {
   return (
     <div className="w-full min-h-screen gap-3 md:pt-24 px-5 max-md:mt-24 text-black flex flex-col items-center justify-center">
       <motion.span
-        className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800 mb-4"
+        className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4"
         variants={textVariants}
         initial="hidden"
         whileInView="visible"
@@ -191,7 +196,7 @@ export default function TechStack() {
         Tech Stack
       </motion.span>
       <motion.h1
-        className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text"
+        className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2"
         variants={textVariants}
         initial="hidden"
         whileInView="visible"
@@ -222,14 +227,20 @@ export default function TechStack() {
           ].map((section, index) => (
             <motion.div
               key={index}
-              className="flex-1 border border-gray-700 bg-black/80 p-5 rounded-xl"
+              className={`flex-1 border border-black/10 dark:bg-black/80 bg-slate-500/10 p-5 rounded-xl ${
+                section === "Frontend Development"
+                  ? "order-1 md:order-2"
+                  : section === "Backend Development"
+                  ? "order-2 md:order-1"
+                  : "order-3"
+              }`}
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
               custom={index}
               viewport={{ once: true }}
             >
-              <h1 className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-5">
+              <h1 className="text-2xl text-center font-bold dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-white dark:to-gray-400 mb-5 text-black">
                 {section}
               </h1>
               <div className="flex flex-wrap ml-4 justify-center gap-1">
@@ -248,12 +259,12 @@ export default function TechStack() {
                       label={capitalizeFirstLetter(icon.headline)}
                       variant="outlined"
                       sx={{
-                        color: "white",
+                        color: theme === 'dark' ? "white" : "black",
                         borderColor: "gray",
-                        backgroundColor: "rgba(0, 0, 0, 0.3)",
+                        backgroundColor: theme === 'dark' ? "black" : "rgba(255, 255, 255, 0.8)",
                         padding: "1rem 0.5rem",
                         "&:hover": {
-                          backgroundColor: "rgba(255, 255, 255, 0.2)",
+                          backgroundColor: "rgba(200, 200, 200, 0.8)"
                         },
                         transition: "all 0.3s ease",
                         marginBottom: "0.5rem",
