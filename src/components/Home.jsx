@@ -107,13 +107,13 @@ export default function Home({ scrollTo }) {
           </p>
         </motion.div>
 
-        <motion.h3
+        <motion.h2
           custom={4}
           variants={itemVariants}
           className="text-2xl dark:bg-gradient-to-r dark:from-white dark:to-gray-400 dark:text-transparent dark:bg-clip-text font-bold text-balance text-center text-slate-800/80"
         >
           I build and enjoy things for the web.
-        </motion.h3>
+        </motion.h2>
 
         <motion.p
           custom={5}

@@ -1,8 +1,8 @@
+import React, { Suspense, useContext, useMemo } from "react";
 import { motion } from "framer-motion";
-import StackIcon from "tech-stack-icons";
+const StackIcon = React.lazy(() => import("tech-stack-icons"));
 import Chip from "@mui/material/Chip";
 import { ThemeContext } from "../context/ThemeContext";
-import { useContext } from "react";
 
 export default function TechStack() {
 
@@ -155,6 +155,14 @@ export default function TechStack() {
     },
   ];
 
+  const iconsBySection = useMemo(() => {
+    return {
+      Frontend: stackIcons.filter((i) => i.field === "Frontend"),
+      Backend: stackIcons.filter((i) => i.field === "Backend"),
+      Tools: stackIcons.filter((i) => i.field === "Tools"),
+    };
+  }, []);
+
   const capitalizeFirstLetter = (str) => {
     return String(str).charAt(0).toUpperCase() + String(str).slice(1);
   };
@@ -195,7 +203,7 @@ export default function TechStack() {
       >
         Tech Stack
       </motion.span>
-      <motion.h1
+      <motion.h2
         className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2"
         variants={textVariants}
         initial="hidden"
@@ -204,7 +212,7 @@ export default function TechStack() {
         viewport={{ once: true }}
       >
         My Tech Stack
-      </motion.h1>
+      </motion.h2>
       <motion.p
         className="text-center text-gray-400 max-w-4xl mb-12"
         variants={textVariants}
@@ -227,13 +235,12 @@ export default function TechStack() {
           ].map((section, index) => (
             <motion.div
               key={index}
-              className={`flex-1 border border-black/10 dark:bg-black/80 bg-slate-500/10 p-5 rounded-xl ${
-                section === "Frontend Development"
-                  ? "order-1 md:order-2"
-                  : section === "Backend Development"
+              className={`flex-1 border dark:border-white/20 border-black/10 dark:bg-black/80 bg-slate-500/10 p-5 rounded-xl ${section === "Frontend Development"
+                ? "order-1 md:order-2"
+                : section === "Backend Development"
                   ? "order-2 md:order-1"
                   : "order-3"
-              }`}
+                }`}
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
@@ -244,34 +251,39 @@ export default function TechStack() {
                 {section}
               </h1>
               <div className="flex flex-wrap ml-4 justify-center gap-1">
-                {stackIcons
-                  .filter((icon) => {
-                    if (section === "Frontend Development")
-                      return icon.field === "Frontend";
-                    if (section === "Backend Development")
-                      return icon.field === "Backend";
-                    return icon.field === "Tools";
-                  })
-                  .map((icon, i) => (
+                {iconsBySection[
+                  section === "Frontend Development"
+                    ? "Frontend"
+                    : section === "Backend Development"
+                      ? "Backend"
+                      : "Tools"
+                ]?.map((icon, i) => (
+                  <Suspense
+                    key={i}
+                    fallback={<div className="w-4 h-4 bg-gray-200 rounded-full" />}
+                  >
                     <Chip
-                      key={i}
                       icon={<StackIcon name={icon.name} className="w-4 h-4" />}
                       label={capitalizeFirstLetter(icon.headline)}
                       variant="outlined"
                       sx={{
-                        color: theme === 'dark' ? "white" : "black",
+                        color: theme === "dark" ? "white" : "black",
                         borderColor: "gray",
-                        backgroundColor: theme === 'dark' ? "black" : "rgba(255, 255, 255, 0.8)",
+                        backgroundColor:
+                          theme === "dark"
+                            ? "black"
+                            : "rgba(255, 255, 255, 0.8)",
                         padding: "1rem 0.5rem",
                         "&:hover": {
-                          backgroundColor: "rgba(200, 200, 200, 0.8)"
+                          backgroundColor: "rgba(200, 200, 200, 0.8)",
                         },
                         transition: "all 0.3s ease",
                         marginBottom: "0.5rem",
                         marginRight: "0.5rem",
                       }}
                     />
-                  ))}
+                  </Suspense>
+                ))}
               </div>
             </motion.div>
           ))}

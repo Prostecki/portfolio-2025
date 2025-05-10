@@ -1,8 +1,6 @@
 import { IoCalendarOutline } from "react-icons/io5";
-import { MdLocationCity } from "react-icons/md";
 import { motion } from "framer-motion";
 import { IoLocationOutline } from "react-icons/io5";
-import { Scale } from "lucide-react";
 
 export default function Work() {
   return (

@@ -108,6 +108,7 @@ export default function Header({ scrollTo }) {
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         className="burger-button relative w-8 h-8 flex flex-col justify-between items-center md:hidden"
+        aria-label="Toggle menu"
       >
         <span
           className={`burger-bar duration-300 ${

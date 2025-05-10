@@ -60,6 +60,8 @@ const About = forwardRef((_, ref) => {
             className="max-w-80 max-md:max-w-60 max-md:rounded-3xl max-md:mt-10 content-center rounded-3xl shadow-2xl shadow-blue-600/30 border border-slate-300/30"
             src="images/about-section.jpeg"
             alt="profile picture"
+            width={320}
+            height={480}
           />
         </motion.div>
         <div className="w-full md:w-1/3 max-md:flex max-md:items-center max-md:justify-center max-md:px-4 flex flex-col gap-5">

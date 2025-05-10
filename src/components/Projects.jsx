@@ -98,14 +98,14 @@ export default function Projects() {
 
   return (
     <div className="w-full max-md:pt-24 max-md:pb-10 pt-32 flex flex-col items-center gap-5 justify-center">
-      <span className="inline-block py-1 px-3 rounded-full text-sm font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4">
+      <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-slate-300/30 dark:bg-slate-500/10 text-slate-800/80 dark:text-blue-500 drop-shadow-2xl mb-4">
         Projects
       </span>
-      <h1 className="text-4xl text-center font-extrabold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text">
+      <h1 className="text-4xl text-center font-extrabold text-gray-900 dark:text-white">
         Projects
       </h1>
-      <motion.h3
-        className="mb-10 mt-5 text-xl text-center font-light text-gray-400"
+      <motion.h2
+        className="mb-10 text-lg text-center font-light text-gray-600 dark:text-gray-400"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
@@ -113,63 +113,67 @@ export default function Projects() {
         variants={textVariants}
       >
         Here are some of the projects I've worked on.
-      </motion.h3>
+      </motion.h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 w-full max-w-7xl">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="rounded-xl overflow-hidden border border-gray-700 bg-gray-900/60 backdrop-blur-md shadow-2xl hover:scale-[1.02] transition-all duration-500 flex flex-col justify-between"
+            className="rounded-xl overflow-hidden border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
             custom={index}
             variants={itemVariants}
           >
-            <div className="flex-grow">
+            <div className="h-48 overflow-hidden">
               <img
-                className="w-full h-48 object-bottom project-image"
+                className="w-full h-full object-cover border-b border-gray-200 dark:border-gray-700"
                 src={project.image}
                 alt={project.name}
               />
-              <h2 className="text-2xl font-bold px-4 pt-4 mb-1 text-teal-300">
+            </div>
+            <div className="flex-grow p-4 flex flex-col justify-between gap-4">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
                 {project.name}
-              </h2>
-              <p className="text-gray-300 text-sm px-4 mb-4">
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2 px-4 mb-4">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.tools.map((tool, toolIndex) => (
                   <div
                     key={toolIndex}
-                    className="flex items-center gap-2 border border-gray-700 px-5 py-1 rounded-full bg-slate-700/40 justify-center"
+                    className="flex items-center gap-2 border border-gray-300 dark:border-gray-600 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700"
                   >
                     <img
                       src={tool.image}
                       alt={tool.name}
-                      className="w-6 object-contain"
+                      className="w-5 h-5 object-contain"
                     />
-                    <span className="text-sm text-gray-300">{tool.name}</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300">
+                      {tool.name}
+                    </span>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="flex justify-between px-4 pb-4">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white rounded-lg transition-all duration-300 shadow-md"
-              >
-                View Live
-              </a>
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white rounded-lg transition-all duration-300 shadow-md"
-              >
-                GitHub
-              </a>
+              <div className="flex w-full justify-between">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white rounded-lg transition-all duration-300 shadow-md"
+                >
+                  View Live
+                </a>
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 rounded-lg transition-all duration-300 shadow-md"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}

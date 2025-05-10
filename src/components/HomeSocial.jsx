@@ -61,14 +61,14 @@ export default function HomeSocial() {
   return (
     <div>
       <div className="flex justify-center gap-10 relative">
-        {icons.map(({ id, href, icon }) => (
+        {icons.map(({ id, href, icon, label }) => (
           <div
             key={id}
             className="relative group bg-gray-600/20 p-3 rounded-xl hover:scale-105 transition duration-200 cursor-pointer"
             onMouseEnter={() => setHovered(id)}
             onMouseLeave={() => setHovered(null)}
           >
-            <a href={href} target="_blank" rel="noopener noreferrer">
+            <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
               {icon}
             </a>
             {hovered === id && (

@@ -77,10 +77,10 @@ export default function GetInTouch() {
       </h1>
       <div className="flex max-md:flex-col max-md:items-center gap-5 p-5">
         <div className="flex flex-col items-start max-md:items-center justify-center max-h-[30rem]">
-          <h3 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-gray-400 max-w-2xl mx-auto">
+          <h2 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-gray-400 max-w-2xl mx-auto">
             Have a project in mind or just want to say hello? I’m always open to
             new ideas and collaborations.
-          </h3>
+          </h2>
           <div className=" flex flex-col max-md:gap-8 items-start gap-3 justify-center max-w-[20rem]">
             <address>
               <div className="flex gap-3 items-center">
@@ -89,9 +89,9 @@ export default function GetInTouch() {
                 </div>
                 <div>
                   <h1 className="text-xl font-bold">Email</h1>
-                  <h3 className="text-lg text-gray-400">
+                  <h2 className="text-lg text-gray-400">
                     mark.taratynov@gmail.com
-                  </h3>
+                  </h2>
                 </div>
               </div>
             </address>
@@ -101,7 +101,7 @@ export default function GetInTouch() {
               </div>
               <div>
                 <h1 className="text-xl font-bold">Location</h1>
-                <h3 className="text-lg text-gray-400">Stockholm, Sweden</h3>
+                <h2 className="text-lg text-gray-400">Stockholm, Sweden</h2>
               </div>
             </div>
             <nav className="flex gap-3 items-center justify-center w-full mt-2 mb-5">
@@ -214,7 +214,7 @@ export default function GetInTouch() {
                 fontWeight: 600,
                 fontSize: "1rem",
                 letterSpacing: 1,
-                backgroundColor: "#3b82f6",
+                backgroundColor: "whiteblue",
                 borderRadius: "0.5rem",
                 transition: "all 0.3s ease-in-out",
                 "&:hover": {
