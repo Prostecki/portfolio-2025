@@ -2,9 +2,13 @@ import { TextField, Button, Box, Typography } from "@mui/material";
 import { Mail } from "lucide-react";
 import { MapPin } from "lucide-react";
 import HomeSocial from "./HomeSocial";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function GetInTouch() {
+
+  const { theme } = useContext(ThemeContext);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [messageError, setMessageError] = useState("");
@@ -72,36 +76,36 @@ export default function GetInTouch() {
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4">
         Contact
       </span>
-      <h1 className="text-4xl md:text-5xl text-center font-bold bg-gradient-to-r from-white via-gray-400 to-slate-500 text-transparent bg-clip-text drop-shadow-sm max-md:mb-0">
+      <h1 className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2">
         Let's Connect
       </h1>
       <div className="flex max-md:flex-col max-md:items-center gap-5 p-5">
         <div className="flex flex-col items-start max-md:items-center justify-center max-h-[30rem]">
-          <h2 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-gray-400 max-w-2xl mx-auto">
+          <h2 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-black/60 max-w-2xl mx-auto dark:text-slate-400">
             Have a project in mind or just want to say hello? I’m always open to
             new ideas and collaborations.
           </h2>
           <div className=" flex flex-col max-md:gap-8 items-start gap-3 justify-center max-w-[20rem]">
             <address>
               <div className="flex gap-3 items-center">
-                <div className="bg-purple-500/10 p-3 rounded-lg">
-                  <Mail className="w-6 h-6 text-purple-400" />
+                <div className="bg-red-500/20 p-3 dark:bg-blue-500/20 rounded-lg">
+                  <Mail className="w-6 h-6 text-black/80 dark:text-white/80" />
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold">Email</h1>
-                  <h2 className="text-lg text-gray-400">
+                  <h1 className="text-xl font-bold dark:text-white/80 text-black/80">Email</h1>
+                  <h2 className="text-lg text-black/80 dark:text-white/80">
                     mark.taratynov@gmail.com
                   </h2>
                 </div>
               </div>
             </address>
             <div className="flex gap-3 items-center justify-between">
-              <div className="bg-pink-500/10 p-3 rounded-lg">
-                <MapPin className="w-6 h-6 text-pink-400" />
+              <div className="bg-blue-500/20 p-3 rounded-lg">
+                <MapPin className="w-6 h-6 text-black/80 dark:text-white/80" />
               </div>
               <div>
-                <h1 className="text-xl font-bold">Location</h1>
-                <h2 className="text-lg text-gray-400">Stockholm, Sweden</h2>
+                <h1 className="text-xl font-bold dark:text-white/80 text-black/80">Location</h1>
+                <h2 className="text-lg text-black/80 dark:text-white/80">Stockholm, Sweden</h2>
               </div>
             </div>
             <nav className="flex gap-3 items-center justify-center w-full mt-2 mb-5">
@@ -115,17 +119,17 @@ export default function GetInTouch() {
             component="form"
             onSubmit={handleFormSubmit}
             sx={{
-              backgroundColor: "#0f172a",
+              backgroundColor: theme === "dark" ? "#0f172a" : "#f8fafc",
               p: 4,
               borderRadius: 4,
-              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+              boxShadow: theme === "dark" ? "0 10px 30px rgba(0,0,0,0.3)" : "0 10px 30px rgba(0,0,0,0.1)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "space-around",
               gap: 4,
               backdropFilter: "blur(6px)",
-              border: "1px solid #334155",
+              border: theme === "dark" ? "1px solid #334155" : "1px solid #e2e8f0",
               minHeight: "500px",
               minWidth: "400px",
             }}
@@ -145,9 +149,9 @@ export default function GetInTouch() {
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
                 style: {
-                  color: "white",
+                  color: theme === "dark" ? "white" : "black",
                   fontSize: "1.1rem",
-                  borderBottom: "1px solid #475569",
+                  borderBottom: theme === "dark" ? "1px solid #475569" : "1px solid #e2e8f0",
                 },
                 disableUnderline: false,
               }}
@@ -165,9 +169,9 @@ export default function GetInTouch() {
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
                 style: {
-                  color: "white",
+                  color: theme === "dark" ? "white" : "black",
                   fontSize: "1.1rem",
-                  borderBottom: "1px solid #475569",
+                  borderBottom: theme === "dark" ? "1px solid #475569" : "1px solid #e2e8f0",
                 },
                 disableUnderline: false,
               }}
@@ -187,9 +191,9 @@ export default function GetInTouch() {
               InputLabelProps={{ style: { color: "#94a3b8" } }}
               InputProps={{
                 style: {
-                  color: "white",
+                  color: theme === "dark" ? "white" : "black",
                   fontSize: "1.1rem",
-                  borderBottom: "1px solid #475569",
+                  borderBottom: theme === "dark" ? "1px solid #475569" : "1px solid #e2e8f0",
                 },
                 disableUnderline: false,
               }}

@@ -101,7 +101,7 @@ export default function Projects() {
       <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-slate-300/30 dark:bg-slate-500/10 text-slate-800/80 dark:text-blue-500 drop-shadow-2xl mb-4">
         Projects
       </span>
-      <h1 className="text-4xl text-center font-extrabold text-gray-900 dark:text-white">
+      <h1 className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2">
         Projects
       </h1>
       <motion.h2
