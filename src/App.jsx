@@ -22,7 +22,6 @@ function App() {
   const projectsRef = useRef();
   const getInTouchRef = useRef();
 
-  const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
     <>

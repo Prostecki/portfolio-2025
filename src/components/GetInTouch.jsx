@@ -72,15 +72,15 @@ export default function GetInTouch() {
   };
 
   return (
-    <div className="w-full px-4 min-h-screen max-md:mt-32 flex flex-col items-center justify-center gap-4 text-white">
+    <div className="w-full min-h-screen max-md:mt-32 flex flex-col items-center justify-center gap-4 text-white overflow-x-hidden px-4">
       <span className="inline-block py-1 px-3 rounded-full text-sm font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4">
         Contact
       </span>
       <h1 className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2">
         Let's Connect
       </h1>
-      <div className="flex max-md:flex-col max-md:items-center gap-5 p-5">
-        <div className="flex flex-col items-start max-md:items-center justify-center max-h-[30rem]">
+      <div className="flex max-md:flex-col max-md:items-center gap-5 p-4 w-full max-w-[100vw] box-border">
+        <div className="flex flex-col items-start max-md:items-center justify-center max-h-[30rem] w-full max-w-[20rem]">
           <h2 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-black/60 max-w-2xl mx-auto dark:text-slate-400">
             Have a project in mind or just want to say hello? I'm always open to
             new ideas and collaborations.
@@ -116,11 +116,14 @@ export default function GetInTouch() {
           </div>
         </div>
 
-        <div className="md:w-1/2 w-[20rem] flex flex-col items-center px-4 md:m-auto">
+        <div className="md:w-1/2 w-full flex flex-col items-center px-0 md:px-4">
           <Box
             component="form"
             onSubmit={handleFormSubmit}
             sx={{
+              width: "100%",
+              maxWidth: "400px",
+              minWidth: "unset",
               backgroundColor: theme === "dark" ? "#0f172a" : "#f8fafc",
               p: 4,
               borderRadius: 4,
@@ -133,7 +136,6 @@ export default function GetInTouch() {
               backdropFilter: "blur(6px)",
               border: theme === "dark" ? "1px solid #334155" : "1px solid #e2e8f0",
               minHeight: "500px",
-              minWidth: "400px",
             }}
             noValidate
             autoComplete="off"

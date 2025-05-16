@@ -23,7 +23,7 @@ const About = forwardRef((_, ref) => {
     <div
       ref={ref}
       id="about"
-      className="flex flex-col items-center justify-center w-full min-h-screen pt-12 px-4 max-md:px-0 max-md:py-12"
+      className="flex flex-col items-center justify-center w-full min-h-screen py-12 px-4 max-md:px-4"
     >
       <motion.div
         custom={0}
@@ -47,7 +47,7 @@ const About = forwardRef((_, ref) => {
           About Me
         </h1>
       </motion.div>
-      <div className="flex flex-col md:flex-row justify-center items-center w-full gap-12 md:gap-20 max-md:py-0 py-8">
+      <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-16 py-8">
         <motion.div
           className="mb-8 md:mb-0"
           custom={2}
@@ -88,7 +88,7 @@ const About = forwardRef((_, ref) => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
-              I’m highly motivated by a growth mindset, always looking for
+              I'm highly motivated by a growth mindset, always looking for
               opportunities to learn, improve, and contribute.
             </p>
           </motion.div>
