@@ -119,7 +119,7 @@ export default function Header({ scrollTo }) {
         {menuItems.map(({ label, ref }) => (
           <a
             key={label}
-            className="nav-link duration-300 hover:text-blue-500"
+            className="relative duration-300 hover:text-blue-600 dark:hover:text-blue-400 after:absolute after:bottom-[-5px] after:left-0 after:h-[3px] after:w-0 after:bg-blue-600 dark:after:bg-white after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
             onClick={() => scrollToSection(ref)}
           >
             {label}
@@ -155,7 +155,7 @@ export default function Header({ scrollTo }) {
                       setIsThemeMenuOpen(false);
                     }}
                     className={`flex items-center gap-2 w-full px-4 py-2 text-left text-sm ${theme === option.value
-                      ? "bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300"
+                      ? "bg-blue-100 dark:bg-blue-900 text-red-500 dark:text-blue-300"
                       : "hover:bg-gray-100 dark:hover:bg-gray-700"
                       }`}
                   >
