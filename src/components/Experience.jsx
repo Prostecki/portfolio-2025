@@ -39,11 +39,10 @@ const Experience = forwardRef((props, ref) => {
             />
             <button
               onClick={handleWork}
-              className={`text-2xl font-medium ${
-                activeSection === "work"
+              className={`text-2xl font-medium ${activeSection === "work"
                   ? "text-blue-500"
                   : "text-gray-400 hover:text-blue-500"
-              } duration-300 cursor-pointer`}
+                } duration-300 cursor-pointer`}
             >
               Work
             </button>
@@ -56,11 +55,10 @@ const Experience = forwardRef((props, ref) => {
             />
             <button
               onClick={handleEducation}
-              className={`text-2xl font-medium ${
-                activeSection === "education"
+              className={`text-2xl font-medium ${activeSection === "education"
                   ? "text-blue-500"
                   : "text-gray-500 hover:text-blue-500"
-              } duration-300 cursor-pointer`}
+                } duration-300 cursor-pointer`}
             >
               Education
             </button>
