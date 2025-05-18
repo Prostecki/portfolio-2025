@@ -8,7 +8,7 @@ export function ThemeProvider({ children }) {
 
   // Determines actual theme (accounts for system preference when theme='system')
   const getActualTheme = () => {
-    if (typeof window === 'undefined') return 'light'; // значение по умолчанию для SSR
+    if (typeof window === 'undefined') return 'light'; // default value for SSR
     if (theme === 'system') {
       return window.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
@@ -19,8 +19,19 @@ export function ThemeProvider({ children }) {
 
   // Applies theme changes and sets up system theme listener
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'system';
-    setTheme(savedTheme);
+    //  first render load theme from localStorage
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setTheme(savedTheme);
+      }
+    }
+  }, []);
+
+  // Effect for updating DOM and localStorage when theme changes
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const root = document.documentElement;
     const actualTheme = getActualTheme();
 
@@ -28,9 +39,7 @@ export function ThemeProvider({ children }) {
     root.classList.toggle('dark', actualTheme === 'dark');
 
     // Persist theme preference in localStorage
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', theme);
-    }
+    localStorage.setItem('theme', theme);
 
     // Handle system theme changes (only when theme='system')
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -42,7 +51,7 @@ export function ThemeProvider({ children }) {
 
     mediaQuery.addEventListener('change', handleSystemThemeChange);
     return () => mediaQuery.removeEventListener('change', handleSystemThemeChange);
-  }, []);
+  }, [theme]);
 
   // Cycles through theme options: light → dark → system → light
   const toggleTheme = () => {
