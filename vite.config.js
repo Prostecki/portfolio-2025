@@ -5,7 +5,12 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxImportSource: "@emotion/react",
+      babel: {
+        plugins: ["@emotion/babel-plugin"],
+      },
+    }),
     viteCompression({ algorithm: "brotliCompress" }),
     visualizer({ open: true }),
   ],
