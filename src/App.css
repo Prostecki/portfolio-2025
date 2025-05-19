@@ -311,3 +311,32 @@ img {
   /* transform: rotate(-45deg) translateY(-8px); 
 } 
 */
+
+/* Scroll animations */
+.scroll-reveal {
+  @apply opacity-0 translate-y-10 transition-all duration-700;
+}
+
+.scroll-reveal-visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Обеспечивает плавное скрытие хедера */
+.header-hide-animate {
+  @apply transform -translate-y-full;
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-show-animate {
+  @apply transform translate-y-0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Подчеркивание активного пункта меню */
+.nav-active {
+  @apply after:w-full;
+}
+
+.nav-links > a.nav-active::after {
+  @apply w-full;
+}

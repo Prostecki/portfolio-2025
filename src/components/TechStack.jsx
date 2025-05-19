@@ -3,9 +3,14 @@ import { motion } from "framer-motion";
 const StackIcon = React.lazy(() => import("tech-stack-icons"));
 import Chip from "@mui/material/Chip";
 import { ThemeContext } from "../context/ThemeContext";
+import {
+  fadeInUp,
+  fadeInLeft,
+  staggerContainer,
+  viewportOptions,
+} from "../utils/animations";
 
 export default function TechStack() {
-
   const { theme } = useContext(ThemeContext);
 
   const stackIcons = [
@@ -167,66 +172,50 @@ export default function TechStack() {
     return String(str).charAt(0).toUpperCase() + String(str).slice(1);
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: (index) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        delay: index * 0.3,
-      },
-    }),
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (index) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: index * 0.1,
-      },
-    }),
-  };
-
   return (
     <div className="w-full min-h-screen gap-3 md:pt-24 px-5 max-md:mt-24 text-black flex flex-col items-center justify-center">
       <motion.span
         className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4"
-        variants={textVariants}
+        variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         custom={0}
-        viewport={{ once: true }}
+        viewport={viewportOptions}
       >
         Tech Stack
       </motion.span>
+
       <motion.h2
         className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500 mb-2"
-        variants={textVariants}
+        variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         custom={1}
-        viewport={{ once: true }}
+        viewport={viewportOptions}
       >
         My Tech Stack
       </motion.h2>
+
       <motion.p
         className="text-center text-gray-400 max-w-4xl mb-12"
-        variants={textVariants}
+        variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         custom={2}
-        viewport={{ once: true }}
+        viewport={viewportOptions}
       >
         Here's a collection of technologies I've been working with across
         frontend, backend, and development tools. Each of them plays a role in
         how I build, test, and ship modern web applications.
       </motion.p>
 
-      <div className="relative w-3/4">
+      <motion.div
+        className="relative w-3/4"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOptions}
+      >
         <div className="max-md:flex-col max-md:items-center flex items-stretch gap-5 justify-center">
           {[
             "Frontend Development",
@@ -235,32 +224,35 @@ export default function TechStack() {
           ].map((section, index) => (
             <motion.div
               key={index}
-              className={`flex-1 border dark:border-white/20 border-black/10 dark:bg-black/80 bg-slate-500/10 p-5 rounded-xl ${section === "Frontend Development"
-                ? "order-1 md:order-2"
-                : section === "Backend Development"
+              className={`flex-1 border dark:border-white/20 border-black/10 dark:bg-black/80 bg-slate-500/10 p-5 rounded-xl ${
+                section === "Frontend Development"
+                  ? "order-1 md:order-2"
+                  : section === "Backend Development"
                   ? "order-2 md:order-1"
                   : "order-3"
-                }`}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
+              }`}
+              variants={fadeInLeft}
               custom={index}
-              viewport={{ once: true }}
             >
               <h1 className="text-2xl text-center font-bold dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-white dark:to-gray-400 mb-5 text-black">
                 {section}
               </h1>
-              <div className="flex flex-wrap ml-4 justify-center gap-1">
+              <motion.div
+                className="flex flex-wrap ml-4 justify-center gap-1"
+                variants={staggerContainer}
+              >
                 {iconsBySection[
                   section === "Frontend Development"
                     ? "Frontend"
                     : section === "Backend Development"
-                      ? "Backend"
-                      : "Tools"
+                    ? "Backend"
+                    : "Tools"
                 ]?.map((icon, i) => (
                   <Suspense
                     key={i}
-                    fallback={<div className="w-4 h-4 bg-gray-200 rounded-full" />}
+                    fallback={
+                      <div className="w-4 h-4 bg-gray-200 rounded-full" />
+                    }
                   >
                     <Chip
                       icon={<StackIcon name={icon.name} className="w-4 h-4" />}
@@ -284,11 +276,11 @@ export default function TechStack() {
                     />
                   </Suspense>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

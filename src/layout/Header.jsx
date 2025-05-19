@@ -1,6 +1,15 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { MdOutlineDarkMode, MdOutlineLightMode, MdOutlineSettingsBrightness } from "react-icons/md";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import {
+  MdOutlineDarkMode,
+  MdOutlineLightMode,
+  MdOutlineSettingsBrightness,
+} from "react-icons/md";
 import { FiSun } from "react-icons/fi";
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -9,10 +18,22 @@ export default function Header({ scrollTo }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [isMobileThemeMenuOpen, setIsMobileThemeMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
   const themeMenuRef = useRef(null);
   const mobileThemeMenuRef = useRef(null);
+  const lastScrollY = useRef(0);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const isScrolledNow = latest > 100;
+
+    if (isScrolledNow !== isScrolled) setIsScrolled(isScrolledNow);
+
+    lastScrollY.current = latest;
+  });
 
   const scrollToSection = (ref) => {
     if (ref?.current) {
@@ -33,34 +54,36 @@ export default function Header({ scrollTo }) {
   const themeOptions = [
     { label: "Light", value: "light", icon: <MdOutlineLightMode size={18} /> },
     { label: "Dark", value: "dark", icon: <MdOutlineDarkMode size={18} /> },
-    { label: "System", value: "system", icon: <MdOutlineSettingsBrightness size={18} /> }
-  ];
-
-  const menuVars = {
-    initial: { opacity: 0, x: 50 },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.5, ease: [0.12, 0, 0.39, 0] }
+    {
+      label: "System",
+      value: "system",
+      icon: <MdOutlineSettingsBrightness size={18} />,
     },
-    exit: {
-      opacity: 0,
-      x: 200,
-      transition: { duration: 0.5, ease: [0.12, 0, 0.39, 0] }
-    }
-  };
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isOpen && menuRef.current && !menuRef.current.contains(event.target) &&
-        buttonRef.current && !buttonRef.current.contains(event.target)) {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
-      if (isThemeMenuOpen && themeMenuRef.current && !themeMenuRef.current.contains(event.target)) {
+      if (
+        isThemeMenuOpen &&
+        themeMenuRef.current &&
+        !themeMenuRef.current.contains(event.target)
+      ) {
         setIsThemeMenuOpen(false);
       }
-      if (isMobileThemeMenuOpen && mobileThemeMenuRef.current &&
-        !mobileThemeMenuRef.current.contains(event.target)) {
+      if (
+        isMobileThemeMenuOpen &&
+        mobileThemeMenuRef.current &&
+        !mobileThemeMenuRef.current.contains(event.target)
+      ) {
         setIsMobileThemeMenuOpen(false);
       }
     };
@@ -70,10 +93,29 @@ export default function Header({ scrollTo }) {
   }, [isOpen, isThemeMenuOpen, isMobileThemeMenuOpen]);
 
   return (
-    <header className="h-[72px] flex justify-center max-md:justify-between items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-2xl md:w-11/12 z-50 bg-white/70 dark:bg-slate-900/70 drop-shadow-md backdrop-blur-md md:rounded-full md:border md:border-gray-300 dark:md:border-gray-800 transition-colors duration-300 px-4">
+    <motion.header
+      className="h-[72px] flex justify-center max-md:justify-between items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-2xl md:w-11/12 z-50 bg-white/70 dark:bg-slate-900/70 drop-shadow-md backdrop-blur-md md:rounded-full md:border md:border-gray-300 dark:md:border-gray-800 transition-colors duration-300 px-4"
+      initial={{ y: -150 }}
+      animate={{
+        y: 0,
+        boxShadow: isScrolled ? "0 10px 30px rgba(0, 0, 0, 0.1)" : "none",
+        backgroundColor: isScrolled
+          ? theme === "dark"
+            ? "rgba(15, 23, 42, 0.85)"
+            : "rgba(255, 255, 255, 0.85)"
+          : theme === "dark"
+          ? "rgba(15, 23, 42, 0.7)"
+          : "rgba(255, 255, 255, 0.7)",
+      }}
+      transition={{ duration: 0.3 }}
+    >
       {/* left part: avatar icon */}
       <div className="flex items-center md:hidden">
-        <img src="/images/me.jpeg" alt="Avatar" className="w-8 h-8 rounded-full" />
+        <img
+          src="/images/me.jpeg"
+          alt="Avatar"
+          className="w-8 h-8 rounded-full"
+        />
       </div>
 
       {/* right part: theme buttons and menu */}
@@ -105,10 +147,11 @@ export default function Header({ scrollTo }) {
                       setTheme(option.value);
                       setIsMobileThemeMenuOpen(false);
                     }}
-                    className={`flex items-center gap-2 w-full px-4 py-2 text-left text-sm ${theme === option.value
-                      ? "bg-blue-100 dark:bg-blue-900 text-black dark:text-white"
-                      : "hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white"
-                      }`}
+                    className={`flex items-center gap-2 w-full px-4 py-2 text-left text-sm ${
+                      theme === option.value
+                        ? "bg-blue-100 dark:bg-blue-900 text-black dark:text-white"
+                        : "hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white"
+                    }`}
                   >
                     {option.icon}
                     <span className="dark:text-white">{option.label}</span>
@@ -126,9 +169,19 @@ export default function Header({ scrollTo }) {
           className="burger-button relative w-8 h-8 flex flex-col justify-between items-center md:hidden"
           aria-label="Toggle menu"
         >
-          <span className={`burger-bar duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`}></span>
-          <span className={`burger-bar duration-300 ${isOpen ? "opacity-0" : ""}`}></span>
-          <span className={`burger-bar duration-300 ${isOpen ? "-rotate-45 translate-y-[-6px]" : ""}`}></span>
+          <span
+            className={`burger-bar duration-300 ${
+              isOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`burger-bar duration-300 ${isOpen ? "opacity-0" : ""}`}
+          ></span>
+          <span
+            className={`burger-bar duration-300 ${
+              isOpen ? "-rotate-45 translate-y-[-6px]" : ""
+            }`}
+          ></span>
         </button>
 
         {/* Desktop menu (navigation + theme) */}
@@ -169,10 +222,11 @@ export default function Header({ scrollTo }) {
                         setTheme(option.value);
                         setIsThemeMenuOpen(false);
                       }}
-                      className={`flex items-center gap-2 w-full px-4 py-2 text-left text-sm ${theme === option.value
-                        ? "bg-blue-100 dark:bg-blue-900 text-black dark:text-white"
-                        : "hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white"
-                        }`}
+                      className={`flex items-center gap-2 w-full px-4 py-2 text-left text-sm ${
+                        theme === option.value
+                          ? "bg-blue-100 dark:bg-blue-900 text-black dark:text-white"
+                          : "hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white"
+                      }`}
                     >
                       {option.icon}
                       {option.label}
@@ -189,32 +243,45 @@ export default function Header({ scrollTo }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            key="mobile-menu"
             ref={menuRef}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{
               opacity: 1,
               y: 0,
-              transition: { duration: 0.2, ease: "easeOut" }
+              scale: 1,
+              transition: {
+                type: "spring",
+                stiffness: 350,
+                damping: 25,
+                duration: 0.3,
+              },
             }}
             exit={{
               opacity: 0,
-              y: 20,
-              transition: { duration: 0.2, ease: "easeIn" }
+              y: 10,
+              scale: 0.95,
+              transition: { duration: 0.2 },
             }}
             className="absolute right-4 top-full mt-2 w-48 bg-white dark:bg-slate-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50 p-2"
           >
             {menuItems.map(({ label, ref }) => (
-              <button
+              <motion.button
                 key={label}
-                onClick={() => scrollToSection(ref)}
+                onClick={() => {
+                  scrollToSection(ref);
+                  setIsOpen(false);
+                }}
                 className="flex items-center gap-2 w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white rounded-md"
+                whileHover={{ x: 3 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
                 {label}
-              </button>
+              </motion.button>
             ))}
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
