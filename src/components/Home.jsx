@@ -57,11 +57,9 @@ export default function Home({ scrollTo }) {
               repeat: Infinity,
             }}
           />
-          <motion.img
+          <img
             src="/images/me.jpeg"
             alt="Avatar"
-            variants={fadeInUp}
-            custom={1.5}
             className="w-40 h-40 rounded-full z-10 object-cover border-2 dark:border-white/40 border-black/40 cursor-pointer"
           />
         </motion.div>

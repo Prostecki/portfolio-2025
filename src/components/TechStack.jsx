@@ -37,7 +37,7 @@ export default function TechStack() {
     },
     {
       name: "tailwindcss",
-      headline: "Tailwind CSS",
+      headline: "Tailwind",
       description:
         "Tailwind CSS - A utility-first CSS framework that allows for rapid UI development with a flexible, customizable design system.",
       field: "Frontend",
@@ -98,13 +98,13 @@ export default function TechStack() {
         "Slack - A messaging platform for team communication and collaboration, with integrated channels for projects and teams.",
       field: "Tools",
     },
-    {
-      name: "jira",
-      headline: "Jira",
-      description:
-        "Jira - A project management tool widely used in agile environments to track issues, bugs, and project progress.",
-      field: "Tools",
-    },
+    // {
+    //   name: "jira",
+    //   headline: "Jira",
+    //   description:
+    //     "Jira - A project management tool widely used in agile environments to track issues, bugs, and project progress.",
+    //   field: "Tools",
+    // },
     {
       name: "figma",
       headline: "Figma",
@@ -157,6 +157,13 @@ export default function TechStack() {
       headline: "TypeScript",
       description: "",
       field: "Frontend",
+    },
+    {
+      name: "git",
+      headline: "Git",
+      description:
+        "Git - A distributed version control system for tracking changes in source code during software development.",
+      field: "Tools",
     },
   ];
 
@@ -224,7 +231,7 @@ export default function TechStack() {
           ].map((section, index) => (
             <motion.div
               key={index}
-              className={`flex-1 border dark:border-white/20 border-black/10 dark:bg-black/80 bg-slate-500/10 p-5 rounded-xl ${
+              className={`flex-1 border dark:border-white/20 border-black/10 dark:bg-black/80 bg-white p-5 rounded-xl ${
                 section === "Frontend Development"
                   ? "order-1 md:order-2"
                   : section === "Backend Development"
@@ -257,7 +264,7 @@ export default function TechStack() {
                     <Chip
                       icon={<StackIcon name={icon.name} className="w-4 h-4" />}
                       label={capitalizeFirstLetter(icon.headline)}
-                      variant="outlined"
+                      // variant="outlined"
                       sx={{
                         color: theme === "dark" ? "white" : "black",
                         borderColor: "gray",
@@ -268,6 +275,12 @@ export default function TechStack() {
                         padding: "1rem 0.5rem",
                         "&:hover": {
                           backgroundColor: "rgba(200, 200, 200, 0.8)",
+                        },
+                        "& .MuiChip-icon": {
+                          filter:
+                            theme === "dark"
+                              ? "none"
+                              : "grayscale(100%) contrast(1.5) brightness(0.9)",
                         },
                         transition: "all 0.3s ease",
                         marginBottom: "0.5rem",
