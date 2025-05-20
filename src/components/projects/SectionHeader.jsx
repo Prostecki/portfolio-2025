@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeInUp, viewportOptions } from "../utils/animations";
+import { viewportOptions } from "../../utils/animations";
 
 export default function SectionHeader({ title, subtitle, customViewport }) {
   const viewport = customViewport || viewportOptions;
@@ -12,7 +13,7 @@ export default function SectionHeader({ title, subtitle, customViewport }) {
         initial="hidden"
         whileInView="visible"
         custom={0}
-        viewport={viewport}
+        viewport={viewportOptions}
       >
         {title}
       </motion.span>
@@ -23,7 +24,7 @@ export default function SectionHeader({ title, subtitle, customViewport }) {
         initial="hidden"
         whileInView="visible"
         custom={1}
-        viewport={viewport}
+        viewport={viewportOptions}
       >
         {title}
       </motion.h2>
@@ -34,7 +35,7 @@ export default function SectionHeader({ title, subtitle, customViewport }) {
         initial="hidden"
         whileInView="visible"
         custom={2}
-        viewport={viewport}
+        viewport={viewportOptions}
       >
         {subtitle}
       </motion.p>

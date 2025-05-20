@@ -1,5 +1,6 @@
 import { IoCalendarOutline, IoLocationOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { viewportOptions } from "../../utils/animations";
 
 const WorkExperience = ({
   title,
@@ -13,7 +14,7 @@ const WorkExperience = ({
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={viewportOptions}
       whileHover={{
         scale: 1.02,
         transition: { duration: 0.3, ease: "easeOut" },

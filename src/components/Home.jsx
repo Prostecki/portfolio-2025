@@ -37,6 +37,12 @@ export default function Home({ scrollTo }) {
         >
           <motion.div
             className="absolute inset-0 rounded-full pointer-events-none"
+            initial={{
+              boxShadow:
+                theme === "dark"
+                  ? "0 0 110px rgba(96, 165, 250, 0.7)"
+                  : "0 0 110px rgba(100, 116, 139, 0.6)",
+            }}
             animate={{
               boxShadow:
                 theme === "dark"
@@ -50,11 +56,6 @@ export default function Home({ scrollTo }) {
                       "0 0 120px rgba(71, 85, 105, 0.8)",
                       "0 0 110px rgba(100, 116, 139, 0.6)",
                     ],
-            }}
-            transition={{
-              duration: 4,
-              ease: "easeInOut",
-              repeat: Infinity,
             }}
           />
           <img

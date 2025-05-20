@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Button from "@mui/material/Button";
 import "animate.css";
 import { ThemeContext } from "../context/ThemeContext";
+import { viewportOptions } from "../utils/animations";
 
 const About = forwardRef((_, ref) => {
   const itemVariants = {
@@ -30,7 +31,7 @@ const About = forwardRef((_, ref) => {
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={viewportOptions}
         className="mb-2"
       >
         <span className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800/60 mb-4">
@@ -43,7 +44,7 @@ const About = forwardRef((_, ref) => {
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={viewportOptions}
         className="mb-8"
       >
         <h1 className="text-4xl bg-gradient-to-r dark:from-white dark:via-gray-400 dark:to-slate-500 text-transparent bg-clip-text font-[700] from-black via-gray-700 to-slate-500">
@@ -58,7 +59,7 @@ const About = forwardRef((_, ref) => {
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={viewportOptions}
         >
           <img
             className="max-w-80 max-md:max-w-60 rounded-3xl shadow-2xl shadow-blue-600/30 border border-slate-300/30"
@@ -75,7 +76,7 @@ const About = forwardRef((_, ref) => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportOptions}
           >
             <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
               Since my childhood, I've been eager to solve problems. When I got
@@ -90,7 +91,7 @@ const About = forwardRef((_, ref) => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportOptions}
           >
             <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
               I'm highly motivated by a growth mindset, always looking for
@@ -102,7 +103,7 @@ const About = forwardRef((_, ref) => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportOptions}
           >
             <p className="dark:text-slate-400 text-slate-700 max-md:text-center">
               My principle in life is:{" "}
@@ -118,7 +119,7 @@ const About = forwardRef((_, ref) => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={viewportOptions}
           >
             <Button
               component="a"

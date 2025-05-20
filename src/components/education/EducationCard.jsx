@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { IoCalendarOutline, IoSchoolOutline } from "react-icons/io5";
-
+import { viewportOptions } from "../../utils/animations";
 export default function EducationCard({
   title,
   institution,
@@ -19,7 +19,7 @@ export default function EducationCard({
       initial="hidden"
       whileInView="show"
       whileHover={{ scale: 1.02 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={viewportOptions}
       variants={{
         hidden: { opacity: 0, y: 60 },
         show: {

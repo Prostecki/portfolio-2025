@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { viewportOptions } from "../../utils/animations";
 
 export default function EducationHeader() {
   return (
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={viewportOptions}
       variants={{
         hidden: { opacity: 0, y: 60 },
         show: {

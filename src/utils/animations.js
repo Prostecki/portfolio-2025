@@ -3,15 +3,13 @@ export const fadeInUp = {
   visible: (custom = 0) => ({
     opacity: 1,
     y: 0,
+    willChange: "opacity, transform",
     transition: {
       type: "spring",
       damping: 25,
       stiffness: 100,
       duration: 0.4,
       delay: custom * 0.15,
-    },
-    style: {
-      willChange: "opacity, transform",
     },
   }),
 };
@@ -39,15 +37,13 @@ export const fadeInRight = {
   visible: (custom = 0) => ({
     opacity: 1,
     x: 0,
+    willChange: "opacity, transform",
     transition: {
       type: "spring",
       damping: 25,
       stiffness: 100,
       duration: 0.4,
       delay: custom * 0.15,
-    },
-    style: {
-      willChange: "opacity, transform",
     },
   }),
 };
@@ -61,11 +57,7 @@ export const staggerContainer = {
   },
 };
 
-export const viewportOptions = {
-  once: true,
-  amount: 0.25,
-  margin: "0px 0px -100px 0px",
-};
+export const viewportOptions = { once: true, amount: 0.1 };
 
 // Animation for cards of projects
 export const projectCardVariants = {

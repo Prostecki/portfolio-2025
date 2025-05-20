@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useContext } from "react";
+import { useRef } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Home from "./components/Home";
@@ -7,7 +7,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import TechStack from "./components/techStack/TechStack";
 import Projects from "./components/projects/Projects";
-import GetInTouch from "./components/GetInTouch";
+import GetInTouch from "./components/GetInTouch/GetInTouch";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
