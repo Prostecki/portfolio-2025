@@ -66,3 +66,17 @@ export const viewportOptions = {
   amount: 0.25,
   margin: "0px 0px -100px 0px",
 };
+
+// Animation for cards of projects
+export const projectCardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};

@@ -1,7 +1,7 @@
 import { BsBriefcaseFill } from "react-icons/bs";
 import { TbSchool } from "react-icons/tb";
-import Education from "./Education";
-import Work from "./Work";
+import Education from "./education/Education";
+import Work from "./workExperience/Work";
 import { forwardRef, useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeContext } from "../context/ThemeContext";
@@ -39,10 +39,11 @@ const Experience = forwardRef((props, ref) => {
             />
             <button
               onClick={handleWork}
-              className={`text-2xl font-medium ${activeSection === "work"
+              className={`text-2xl font-medium ${
+                activeSection === "work"
                   ? "text-blue-500"
                   : "text-gray-400 hover:text-blue-500"
-                } duration-300 cursor-pointer`}
+              } duration-300 cursor-pointer`}
             >
               Work
             </button>
@@ -55,10 +56,11 @@ const Experience = forwardRef((props, ref) => {
             />
             <button
               onClick={handleEducation}
-              className={`text-2xl font-medium ${activeSection === "education"
+              className={`text-2xl font-medium ${
+                activeSection === "education"
                   ? "text-blue-500"
                   : "text-gray-500 hover:text-blue-500"
-                } duration-300 cursor-pointer`}
+              } duration-300 cursor-pointer`}
             >
               Education
             </button>

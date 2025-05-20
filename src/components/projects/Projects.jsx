@@ -7,11 +7,10 @@ import {
   fadeInLeft,
   staggerContainer,
   viewportOptions,
+  projectCardVariants,
 } from "../../utils/animations";
 
 export default function Projects() {
-  const { theme } = useContext(ThemeContext);
-
   const [activeCards, setActiveCards] = useState(
     Array(projects.length).fill(false)
   );
@@ -31,20 +30,6 @@ export default function Projects() {
       newState[index] = false;
       return newState;
     });
-  };
-
-  // Animation for cards of projects
-  const projectCardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
   };
 
   return (
