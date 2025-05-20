@@ -5,10 +5,9 @@ import Footer from "./layout/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
 import Experience from "./components/Experience";
-import TechStack from "./components/TechStack";
-import Projects from "./components/Projects";
+import TechStack from "./components/techStack/TechStack";
+import Projects from "./components/projects/Projects";
 import GetInTouch from "./components/GetInTouch";
-import { ThemeContext } from "./context/ThemeContext";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -21,7 +20,6 @@ function App() {
   const techStackRef = useRef();
   const projectsRef = useRef();
   const getInTouchRef = useRef();
-
 
   return (
     <>

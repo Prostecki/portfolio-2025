@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { ThemeContext } from "../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import TechStackSection from "./TechStackSection";
-import { stackIcons, categories } from "../data/techStack";
+import { stackIcons, categories } from "../../data/techStack";
 import {
   fadeInUp,
   staggerContainer,
   viewportOptions,
-} from "../utils/animations";
+} from "../../utils/animations";
 
 export default function TechStack() {
   const { theme } = useContext(ThemeContext);

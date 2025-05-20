@@ -1,90 +1,22 @@
 import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import { ThemeContext } from "../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
+import { projects } from "../../data/projects";
 import {
   fadeInUp,
   fadeInLeft,
   staggerContainer,
   viewportOptions,
-} from "../utils/animations";
+} from "../../utils/animations";
 
 export default function Projects() {
   const { theme } = useContext(ThemeContext);
-  const projects = [
-    {
-      name: "Hakim Livs",
-      description:
-        "Hakim Livs Webshop is a full-stack e-commerce application built by modern concepts and technologies with user authentication through JWT auth",
-      image: "images/hakim-livs.png",
-      tools: [
-        { name: "HTML", image: "images/html.webp" },
-        { name: "CSS", image: "images/css.png" },
-        { name: "JavaScript", image: "images/javascript.webp" },
-        { name: "MongoDB", image: "images/mongodb-icon.svg" },
-        { name: "Node.js", image: "images/nodejs.webp" },
-        { name: "Jest", image: "images/jest.png" },
-      ],
-      liveLink: "https://webshop-2025-fe-g1-one.vercel.app",
-      githubLink: "https://github.com/Prostecki/hakim-livs-webshop-frontend",
-    },
-    {
-      name: "Sortify",
-      description:
-        "Your ultimate time tracker and management system for habits, tasks, and events.",
-      image: "images/dashboard.jpg",
-      tools: [
-        { name: "React.js", image: "images/react.webp" },
-        { name: "JavaScript", image: "images/javascript.webp" },
-        { name: "tailwind.css", image: "images/tailwind.png" },
-      ],
-      liveLink: "https://sortify-khaki.vercel.app/",
-      githubLink: "https://github.com/Prostecki/Sortify",
-    },
-    {
-      name: "Quiz App",
-      description:
-        "This web-based quiz application is built using JavaScript, HTML, and CSS, designed to provide a fun and interactive quiz experience for users.",
-      image: "images/quiz.jpg",
-      tools: [
-        { name: "HTML", image: "images/html.webp" },
-        { name: "CSS", image: "images/css.png" },
-        { name: "JavaScript", image: "images/javascript.webp" },
-      ],
-      liveLink: "https://prostecki.github.io/quiz-app/",
-      githubLink: "https://github.com/Prostecki/quiz-app",
-    },
-    {
-      name: "Advent Calendar - 2024",
-      description:
-        "An interactive advent calendar where users can watch videos and follow baking instructions each day, leading up to Christmas.",
-      image: "images/advent.jpeg",
-      tools: [
-        { name: "React.js", image: "images/react.webp" },
-        { name: "JavaScript", image: "images/javascript.webp" },
-        { name: "tailwind.css", image: "images/tailwind.png" },
-      ],
-      liveLink: "https://anastasias-advent-calendar.vercel.app/",
-      githubLink: "https://github.com/Prostecki/advent-calendar-react",
-    },
-    {
-      name: "Parallax Effect",
-      description:
-        "A simple study project based on theme The Witcher using by Parallax and Swiper libraries in JS.",
-      image: "images/parallax.png",
-      tools: [
-        { name: "HTML", image: "images/html.webp" },
-        { name: "CSS", image: "images/css.png" },
-        { name: "JavaScript", image: "images/javascript.webp" },
-      ],
-      liveLink: "https://prostecki.github.io/Parallax-Effect/",
-      githubLink: "https://github.com/Prostecki/Parallax-Effect",
-    },
-  ];
+
   const [activeCards, setActiveCards] = useState(
     Array(projects.length).fill(false)
   );
 
-  // Обработчики для анимации нажатия
+  // listeners for animations of clicked cards
   const handleMouseDown = (index) => {
     setActiveCards((prev) => {
       const newState = [...prev];
@@ -101,7 +33,7 @@ export default function Projects() {
     });
   };
 
-  // Анимация для карточек проектов
+  // Animation for cards of projects
   const projectCardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i) => ({

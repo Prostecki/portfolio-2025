@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { motion } from "framer-motion";
 import Chip from "@mui/material/Chip";
-import { staggerContainer } from "../utils/animations";
+import { staggerContainer } from "../../utils/animations";
 
 const StackIcon = React.lazy(() => import("tech-stack-icons"));
 
