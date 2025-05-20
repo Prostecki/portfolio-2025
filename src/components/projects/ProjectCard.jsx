@@ -77,6 +77,7 @@ function ProjectTools({ tools, isActive }) {
     <motion.div
       className="flex flex-wrap gap-2 mb-4"
       variants={staggerContainer}
+      style={{ willChange: "opacity, transform" }}
     >
       {tools.map((tool, toolIndex) => (
         <motion.div
@@ -107,6 +108,7 @@ function ProjectLinks({ liveLink, githubLink, isActive }) {
       className="flex w-full justify-between"
       variants={fadeInUp}
       custom={2}
+      style={{ willChange: "opacity, transform" }}
     >
       <a
         href={liveLink}
