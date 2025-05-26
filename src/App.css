@@ -340,3 +340,9 @@ img {
 .nav-links > a.nav-active::after {
   @apply w-full;
 }
+
+.bg-custom {
+  background-color: rgb(13, 17, 23);
+  background-image: url("/public/background.png");
+  background-repeat: repeat;
+}

@@ -67,4 +67,19 @@ export const projects = [
     liveLink: "https://prostecki.github.io/Parallax-Effect/",
     githubLink: "https://github.com/Prostecki/Parallax-Effect",
   },
+  {
+    name: "Weather Forecast App",
+    description:
+      "A modern weather application built with Node.js and React that provides current weather conditions and hourly forecasts.",
+    image: "images/weather-app-2025.png",
+    tools: [
+      { name: "React.js", image: "images/react.webp" },
+      { name: "JavaScript", image: "images/javascript.webp" },
+      { name: "tailwind.css", image: "images/tailwind.png" },
+      { name: "Node.js", image: "images/nodejs.webp" },
+    ],
+    liveLink: null, // Change to null instead of using GitHub URL
+    liveStatus: "coming-soon",
+    githubLink: "https://github.com/Prostecki/weather_app_2025",
+  },
 ];

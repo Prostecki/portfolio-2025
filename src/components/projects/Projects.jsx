@@ -91,7 +91,11 @@ export default function Projects() {
           >
             <div className="h-48 overflow-hidden">
               <img
-                className={`w-full h-full object-cover border-b border-gray-200 dark:border-gray-700 transition-transform duration-500 ${
+                className={`w-full ${
+                  project.name === "Weather Forecast App"
+                    ? "object-top"
+                    : "object-cover"
+                } border-b border-gray-200 dark:border-gray-700 transition-transform duration-500 ${
                   activeCards[index] ? "scale-105" : ""
                 }`}
                 src={project.image}
@@ -142,16 +146,36 @@ export default function Projects() {
                 variants={fadeInUp}
                 custom={2}
               >
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white rounded-lg transition-all duration-300 shadow-md ${
-                    activeCards[index] ? "bg-blue-600" : ""
-                  }`}
-                >
-                  View Live
-                </a>
+                {project.liveLink && project.liveStatus !== "coming-soon" ? (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white rounded-lg transition-all duration-300 shadow-md ${
+                      activeCards[index] ? "bg-blue-600" : ""
+                    }`}
+                  >
+                    View Live
+                  </a>
+                ) : (
+                  <span className="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg cursor-not-allowed opacity-70 select-none pointer-events-none border border-gray-400 border-dashed flex items-center">
+                    <svg
+                      className="w-4 h-4 mr-1.5 text-gray-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Coming Soon
+                  </span>
+                )}
                 <a
                   href={project.githubLink}
                   target="_blank"
