@@ -14,7 +14,8 @@ import { FiSun } from "react-icons/fi";
 import { ThemeContext } from "../context/ThemeContext";
 
 export default function Header({ scrollTo }) {
-  const { theme, setTheme } = useContext(ThemeContext);
+  // Get both theme and actualTheme from context
+  const { theme, setTheme, actualTheme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [isMobileThemeMenuOpen, setIsMobileThemeMenuOpen] = useState(false);
@@ -94,16 +95,16 @@ export default function Header({ scrollTo }) {
 
   return (
     <motion.header
-      className="h-[72px] flex justify-center max-md:justify-between items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-2xl md:w-11/12 z-50 bg-white/70 dark:bg-slate-900/70 drop-shadow-md backdrop-blur-md md:rounded-full md:border md:border-gray-300 dark:md:border-gray-800 transition-colors duration-300 px-4"
+      className="h-[72px] flex justify-center max-md:justify-between items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-2xl md:w-11/12 z-50 drop-shadow-md backdrop-blur-md md:rounded-full md:border transition-colors duration-300 px-4 border-gray-300 dark:border-gray-800"
       initial={{ y: -150 }}
       animate={{
         y: 0,
         boxShadow: isScrolled ? "0 10px 30px rgba(0, 0, 0, 0.1)" : "none",
         backgroundColor: isScrolled
-          ? theme === "dark"
+          ? actualTheme === "dark"
             ? "rgba(15, 23, 42, 0.85)"
             : "rgba(255, 255, 255, 0.85)"
-          : theme === "dark"
+          : actualTheme === "dark"
           ? "rgba(15, 23, 42, 0.7)"
           : "rgba(255, 255, 255, 0.7)",
       }}
@@ -126,7 +127,7 @@ export default function Header({ scrollTo }) {
             onClick={() => setIsMobileThemeMenuOpen(!isMobileThemeMenuOpen)}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           >
-            {theme === "dark" ? (
+            {actualTheme === "dark" ? (
               <FiSun size={25} className="text-white" />
             ) : (
               <MdOutlineDarkMode size={25} />
@@ -201,7 +202,7 @@ export default function Header({ scrollTo }) {
               onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
               className="p-2 rounded-full dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             >
-              {theme === "dark" ? (
+              {actualTheme === "dark" ? (
                 <MdOutlineDarkMode size={22} />
               ) : (
                 <MdOutlineLightMode size={22} />

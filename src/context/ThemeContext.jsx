@@ -17,6 +17,18 @@ export function ThemeProvider({ children }) {
     return "system";
   });
 
+  // Add an actual theme state that we can update
+  const [actualTheme, setActualTheme] = useState(() => {
+    if (typeof window === "undefined") return "light";
+
+    if (theme === "system") {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    return theme;
+  });
+
   // Determines actual theme (accounts for system preference when theme='system')
   const getActualTheme = () => {
     if (typeof window === "undefined") return "light"; // default value for SSR
@@ -33,10 +45,13 @@ export function ThemeProvider({ children }) {
     if (typeof window === "undefined") return;
 
     const root = document.documentElement;
-    const actualTheme = getActualTheme();
+    const newActualTheme = getActualTheme();
+
+    // Update the state when the actual theme changes
+    setActualTheme(newActualTheme);
 
     // Toggle dark class on document root
-    root.classList.toggle("dark", actualTheme === "dark");
+    root.classList.toggle("dark", newActualTheme === "dark");
 
     // Persist theme preference in localStorage with unique key
     try {
@@ -49,6 +64,8 @@ export function ThemeProvider({ children }) {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleSystemThemeChange = (e) => {
       if (theme === "system") {
+        const systemTheme = e.matches ? "dark" : "light";
+        setActualTheme(systemTheme); // Update state when system theme changes
         root.classList.toggle("dark", e.matches);
       }
     };
@@ -73,7 +90,7 @@ export function ThemeProvider({ children }) {
         theme, // Current selected theme (light/dark/system)
         setTheme, // Function to set theme directly
         toggleTheme, // Function to cycle through themes
-        actualTheme: getActualTheme(), // Computed active theme (accounts for system)
+        actualTheme, // Use the state variable instead of calling the function
       }}
     >
       {children}
