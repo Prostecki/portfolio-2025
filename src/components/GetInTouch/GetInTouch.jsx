@@ -23,7 +23,7 @@ export default function GetInTouch() {
         Let's Connect
       </h1>
 
-      <div className="flex max-md:flex-col max-md:items-center gap-5 p-4 w-full max-w-[100vw] box-border">
+      <div className="flex max-md:flex-col max-md:items-center justify-center gap-5 p-4 w-full max-w-[100vw] box-border">
         <ContactInfo />
 
         <div className="md:w-1/2 w-full flex flex-col items-center px-0 md:px-4">

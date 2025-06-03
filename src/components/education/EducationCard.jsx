@@ -11,15 +11,18 @@ export default function EducationCard({
   delay,
 }) {
   const baseClasses =
-    "relative dark:bg-black/80 bg-slate-500/10 p-7 max-w-[28rem] rounded-2xl border border-black/10 dark:border-white/10 group hover:border-white/30 cursor-pointer duration-300";
+    "relative dark:bg-black/80 bg-slate-500/10 p-7 max-w-[28rem] rounded-2xl border border-black/10 dark:border-white/10 group hover:border-white/30 cursor-pointer";
   const positionClasses = position === "right" ? "md:ml-[2rem]" : "";
 
   return (
     <motion.div
       initial="hidden"
       whileInView="show"
-      whileHover={{ scale: 1.02 }}
       viewport={viewportOptions}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.3, ease: "easeOut" },
+      }}
       variants={{
         hidden: { opacity: 0, y: 60 },
         show: {

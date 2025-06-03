@@ -3,9 +3,9 @@ export default function Footer() {
     <footer className="w-full bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 border-t border-slate-200 dark:border-slate-700 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-evenly gap-4">
-          {/* Логотип или имя */}
+          {/* Logo or name */}
           <div className="flex items-center gap-2">
-            <span className="text-lg font-bold bg-gradient-to-r from-black to-black uppercase drop-shadow-2xl dark:from-slate-200 dark:via-blue-400 dark:to-blue-600/50 bg-clip-text text-transparent">
+            <span className="text-lg font-bold bg-gradient-to-r from-black to-black uppercase drop-shadow-2xl dark:from-slate-200 dark:via-blue-400 dark:to-blue-600/50 bg-clip-text text-transparent max-md:text-sm">
               Mark Taratynov
             </span>
           </div>

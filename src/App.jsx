@@ -53,7 +53,7 @@ function App() {
         <section ref={projectsRef}>
           <Projects />
         </section>
-        <section ref={getInTouchRef}>
+        <section ref={getInTouchRef} className="w-full">
           <GetInTouch />
         </section>
       </main>

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { fadeInUp, viewportOptions } from "../utils/animations";
 
 export default function Home({ scrollTo }) {
-  const { theme } = useContext(ThemeContext);
+  const { actualTheme } = useContext(ThemeContext);
 
   const scrollToSection = (ref) => {
     if (ref?.current) {
@@ -39,13 +39,13 @@ export default function Home({ scrollTo }) {
             className="absolute inset-0 rounded-full pointer-events-none"
             initial={{
               boxShadow:
-                theme === "dark"
+                actualTheme === "dark"
                   ? "0 0 110px rgba(96, 165, 250, 0.7)"
                   : "0 0 110px rgba(100, 116, 139, 0.6)",
             }}
             animate={{
               boxShadow:
-                theme === "dark"
+                actualTheme === "dark"
                   ? [
                       "0 0 110px rgba(96, 165, 250, 0.7)",
                       "0 0 120px rgba(147, 197, 253, 1)",
@@ -57,6 +57,13 @@ export default function Home({ scrollTo }) {
                       "0 0 110px rgba(100, 116, 139, 0.6)",
                     ],
             }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+            style={{ willChange: "box-shadow" }}
           />
           <img
             src="/images/me.jpeg"
@@ -120,11 +127,11 @@ export default function Home({ scrollTo }) {
             variants={fadeInUp}
             href="https://taratynov-cv-page.vercel.app/"
             target="_blank"
-            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer border border-black/40 hover:border-black/60 hover:shadow-md duration-300 dark:text-white dark:border-white/40"
+            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer border border-black/40 hover:border-black/60 hover:shadow-md dark:text-white dark:border-white/40"
           >
             Link to CV
             <IoIosArrowRoundBack
-              style={{ color: theme === "dark" ? "white" : "black" }}
+              style={{ color: actualTheme === "dark" ? "white" : "black" }}
               size={30}
               className="arrow-shake"
             />
@@ -134,7 +141,7 @@ export default function Home({ scrollTo }) {
             custom={7}
             variants={fadeInUp}
             onClick={() => scrollToSection(scrollTo.getInTouchRef)}
-            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer border border-black/40 hover:border-black/60 hover:shadow-md duration-300 bg-blue-200/80 dark:bg-blue-600/95 dark:text-white"
+            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer border border-black/40 hover:border-black/60 hover:shadow-md -300 bg-blue-200/80 dark:bg-blue-600/95 dark:text-white"
           >
             Contact me!
           </motion.button>
