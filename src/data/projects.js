@@ -1,5 +1,19 @@
 export const projects = [
   {
+    name: "Pokémon App",
+    description:
+      "A comprehensive React application for exploring Pokémon data with interactive features: Browse Pokémon, view detailed stats, check evolution chains, and more.",
+    image: "images/pokemon-bg.jpg",
+    tools: [
+      { name: "React.js", image: "images/react.webp" },
+      { name: "JavaScript", image: "images/javascript.webp" },
+      { name: "tailwind.css", image: "images/css.png" },
+      { name: "Framer Motion", image: "images/motion-icon.png" },
+    ],
+    liveLink: "https://pokemonsmania-app.vercel.app/",
+    githubLink: "https://github.com/Prostecki/pokemon-app",
+  },
+  {
     name: "Hakim Livs",
     description:
       "Hakim Livs Webshop is a full-stack e-commerce application built by modern concepts and technologies with user authentication through JWT auth",
