@@ -48,6 +48,7 @@ export function LanguageProvider({ children }) {
   const availableLanguages = [
     { code: "en", name: "English", flag: "🇺🇸" },
     { code: "sv", name: "Svenska", flag: "🇸🇪" },
+    { code: "ru", name: "Русский", flag: "🇷🇺" },
   ];
 
   const value = {
