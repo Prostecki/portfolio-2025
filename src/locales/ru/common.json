@@ -9,10 +9,10 @@
   },
   "home": {
     "sectionLabel": "Добро пожаловать в мое портфолио",
-    "status": "Рассматриваю предложения",
+    "status": "Открыт к предложениям",
     "greeting": "Привет, я",
     "name": "Марк Таратынов",
-    "title": "Я создаю и наслаждаюсь вещами для веба.",
+    "title": "Я увлечён созданием качественных и функциональных решений для веба.",
     "description": "Я фулстек-разработчик, который любит создавать веб-приложения, которые одновременно полезны и просты в использовании. Мой путь начался с любопытства и развился благодаря постоянной практике. Я фокусируюсь на изучении современных технологий и применении их в реальных проектах шаг за шагом.",
     "downloadCV": "Ссылка на CV",
     "getInTouch": "Связаться со мной!"
@@ -63,28 +63,28 @@
     "workData": {
       "deliveryDriver": {
         "title": "Специалист по доставке",
-        "period": "Май 2024 - Настоящее время",
+        "period": "Май 2024 - Сейчас",
         "location": "ICA Brunna, Стокгольм",
-        "skills": "Управление временем, Коммуникация, Решение проблем, GPS, Шведский, Английский"
+        "skills": "Тайм Менеджмент, Коммуникация, Решение проблем, GPS, Шведский, Английский"
       },
       "webDevFreelancer": {
         "title": "Веб-разработчик фрилансер",
-        "period": "Сен 2023 - Настоящее время",
+        "period": "Сент 2023 - Сейчас",
         "location": "Самозанятый, Удаленно",
-        "skills": "HTML, CSS, JavaScript, React.js, Tailwind.CSS"
+        "skills": "HTML, CSS, JavaScript, React.js, Tailwind.CSS, Node.js, Express.js, MongoDB, PostgreSQL"
       },
       "webDevelopmentIntern": {
         "title": "Стажёр веб-разработчик",
         "period": "Окт 2022 - Март 2023",
         "location": "Nordic IT School, Москва",
-        "skills": "HTML, CSS, JavaScript, PHP, MySQL, Docker, GO"
+        "skills": "HTML, CSS, JavaScript, PHP, MySQL, Docker, Vue.js"
       }
     },
     "educationData": {
       "fullstackDeveloper": {
         "title": "Фулстек-разработчик, open source",
         "institution": "Nackademin, Стокгольм",
-        "period": "Авг 2024 - Настоящее время"
+        "period": "Авг 2024 - Сейчас"
       },
       "municipalAdultEducation": {
         "title": "Муниципальное образование для взрослых",
@@ -110,8 +110,8 @@
     "title": "Проекты",
     "subtitle": "Вот некоторые из проектов, над которыми я работал.",
     "viewProject": "Посмотреть проект",
-    "sourceCode": "Исходный код",
-    "liveDemo": "Живая демо",
+    "sourceCode": "Репозиторий",
+    "liveDemo": "Демо",
     "data": {
       "pokemon": {
         "name": "Pokémon приложение",
