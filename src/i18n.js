@@ -53,8 +53,8 @@ i18n
       escapeValue: false, // React already protects against XSS
     },
 
-    // Debug mode for development
-    debug: process.env.NODE_ENV === "development",
+    // Debug mode for development (disabled to reduce console noise)
+    debug: false,
   });
 
 export default i18n;
