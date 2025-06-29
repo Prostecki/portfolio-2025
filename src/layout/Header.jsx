@@ -106,7 +106,7 @@ export default function Header({ scrollTo }) {
 
   return (
     <motion.header
-      className="h-[72px] flex justify-center max-md:justify-between items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-2xl md:w-11/12 z-50 drop-shadow-md backdrop-blur-md md:rounded-full md:border transition-colors duration-300 px-4 border-gray-300 dark:border-gray-800"
+      className="h-[72px] flex justify-center max-md:justify-between items-center fixed md:top-5 left-0 right-0 mx-auto w-full md:max-w-3xl md:w-11/12 z-50 drop-shadow-md backdrop-blur-md md:rounded-full md:border transition-colors duration-300 px-4 border-gray-300 dark:border-gray-800"
       initial={{ y: -150 }}
       animate={{
         y: 0,
