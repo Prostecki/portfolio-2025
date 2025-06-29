@@ -59,7 +59,51 @@
     "workSubtitle": "Here's a summary of my professional journey.",
     "educationTitle": "Education",
     "educationSubtitle": "My academic background and continuous learning journey.",
-    "skills": "Skills"
+    "skills": "Skills",
+    "workData": {
+      "deliveryDriver": {
+        "title": "Delivery Driver",
+        "period": "May 2024 - Present",
+        "location": "ICA Brunna, Stockholm",
+        "skills": "Time Management, Communication, Problem Solving, GPS, Swedish, English"
+      },
+      "webDevFreelancer": {
+        "title": "Web Dev Freelancer",
+        "period": "Sep 2023 - Present",
+        "location": "Self-Employed, Remote",
+        "skills": "HTML, CSS, JavaScript, React.js, Tailwind.CSS"
+      },
+      "webDevelopmentIntern": {
+        "title": "Web Development Intern",
+        "period": "Oct 2022 - March 2023",
+        "location": "Nordic IT School, Moscow",
+        "skills": "HTML, CSS, JavaScript, PHP, MySQL, Docker, GO"
+      }
+    },
+    "educationData": {
+      "fullstackDeveloper": {
+        "title": "Fullstack Developer, open source",
+        "institution": "Nackademin, Stockholm",
+        "period": "Aug 2024 - Present"
+      },
+      "municipalAdultEducation": {
+        "title": "Municipal Adult Education",
+        "institution": "Solna KomVux, Stockholm",
+        "period": "Oct 2022 - April 2024",
+        "courses": ["Swedish", "English"]
+      },
+      "javascriptCourse": {
+        "title": "The Complete JavaScript Course 2025: From Zero to Expert!",
+        "institution": "Udemy, Inc",
+        "period": "Sep 2024 - Jan 2025",
+        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Modern Web Development"
+      },
+      "bachelorAthletics": {
+        "title": "Bachelor's degree in Athletics",
+        "institution": "Lesgaft National State University, Russia",
+        "period": "Sep 2014 - May 2018"
+      }
+    }
   },
   "projects": {
     "sectionLabel": "Projects",

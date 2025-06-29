@@ -59,7 +59,51 @@
     "workSubtitle": "Här är en sammanfattning av min professionella resa.",
     "educationTitle": "Utbildning",
     "educationSubtitle": "Min akademiska bakgrund och kontinuerliga inlärningsresa.",
-    "skills": "Färdigheter"
+    "skills": "Färdigheter",
+    "workData": {
+      "deliveryDriver": {
+        "title": "Budchaufför",
+        "period": "Maj 2024 - Nuvarande",
+        "location": "ICA Brunna, Stockholm",
+        "skills": "Tidshantering, Kommunikation, Problemlösning, GPS, Svenska, Engelska"
+      },
+      "webDevFreelancer": {
+        "title": "Webbutvecklare frilansare",
+        "period": "Sep 2023 - Nuvarande",
+        "location": "Egenföretagare, Distans",
+        "skills": "HTML, CSS, JavaScript, React.js, Tailwind.CSS"
+      },
+      "webDevelopmentIntern": {
+        "title": "Webbutvecklingspraktikant",
+        "period": "Okt 2022 - Mars 2023",
+        "location": "Nordic IT School, Moskva",
+        "skills": "HTML, CSS, JavaScript, PHP, MySQL, Docker, GO"
+      }
+    },
+    "educationData": {
+      "fullstackDeveloper": {
+        "title": "Fullstack-utvecklare, öppen källkod",
+        "institution": "Nackademin, Stockholm",
+        "period": "Aug 2024 - Nuvarande"
+      },
+      "municipalAdultEducation": {
+        "title": "Kommunal vuxenutbildning",
+        "institution": "Solna KomVux, Stockholm",
+        "period": "Okt 2022 - April 2024",
+        "courses": ["Svenska", "Engelska"]
+      },
+      "javascriptCourse": {
+        "title": "Den kompletta JavaScript-kursen 2025: Från noll till expert!",
+        "institution": "Udemy, Inc",
+        "period": "Sep 2024 - Jan 2025",
+        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Modern webbutveckling"
+      },
+      "bachelorAthletics": {
+        "title": "Kandidatexamen i idrott",
+        "institution": "Lesgaft Statliga Universitet, Ryssland",
+        "period": "Sep 2014 - Maj 2018"
+      }
+    }
   },
   "projects": {
     "sectionLabel": "Projekt",

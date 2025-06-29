@@ -59,7 +59,51 @@
     "workSubtitle": "Вот краткое изложение моего профессионального пути.",
     "educationTitle": "Образование",
     "educationSubtitle": "Мое академическое образование и путь непрерывного обучения.",
-    "skills": "Навыки"
+    "skills": "Навыки",
+    "workData": {
+      "deliveryDriver": {
+        "title": "Специалист по доставке",
+        "period": "Май 2024 - Настоящее время",
+        "location": "ICA Brunna, Стокгольм",
+        "skills": "Управление временем, Коммуникация, Решение проблем, GPS, Шведский, Английский"
+      },
+      "webDevFreelancer": {
+        "title": "Веб-разработчик фрилансер",
+        "period": "Сен 2023 - Настоящее время",
+        "location": "Самозанятый, Удаленно",
+        "skills": "HTML, CSS, JavaScript, React.js, Tailwind.CSS"
+      },
+      "webDevelopmentIntern": {
+        "title": "Стажёр веб-разработчик",
+        "period": "Окт 2022 - Март 2023",
+        "location": "Nordic IT School, Москва",
+        "skills": "HTML, CSS, JavaScript, PHP, MySQL, Docker, GO"
+      }
+    },
+    "educationData": {
+      "fullstackDeveloper": {
+        "title": "Фулстек-разработчик, open source",
+        "institution": "Nackademin, Стокгольм",
+        "period": "Авг 2024 - Настоящее время"
+      },
+      "municipalAdultEducation": {
+        "title": "Муниципальное образование для взрослых",
+        "institution": "Solna KomVux, Стокгольм",
+        "period": "Окт 2022 - Апр 2024",
+        "courses": ["Шведский", "Английский"]
+      },
+      "javascriptCourse": {
+        "title": "Полный курс JavaScript 2025: От нуля до эксперта!",
+        "institution": "Udemy, Inc",
+        "period": "Сен 2024 - Янв 2025",
+        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Современная веб-разработка"
+      },
+      "bachelorAthletics": {
+        "title": "Бакалавр в области физической культуры и спорта",
+        "institution": "Государственный университет им. Лесгафта, Россия",
+        "period": "Сен 2014 - Май 2018"
+      }
+    }
   },
   "projects": {
     "sectionLabel": "Проекты",

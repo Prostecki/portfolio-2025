@@ -4,10 +4,10 @@ import { viewportOptions } from "../../utils/animations";
 import { useTranslation } from "react-i18next";
 
 const WorkExperience = ({
-  title,
-  period,
-  location,
-  skills,
+  titleKey,
+  periodKey,
+  locationKey,
+  skillsKey,
   delay,
   isRight,
 }) => {
@@ -46,16 +46,16 @@ const WorkExperience = ({
           } rounded-2xl border border-black/10 dark:border-white/10 group-hover:border-white/30`}
         >
           <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">
-            {title}
+            {t(titleKey)}
           </h3>
           <div className="md:flex justify-start items-center gap-2">
             <div className="flex items-center gap-2">
               <IoCalendarOutline className="dark:text-blue-500 text-black text-xl" />
-              <p className="text-gray-500 text-sm">{period}</p>
+              <p className="text-gray-500 text-sm">{t(periodKey)}</p>
             </div>
             <div className="flex items-center gap-2">
               <IoLocationOutline className="dark:text-blue-500 text-black text-xl" />
-              <p className="text-gray-500 text-sm">{location}</p>
+              <p className="text-gray-500 text-sm">{t(locationKey)}</p>
             </div>
           </div>
           <div className="dark:text-white text-black/50 text-sm mt-2">
@@ -63,7 +63,7 @@ const WorkExperience = ({
               <span className="dark:text-slate-400 text-slate-800 uppercase tracking-wide">
                 {t("experience.skills")}:{" "}
               </span>
-              {skills}
+              {t(skillsKey)}
             </p>
           </div>
         </div>
