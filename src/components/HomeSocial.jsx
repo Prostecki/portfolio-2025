@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 export default function HomeSocial() {
   const [hovered, setHovered] = useState(null);
-  const { theme } = useContext(ThemeContext);
+  const { actualTheme } = useContext(ThemeContext);
   const icons = [
     {
       id: "github",
@@ -17,7 +17,7 @@ export default function HomeSocial() {
         <FaGithub
           className="drop-shadow-xl"
           size={25}
-          style={{ color: theme === "dark" ? "white" : "black" }}
+          style={{ color: actualTheme === "dark" ? "white" : "black" }}
         />
       ),
       label: "GitHub",
@@ -29,7 +29,10 @@ export default function HomeSocial() {
         <FaLinkedin
           className="drop-shadow-lg"
           size={25}
-          style={{ color: theme === "dark" ? "white" : "black", cursor: "pointer" }}
+          style={{
+            color: actualTheme === "dark" ? "white" : "black",
+            cursor: "pointer",
+          }}
         />
       ),
       label: "LinkedIn",
@@ -41,7 +44,10 @@ export default function HomeSocial() {
         <FaTwitter
           className="drop-shadow-lg"
           size={25}
-          style={{ color: theme === "dark" ? "white" : "black", cursor: "pointer" }}
+          style={{
+            color: actualTheme === "dark" ? "white" : "black",
+            cursor: "pointer",
+          }}
         />
       ),
       label: "Twitter",
@@ -53,7 +59,10 @@ export default function HomeSocial() {
         <RiTelegram2Line
           className="drop-shadow-lg"
           size={25}
-          style={{ color: theme === "dark" ? "white" : "black", cursor: "pointer" }}
+          style={{
+            color: actualTheme === "dark" ? "white" : "black",
+            cursor: "pointer",
+          }}
         />
       ),
       label: "Telegram",
