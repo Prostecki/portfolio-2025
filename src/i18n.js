@@ -20,14 +20,14 @@ const resources = {
 };
 
 i18n
-  .use(LanguageDetector) // Автоматическое определение языка
-  .use(initReactI18next) // Интеграция с React
+  .use(LanguageDetector) // Automatic language detection
+  .use(initReactI18next) // React integration
   .init({
     resources,
-    fallbackLng: "en", // Язык по умолчанию
-    defaultNS: "common", // Namespace по умолчанию
+    fallbackLng: "en", // Default language
+    defaultNS: "common", // Default namespace
 
-    // Настройки определения языка
+    // Language detection settings
     detection: {
       order: ["localStorage", "navigator", "htmlTag"],
       caches: ["localStorage"],
@@ -35,10 +35,10 @@ i18n
     },
 
     interpolation: {
-      escapeValue: false, // React уже защищает от XSS
+      escapeValue: false, // React already protects against XSS
     },
 
-    // Debug режим для разработки
+    // Debug mode for development
     debug: process.env.NODE_ENV === "development",
   });
 

@@ -96,7 +96,7 @@ export default function Home({ scrollTo }) {
             <span className="absolute w-3 h-3 dark:bg-blue-500 bg-green-500 rounded-full"></span>
           </span>
           <p className="dark:text-white text-slate-800 text-center">
-            Open to work
+            {t("home.status")}
           </p>
         </motion.div>
 
