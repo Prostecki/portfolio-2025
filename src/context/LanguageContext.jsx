@@ -31,6 +31,21 @@ export function LanguageProvider({ children }) {
     }
   };
 
+  // Функция для сброса языка на английский
+  const resetLanguage = async () => {
+    try {
+      // Очищаем localStorage
+      if (typeof window !== "undefined") {
+        localStorage.removeItem(LANGUAGE_STORAGE_KEY);
+      }
+      // Устанавливаем английский
+      await i18n.changeLanguage("en");
+      setLanguage("en");
+    } catch (error) {
+      console.error("Error resetting language:", error);
+    }
+  };
+
   // Синхронизируем состояние с i18n при изменении языка
   useEffect(() => {
     const handleLanguageChange = (lng) => {
@@ -54,6 +69,7 @@ export function LanguageProvider({ children }) {
   const value = {
     language,
     changeLanguage,
+    resetLanguage,
     availableLanguages,
     isLoading: !i18n.isInitialized,
   };

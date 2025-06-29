@@ -32,7 +32,22 @@ i18n
       order: ["localStorage", "navigator", "htmlTag"],
       caches: ["localStorage"],
       lookupLocalStorage: "portfolio2025_language",
+      // Only detect languages that we actually support
+      checkWhitelist: true,
+      // Convert language codes like 'en-US' to 'en'
+      convertDetectedLanguage: (lng) => {
+        const supportedLanguages = ["en", "sv", "ru"];
+        // Extract the base language code (e.g., 'en' from 'en-US')
+        const baseLang = lng.split("-")[0];
+        // Return the base language if it's supported, otherwise fallback to English
+        return supportedLanguages.includes(baseLang) ? baseLang : "en";
+      },
     },
+
+    // Whitelist of supported languages
+    supportedLngs: ["en", "sv", "ru"],
+    // Don't use language detector for unsupported languages
+    nonExplicitSupportedLngs: false,
 
     interpolation: {
       escapeValue: false, // React already protects against XSS
