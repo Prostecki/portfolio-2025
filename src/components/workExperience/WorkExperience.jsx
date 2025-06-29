@@ -1,6 +1,7 @@
 import { IoCalendarOutline, IoLocationOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { viewportOptions } from "../../utils/animations";
+import { useTranslation } from "react-i18next";
 
 const WorkExperience = ({
   title,
@@ -10,6 +11,8 @@ const WorkExperience = ({
   delay,
   isRight,
 }) => {
+  const { t } = useTranslation("common");
+
   return (
     <motion.div
       initial="hidden"
@@ -58,7 +61,7 @@ const WorkExperience = ({
           <div className="dark:text-white text-black/50 text-sm mt-2">
             <p>
               <span className="dark:text-slate-400 text-slate-800 uppercase tracking-wide">
-                Skills:{" "}
+                {t("experience.skills")}:{" "}
               </span>
               {skills}
             </p>

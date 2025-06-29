@@ -8,9 +8,11 @@ import {
   staggerContainer,
   viewportOptions,
 } from "../../utils/animations";
+import { useTranslation } from "react-i18next";
 
 export default function TechStack() {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation("common");
 
   // Group icons by category
   const iconsByCategory = React.useMemo(() => {
@@ -21,6 +23,20 @@ export default function TechStack() {
       return acc;
     }, {});
   }, []);
+
+  // Function to get translated category label
+  const getCategoryLabel = (categoryId) => {
+    switch (categoryId) {
+      case "Frontend":
+        return t("techStack.frontend");
+      case "Backend":
+        return t("techStack.backend");
+      case "Tools":
+        return t("techStack.tools");
+      default:
+        return categoryId;
+    }
+  };
 
   // Map categories to their order class
   const getCategoryOrder = (categoryLabel) => {
@@ -45,7 +61,7 @@ export default function TechStack() {
         custom={0}
         viewport={viewportOptions}
       >
-        Tech Stack
+        {t("techStack.sectionLabel")}
       </motion.span>
 
       <motion.h2
@@ -56,7 +72,7 @@ export default function TechStack() {
         custom={1}
         viewport={viewportOptions}
       >
-        My Tech Stack
+        {t("techStack.title")}
       </motion.h2>
 
       <motion.p
@@ -67,9 +83,7 @@ export default function TechStack() {
         custom={2}
         viewport={viewportOptions}
       >
-        Here's a collection of technologies I've been working with across
-        frontend, backend, and development tools. Each of them plays a role in
-        how I build, test, and ship modern web applications.
+        {t("techStack.subtitle")}
       </motion.p>
 
       {/* Tech stack categories */}
@@ -84,7 +98,7 @@ export default function TechStack() {
           {categories.map((category, index) => (
             <TechStackSection
               key={index}
-              title={category.label}
+              title={getCategoryLabel(category.id)}
               icons={iconsByCategory[category.id]}
               theme={theme}
               order={getCategoryOrder(category.label)}

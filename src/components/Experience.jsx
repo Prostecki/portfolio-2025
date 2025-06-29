@@ -5,10 +5,11 @@ import Work from "./workExperience/Work";
 import { forwardRef, useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeContext } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const Experience = forwardRef((props, ref) => {
   const [activeSection, setActiveSection] = useState("work");
-
+  const { t } = useTranslation("common");
   const { theme } = useContext(ThemeContext);
 
   const handleWork = () => {
@@ -26,7 +27,7 @@ const Experience = forwardRef((props, ref) => {
       id="experience"
     >
       <span className="inline-block py-1 px-3 rounded-full text-xs font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 drop-shadow-2xl text-slate-800 mb-4">
-        My Story
+        {t("experience.sectionLabel")}
       </span>
 
       <div className="flex flex-col items-center">
@@ -45,7 +46,7 @@ const Experience = forwardRef((props, ref) => {
                   : "text-gray-400 hover:text-blue-500"
               } duration-300 cursor-pointer`}
             >
-              Work
+              {t("experience.work")}
             </button>
           </div>
           <div className="flex items-center gap-2">
@@ -62,7 +63,7 @@ const Experience = forwardRef((props, ref) => {
                   : "text-gray-500 hover:text-blue-500"
               } duration-300 cursor-pointer`}
             >
-              Education
+              {t("experience.education")}
             </button>
           </div>
         </div>

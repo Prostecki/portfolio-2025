@@ -1,13 +1,15 @@
 // components/contact/ContactInfo.jsx
 import { Mail, MapPin } from "lucide-react";
 import HomeSocial from "../HomeSocial";
+import { useTranslation } from "react-i18next";
 
 export default function ContactInfo() {
+  const { t } = useTranslation("common");
+
   return (
     <div className="flex flex-col items-start max-md:items-center justify-center max-h-[30rem] w-full max-w-[20rem]">
       <h2 className="mb-10 mt-4 text-lg md:text-xl max-md:text-center text-start font-light text-black/60 max-w-2xl mx-auto dark:text-slate-400">
-        Have a project in mind or just want to say hello? I'm always open to new
-        ideas and collaborations.
+        {t("contact.subtitle")}
       </h2>
       <div className="flex flex-col max-md:gap-8 items-start gap-3 justify-center max-w-[20rem]">
         <address>
@@ -20,7 +22,7 @@ export default function ContactInfo() {
                 style={{ fontStyle: "normal" }}
                 className="text-xl font-bold dark:text-white/80 text-black/80"
               >
-                Email
+                {t("contact.info.email")}
               </h1>
               <h2
                 style={{ fontStyle: "normal" }}
@@ -37,10 +39,10 @@ export default function ContactInfo() {
           </div>
           <div>
             <h1 className="text-xl font-bold dark:text-white/80 text-black/80">
-              Location
+              {t("contact.info.location")}
             </h1>
             <h2 className="text-lg text-black/80 dark:text-white/80">
-              Stockholm, Sweden
+              {t("contact.info.locationValue")}
             </h2>
           </div>
         </div>

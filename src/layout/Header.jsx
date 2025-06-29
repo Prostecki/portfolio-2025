@@ -12,10 +12,13 @@ import {
 } from "react-icons/md";
 import { FiSun } from "react-icons/fi";
 import { ThemeContext } from "../context/ThemeContext";
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export default function Header({ scrollTo }) {
   // Get both theme and actualTheme from context
   const { theme, setTheme, actualTheme } = useContext(ThemeContext);
+  const { t } = useTranslation("common");
   const [isOpen, setIsOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [isMobileThemeMenuOpen, setIsMobileThemeMenuOpen] = useState(false);
@@ -44,19 +47,27 @@ export default function Header({ scrollTo }) {
   };
 
   const menuItems = [
-    { label: "Home", ref: scrollTo.homeRef },
-    { label: "About", ref: scrollTo.aboutRef },
-    { label: "Experience", ref: scrollTo.experienceRef },
-    { label: "Skills", ref: scrollTo.techStackRef },
-    { label: "Projects", ref: scrollTo.projectsRef },
-    { label: "Get In Touch", ref: scrollTo.getInTouchRef },
+    { label: t("navigation.home"), ref: scrollTo.homeRef },
+    { label: t("navigation.about"), ref: scrollTo.aboutRef },
+    { label: t("navigation.experience"), ref: scrollTo.experienceRef },
+    { label: t("navigation.skills"), ref: scrollTo.techStackRef },
+    { label: t("navigation.projects"), ref: scrollTo.projectsRef },
+    { label: t("navigation.contact"), ref: scrollTo.getInTouchRef },
   ];
 
   const themeOptions = [
-    { label: "Light", value: "light", icon: <MdOutlineLightMode size={18} /> },
-    { label: "Dark", value: "dark", icon: <MdOutlineDarkMode size={18} /> },
     {
-      label: "System",
+      label: t("theme.light"),
+      value: "light",
+      icon: <MdOutlineLightMode size={18} />,
+    },
+    {
+      label: t("theme.dark"),
+      value: "dark",
+      icon: <MdOutlineDarkMode size={18} />,
+    },
+    {
+      label: t("theme.system"),
       value: "system",
       icon: <MdOutlineSettingsBrightness size={18} />,
     },
@@ -119,8 +130,13 @@ export default function Header({ scrollTo }) {
         />
       </div>
 
-      {/* right part: theme buttons and menu */}
-      <div className="flex items-center gap-4">
+      {/* right part: theme buttons, language switcher and menu */}
+      <div className="flex items-center gap-2">
+        {/* language switcher (mobile version) */}
+        <div className="md:hidden">
+          <LanguageSwitcher />
+        </div>
+
         {/* theme button (mobile version) */}
         <div className="md:hidden relative" ref={mobileThemeMenuRef}>
           <button
@@ -185,7 +201,7 @@ export default function Header({ scrollTo }) {
           ></span>
         </button>
 
-        {/* Desktop menu (navigation + theme) */}
+        {/* Desktop menu (navigation + theme + language) */}
         <nav className="max-md:hidden flex gap-6 items-center">
           {menuItems.map(({ label, ref }) => (
             <a
@@ -196,6 +212,10 @@ export default function Header({ scrollTo }) {
               {label}
             </a>
           ))}
+
+          {/* language switcher (desktop version) */}
+          <LanguageSwitcher />
+
           {/* theme button (desktop version) */}
           <div className="relative" ref={themeMenuRef}>
             <button

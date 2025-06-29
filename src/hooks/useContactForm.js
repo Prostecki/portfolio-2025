@@ -1,7 +1,9 @@
 // hooks/useContactForm.js
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const useContactForm = () => {
+  const { t } = useTranslation("common");
   const [isSuccess, setIsSuccess] = useState(false);
   const [messageError, setMessageError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +33,7 @@ export const useContactForm = () => {
       formValues.message.length > 500 ||
       !emailRegex.test(formValues.email)
     ) {
-      setMessageError("Please fill in the fields properly and try again.");
+      setMessageError(t("contact.form.error"));
       setIsSubmitting(false);
       return;
     }
@@ -56,7 +58,7 @@ export const useContactForm = () => {
       setFormValues({ name: "", email: "", message: "" });
     } catch (error) {
       console.error(`Error, ${error}`);
-      setMessageError("Something went wrong. Please, try again");
+      setMessageError(t("contact.form.errorGeneral"));
     } finally {
       setIsSubmitting(false);
     }

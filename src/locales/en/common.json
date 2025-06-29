@@ -1,0 +1,88 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Get In Touch"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "name": "Mark Taratynov",
+    "title": "I build and enjoy things for the web.",
+    "description": "I'm a fullstack developer who enjoys building web applications that are both useful and easy to use. My journey started with curiosity and grew through consistent practice. I focus on learning modern technologies and applying them in real projects step by step.",
+    "downloadCV": "Link to CV",
+    "getInTouch": "Contact me!"
+  },
+  "about": {
+    "sectionLabel": "About",
+    "title": "About Me",
+    "description": "Since my childhood, I've been eager to solve problems. When I got my first PC with an AMD Duron 700MHz processor, if I remember correctly, something went wrong. Without the internet, I managed to fix it on my own by delving into the BIOS and installing different drivers, and I was just 10 y.o. I'm highly motivated by a growth mindset, always looking for opportunities to learn, improve, and contribute.",
+    "principle": "My principle in life is:",
+    "principleQuote": "Patience and diligent effort are the keys to personal development and progress.",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "technologies": "Technologies Mastered"
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Have a project in mind or just want to say hello? I'm always open to new ideas and collaborations.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your.email@example.com",
+      "messagePlaceholder": "Tell me about your project or just say hello...",
+      "sendButton": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Message sent successfully!",
+      "error": "Please fill in the fields properly and try again.",
+      "errorGeneral": "Something went wrong. Please, try again"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "locationValue": "Stockholm, Sweden"
+    }
+  },
+  "experience": {
+    "sectionLabel": "My Story",
+    "work": "Work",
+    "education": "Education",
+    "workTitle": "Work Experience",
+    "workSubtitle": "Here's a summary of my professional journey.",
+    "educationTitle": "Education",
+    "educationSubtitle": "My academic background and continuous learning journey.",
+    "skills": "Skills"
+  },
+  "projects": {
+    "sectionLabel": "Projects",
+    "title": "Projects",
+    "subtitle": "Here are some of the projects I've worked on.",
+    "viewProject": "View Project",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo"
+  },
+  "techStack": {
+    "sectionLabel": "Tech Stack",
+    "title": "My Tech Stack",
+    "subtitle": "Here's a collection of technologies I've been working with across frontend, backend, and development tools. Each of them plays a role in how I build, test, and ship modern web applications.",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "tools": "Tools and Technologies"
+  },
+  "buttons": {
+    "downloadCV": "Download CV",
+    "learnMore": "Learn More",
+    "viewAll": "View All"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

@@ -9,8 +9,10 @@ import {
   viewportOptions,
   projectCardVariants,
 } from "../../utils/animations";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+  const { t } = useTranslation("common");
   const [activeCards, setActiveCards] = useState(
     Array(projects.length).fill(false)
   );
@@ -42,7 +44,7 @@ export default function Projects() {
         custom={0}
         viewport={viewportOptions}
       >
-        Projects
+        {t("projects.sectionLabel")}
       </motion.span>
 
       <motion.h2
@@ -53,7 +55,7 @@ export default function Projects() {
         custom={1}
         viewport={viewportOptions}
       >
-        Projects
+        {t("projects.title")}
       </motion.h2>
 
       <motion.p
@@ -64,7 +66,7 @@ export default function Projects() {
         custom={2}
         viewport={viewportOptions}
       >
-        Here are some of the projects I've worked on.
+        {t("projects.subtitle")}
       </motion.p>
 
       <motion.div

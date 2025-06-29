@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { ThemeContext } from "../context/ThemeContext";
 import { useContext } from "react";
 import { fadeInUp, viewportOptions } from "../utils/animations";
+import { useTranslation } from "react-i18next";
 
 export default function Home({ scrollTo }) {
   const { actualTheme } = useContext(ThemeContext);
+  const { t } = useTranslation("common");
 
   const scrollToSection = (ref) => {
     if (ref?.current) {
@@ -81,7 +83,7 @@ export default function Home({ scrollTo }) {
           }}
           className="text-4xl max-sm:text-2xl font-bold tracking-tight text-slate-900 dark:bg-gradient-to-r dark:from-white dark:to-blue-200 dark:text-transparent dark:bg-clip-text text-center"
         >
-          Mark Taratynov
+          {t("home.name")}
         </motion.h1>
 
         <motion.div
@@ -103,7 +105,7 @@ export default function Home({ scrollTo }) {
           variants={fadeInUp}
           className="text-2xl dark:bg-gradient-to-r dark:from-white dark:to-gray-400 dark:text-transparent dark:bg-clip-text font-bold text-balance text-center text-slate-800/80"
         >
-          I build and enjoy things for the web.
+          {t("home.title")}
         </motion.h2>
 
         <motion.p
@@ -111,10 +113,7 @@ export default function Home({ scrollTo }) {
           variants={fadeInUp}
           className="text-balance dark:text-slate-100 text-black/90 text-center"
         >
-          I'm a fullstack developer who enjoys building web applications that
-          are both useful and easy to use. My journey started with curiosity and
-          grew through consistent practice. I focus on learning modern
-          technologies and applying them in real projects step by step.
+          {t("home.description")}
         </motion.p>
 
         <motion.div
@@ -129,7 +128,7 @@ export default function Home({ scrollTo }) {
             target="_blank"
             className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer border border-black/40 hover:border-black/60 hover:shadow-md dark:text-white dark:border-white/40"
           >
-            Link to CV
+            {t("buttons.downloadCV")}
             <IoIosArrowRoundBack
               style={{ color: actualTheme === "dark" ? "white" : "black" }}
               size={30}
@@ -143,7 +142,7 @@ export default function Home({ scrollTo }) {
             onClick={() => scrollToSection(scrollTo.getInTouchRef)}
             className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer border border-black/40 hover:border-black/60 hover:shadow-md -300 bg-blue-200/80 dark:bg-blue-600/95 dark:text-white"
           >
-            Contact me!
+            {t("home.getInTouch")}
           </motion.button>
         </motion.div>
       </motion.div>

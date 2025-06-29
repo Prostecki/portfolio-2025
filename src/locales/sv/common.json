@@ -1,0 +1,88 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "about": "Om mig",
+    "experience": "Erfarenhet",
+    "skills": "Färdigheter",
+    "projects": "Projekt",
+    "contact": "Kontakta mig"
+  },
+  "home": {
+    "greeting": "Hej, jag är",
+    "name": "Mark Taratynov",
+    "title": "Jag bygger och njuter av saker för webben.",
+    "description": "Jag är en fullstack-utvecklare som gillar att bygga webbapplikationer som är både användbara och lätta att använda. Min resa började med nyfikenhet och växte genom konsekvent övning. Jag fokuserar på att lära mig moderna teknologier och tillämpa dem i verkliga projekt steg för steg.",
+    "downloadCV": "Länk till CV",
+    "getInTouch": "Kontakta mig!"
+  },
+  "about": {
+    "sectionLabel": "Om mig",
+    "title": "Om mig",
+    "description": "Sedan barndomen har jag varit ivrig att lösa problem. När jag fick min första PC med en AMD Duron 700MHz-processor, om jag minns rätt, gick något fel. Utan internet lyckades jag fixa det på egen hand genom att fördjupa mig i BIOS och installera olika drivrutiner, och jag var bara 10 år gammal. Jag är mycket motiverad av ett tillväxttänk och letar alltid efter möjligheter att lära mig, förbättra och bidra.",
+    "principle": "Min princip i livet är:",
+    "principleQuote": "Tålamod och flitig ansträngning är nycklarna till personlig utveckling och framsteg.",
+    "stats": {
+      "experience": "Års erfarenhet",
+      "projects": "Slutförda projekt",
+      "technologies": "Behärskade teknologier"
+    }
+  },
+  "contact": {
+    "title": "Låt oss koppla",
+    "subtitle": "Har du ett projekt i åtanke eller vill bara säga hej? Jag är alltid öppen för nya idéer och samarbeten.",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "message": "Meddelande",
+      "namePlaceholder": "Ditt fullständiga namn",
+      "emailPlaceholder": "din.epost@exempel.se",
+      "messagePlaceholder": "Berätta om ditt projekt eller säg bara hej...",
+      "sendButton": "Skicka meddelande",
+      "sending": "Skickar...",
+      "success": "Tack! Meddelandet skickades framgångsrikt!",
+      "error": "Vänligen fyll i fälten korrekt och försök igen.",
+      "errorGeneral": "Något gick fel. Vänligen försök igen"
+    },
+    "info": {
+      "email": "E-post",
+      "location": "Plats",
+      "locationValue": "Stockholm, Sverige"
+    }
+  },
+  "experience": {
+    "sectionLabel": "Min berättelse",
+    "work": "Arbete",
+    "education": "Utbildning",
+    "workTitle": "Arbetslivserfarenhet",
+    "workSubtitle": "Här är en sammanfattning av min professionella resa.",
+    "educationTitle": "Utbildning",
+    "educationSubtitle": "Min akademiska bakgrund och kontinuerliga inlärningsresa.",
+    "skills": "Färdigheter"
+  },
+  "projects": {
+    "sectionLabel": "Projekt",
+    "title": "Projekt",
+    "subtitle": "Här är några av de projekt jag har arbetat på.",
+    "viewProject": "Visa projekt",
+    "sourceCode": "Källkod",
+    "liveDemo": "Live demo"
+  },
+  "techStack": {
+    "sectionLabel": "Tech Stack",
+    "title": "Min Tech Stack",
+    "subtitle": "Här är en samling teknologier jag har arbetat med inom frontend, backend och utvecklingsverktyg. Var och en av dem spelar en roll i hur jag bygger, testar och levererar moderna webbapplikationer.",
+    "frontend": "Frontend-utveckling",
+    "backend": "Backend-utveckling",
+    "tools": "Verktyg och teknologier"
+  },
+  "buttons": {
+    "downloadCV": "Ladda ner CV",
+    "learnMore": "Läs mer",
+    "viewAll": "Visa alla"
+  },
+  "theme": {
+    "light": "Ljus",
+    "dark": "Mörk",
+    "system": "System"
+  }
+}
