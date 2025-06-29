@@ -29,7 +29,7 @@ export default function Home({ scrollTo }) {
           variants={fadeInUp}
           className="inline-block py-1 px-3 rounded-full text-sm font-medium dark:bg-teal-500/10 dark:text-blue-500 bg-slate-300/30 text-slate-800/60 mb-4"
         >
-          Welcome to my portfolio
+          {t("home.sectionLabel")}
         </motion.span>
 
         <motion.div

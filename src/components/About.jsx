@@ -20,7 +20,7 @@ const About = forwardRef((_, ref) => {
     }),
   };
 
-  const { theme } = useContext(ThemeContext);
+  const { actualTheme } = useContext(ThemeContext);
 
   return (
     <div
@@ -112,7 +112,7 @@ const About = forwardRef((_, ref) => {
               target="_blank"
               rel="noopener noreferrer"
               variant="outlined"
-              color={theme === "dark" ? "primary" : "black"}
+              color={actualTheme === "dark" ? "primary" : "black"}
               size="medium"
               style={{ borderRadius: "20px" }}
               className="w-[5rem] text-center mt-4 bg-slate-300/80 rounded-full shadow-md duration-200"

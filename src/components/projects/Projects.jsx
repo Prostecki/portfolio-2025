@@ -101,7 +101,7 @@ export default function Projects() {
                   activeCards[index] ? "scale-105" : ""
                 }`}
                 src={project.image}
-                alt={project.name}
+                alt={t(project.nameKey)}
               />
             </div>
             <div className="flex-grow p-4 flex flex-col justify-between gap-4">
@@ -110,14 +110,14 @@ export default function Projects() {
                 variants={fadeInLeft}
                 custom={0}
               >
-                {project.name}
+                {t(project.nameKey)}
               </motion.h3>
               <motion.p
                 className="text-gray-600 dark:text-gray-300 text-sm"
                 variants={fadeInLeft}
                 custom={1}
               >
-                {project.description}
+                {t(project.descriptionKey)}
               </motion.p>
               <motion.div
                 className="flex flex-wrap gap-2 mb-4"
@@ -157,7 +157,7 @@ export default function Projects() {
                       activeCards[index] ? "bg-blue-600" : ""
                     }`}
                   >
-                    View Live
+                    {t("projects.liveDemo")}
                   </a>
                 ) : (
                   <span className="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg cursor-not-allowed opacity-70 select-none pointer-events-none border border-gray-400 border-dashed flex items-center">
@@ -175,7 +175,7 @@ export default function Projects() {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    Coming Soon
+                    {t("buttons.comingSoon")}
                   </span>
                 )}
                 <a
@@ -186,7 +186,7 @@ export default function Projects() {
                     activeCards[index] ? "bg-gray-300 dark:bg-gray-600" : ""
                   }`}
                 >
-                  GitHub
+                  {t("projects.sourceCode")}
                 </a>
               </motion.div>
             </div>

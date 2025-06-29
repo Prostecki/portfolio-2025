@@ -39,11 +39,11 @@ export default function TechStack() {
   };
 
   // Map categories to their order class
-  const getCategoryOrder = (categoryLabel) => {
-    switch (categoryLabel) {
-      case "Frontend Development":
+  const getCategoryOrder = (categoryId) => {
+    switch (categoryId) {
+      case "Frontend":
         return "order-1 md:order-2";
-      case "Backend Development":
+      case "Backend":
         return "order-2 md:order-1";
       default:
         return "order-3";
@@ -101,7 +101,7 @@ export default function TechStack() {
               title={getCategoryLabel(category.id)}
               icons={iconsByCategory[category.id]}
               theme={theme}
-              order={getCategoryOrder(category.label)}
+              order={getCategoryOrder(category.id)}
             />
           ))}
         </div>

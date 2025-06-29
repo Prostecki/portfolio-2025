@@ -65,7 +65,37 @@
     "subtitle": "Här är några av de projekt jag har arbetat på.",
     "viewProject": "Visa projekt",
     "sourceCode": "Källkod",
-    "liveDemo": "Live demo"
+    "liveDemo": "Live demo",
+    "data": {
+      "pokemon": {
+        "name": "Pokémon App",
+        "description": "En omfattande React-applikation för att utforska Pokémon-data med interaktiva funktioner: Bläddra bland Pokémon, visa detaljerad statistik, kolla evolutionskedjor och mer."
+      },
+      "hakimLivs": {
+        "name": "Hakim Livs",
+        "description": "Hakim Livs Webshop är en fullstack e-handelsapplikation byggd med moderna koncept och teknologier med användarautentisering genom JWT auth"
+      },
+      "quizApp": {
+        "name": "Quiz App",
+        "description": "En dynamisk quiz-applikation byggd med moderna webbteknologier, med interaktiva frågor och realtidspoäng."
+      },
+      "adventCalendar": {
+        "name": "Adventskalender 2024",
+        "description": "En interaktiv adventskalender-applikation med dagliga överraskningar och festliga animationer."
+      },
+      "weatherApp": {
+        "name": "Väder App 2025",
+        "description": "En modern väderapplikation som ger korrekta prognoser med vackert UI och responsiv design."
+      },
+      "sortify": {
+        "name": "Sortify",
+        "description": "Ett effektivt sorterings- och organisationsverktyg med intuitivt gränssnitt och kraftfulla funktioner."
+      },
+      "parallax": {
+        "name": "Parallax Effekt",
+        "description": "Ett enkelt studieprojekt baserat på temat The Witcher med hjälp av Parallax och Swiper bibliotek i JS."
+      }
+    }
   },
   "techStack": {
     "sectionLabel": "Tech Stack",
@@ -78,7 +108,8 @@
   "buttons": {
     "downloadCV": "Ladda ner CV",
     "learnMore": "Läs mer",
-    "viewAll": "Visa alla"
+    "viewAll": "Visa alla",
+    "comingSoon": "Kommer snart"
   },
   "theme": {
     "light": "Ljus",
