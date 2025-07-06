@@ -84,24 +84,28 @@
       "fullstackDeveloper": {
         "title": "Fullstack Developer, open source",
         "institution": "Nackademin, Stockholm",
-        "period": "Aug 2024 - Present"
+        "period": "Aug 2024 - Present",
+        "description": "Comprehensive fullstack development program focused on modern web technologies, including React, Node.js, databases, and open-source contributions. Learning industry best practices and agile development methodologies."
       },
       "municipalAdultEducation": {
         "title": "Municipal Adult Education",
         "institution": "Solna KomVux, Stockholm",
         "period": "Oct 2022 - April 2024",
-        "courses": ["Swedish", "English"]
+        "courses": ["Swedish", "English"],
+        "description": "Intensive language studies to achieve proficiency in Swedish and English, enabling better integration into Swedish society and professional communication in international environments."
       },
       "javascriptCourse": {
         "title": "The Complete JavaScript Course 2025: From Zero to Expert!",
         "institution": "Udemy, Inc",
         "period": "Sep 2024 - Jan 2025",
-        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Modern Web Development"
+        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Modern Web Development",
+        "description": "Comprehensive JavaScript course covering fundamentals to advanced concepts including ES6+, DOM manipulation, Object-Oriented Programming, asynchronous programming, working with APIs, and modern development tools."
       },
       "bachelorAthletics": {
         "title": "Bachelor's degree in Athletics",
         "institution": "Lesgaft National State University, Russia",
-        "period": "Sep 2014 - May 2018"
+        "period": "Sep 2014 - May 2018",
+        "description": "Four-year degree program focusing on sports science, athletic training methodologies, biomechanics, physiology, and coaching techniques. Developed strong analytical and problem-solving skills through scientific approach to athletics."
       }
     }
   },

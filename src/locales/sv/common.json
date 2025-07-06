@@ -84,24 +84,28 @@
       "fullstackDeveloper": {
         "title": "Fullstack-utvecklare, öppen källkod",
         "institution": "Nackademin, Stockholm",
-        "period": "Aug 2024 - Nuvarande"
+        "period": "Aug 2024 - Nuvarande",
+        "description": "Omfattande fullstack-utvecklingsprogram fokuserat på moderna webbteknologier, inklusive React, Node.js, databaser och bidrag till öppen källkod. Lärande av branschens bästa praxis och agila utvecklingsmetoder."
       },
       "municipalAdultEducation": {
         "title": "Kommunal vuxenutbildning",
         "institution": "Solna KomVux, Stockholm",
         "period": "Okt 2022 - April 2024",
-        "courses": ["Svenska", "Engelska"]
+        "courses": ["Svenska", "Engelska"],
+        "description": "Intensiva språkstudier för att uppnå färdigheter i svenska och engelska, vilket möjliggör bättre integration i det svenska samhället och professionell kommunikation i internationella miljöer."
       },
       "javascriptCourse": {
         "title": "Den kompletta JavaScript-kursen 2025: Från noll till expert!",
         "institution": "Udemy, Inc",
         "period": "Sep 2024 - Jan 2025",
-        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Modern webbutveckling"
+        "skills": "JavaScript, ES6+, DOM, OOP, AJAX, APIs, NPM, Parcel, Modern webbutveckling",
+        "description": "Omfattande JavaScript-kurs som täcker grundläggande till avancerade koncept inklusive ES6+, DOM-manipulation, objektorienterad programmering, asynkron programmering, arbete med APIs och moderna utvecklingsverktyg."
       },
       "bachelorAthletics": {
         "title": "Kandidatexamen i idrott",
         "institution": "Lesgaft Statliga Universitet, Ryssland",
-        "period": "Sep 2014 - Maj 2018"
+        "period": "Sep 2014 - Maj 2018",
+        "description": "Fyraårigt kandidatprogram fokuserat på idrottsvetenskap, atletisk träningsmetodik, biomekanik, fysiologi och coachingteknik. Utvecklade starka analytiska och problemlösningsfärdigheter genom vetenskapligt tillvägagångssätt inom idrott."
       }
     }
   },

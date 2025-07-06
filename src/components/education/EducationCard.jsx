@@ -7,6 +7,7 @@ export default function EducationCard({
   titleKey,
   institutionKey,
   periodKey,
+  descriptionKey,
   position,
   skillsKey,
   coursesKey,
@@ -40,6 +41,12 @@ export default function EducationCard({
       <h3 className="text-2xl font-semibold mb-3 text-black dark:text-white">
         {t(titleKey)}
       </h3>
+
+      {descriptionKey && (
+        <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+          {t(descriptionKey)}
+        </p>
+      )}
 
       {coursesKey && (
         <ul className="dark:text-white text-black ml-6 list-disc mb-4">
